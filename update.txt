@@ -1,0 +1,14 @@
+Todo: 
+1. Fixing navigation bar and side bar (copy the navigation and side bar from category_all and adapt it for other pages):
+ - Categories:
+    - Add "Location" navigation entry to:
+        - category_all - Done 
+        - category_all_with_drawer
+        - category_with_attribute
+        - category_without_attribute
+ - Location:
+    - All locations - Done
+    - Create location form
+    - Location details drawer
+
+2. Fix the bottom navigation on mobile 
