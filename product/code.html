@@ -1,361 +1,436 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kinetic Inventory - Product Details</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-tertiary-fixed": "#00343c",
-                    "tertiary-fixed-dim": "#00cdeb",
-                    "primary": "#006947",
-                    "on-background": "#2c2f30",
-                    "outline-variant": "#abadae",
-                    "surface-tint": "#006947",
-                    "error-container": "#fb5151",
-                    "secondary-fixed-dim": "#47edc4",
-                    "secondary-dim": "#005b48",
-                    "outline": "#757778",
-                    "error": "#b31b25",
-                    "tertiary": "#006575",
-                    "secondary-fixed": "#5afcd2",
-                    "surface-variant": "#dadddf",
-                    "surface-container-low": "#eff1f2",
-                    "error-dim": "#9f0519",
-                    "tertiary-container": "#00dcfd",
-                    "primary-fixed": "#69f6b8",
-                    "surface-container-lowest": "#ffffff",
-                    "on-secondary-fixed": "#004939",
-                    "surface-dim": "#d1d5d7",
-                    "secondary-container": "#5afcd2",
-                    "on-secondary": "#c4ffea",
-                    "on-surface-variant": "#595c5d",
-                    "surface-container-high": "#e0e3e4",
-                    "surface-bright": "#f5f6f7",
-                    "on-surface": "#2c2f30",
-                    "primary-dim": "#005c3d",
-                    "on-primary-fixed": "#00452d",
-                    "on-error-container": "#570008",
-                    "on-tertiary": "#dcf7ff",
-                    "tertiary-dim": "#005866",
-                    "inverse-primary": "#69f6b8",
-                    "on-primary": "#c8ffe0",
-                    "secondary": "#006853",
-                    "surface": "#f5f6f7",
-                    "on-tertiary-container": "#004955",
-                    "background": "#f5f6f7",
-                    "inverse-surface": "#0c0f10",
-                    "inverse-on-surface": "#9b9d9e",
-                    "on-secondary-fixed-variant": "#006853",
-                    "surface-container": "#e6e8ea",
-                    "tertiary-fixed": "#00dcfd",
-                    "on-primary-fixed-variant": "#006544",
-                    "primary-fixed-dim": "#58e7ab",
-                    "on-secondary-container": "#005d4a",
-                    "on-error": "#ffefee",
-                    "on-primary-container": "#005a3c",
-                    "on-tertiary-fixed-variant": "#005360",
-                    "surface-container-highest": "#dadddf",
-                    "primary-container": "#69f6b8"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Work Sans"],
-                    "display": ["Work Sans"],
-                    "body": ["Work Sans"],
-                    "label": ["Work Sans"]
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kinetic Inventory - Product Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#00343c",
+                        "tertiary-fixed-dim": "#00cdeb",
+                        "primary": "#006947",
+                        "on-background": "#2c2f30",
+                        "outline-variant": "#abadae",
+                        "surface-tint": "#006947",
+                        "error-container": "#fb5151",
+                        "secondary-fixed-dim": "#47edc4",
+                        "secondary-dim": "#005b48",
+                        "outline": "#757778",
+                        "error": "#b31b25",
+                        "tertiary": "#006575",
+                        "secondary-fixed": "#5afcd2",
+                        "surface-variant": "#dadddf",
+                        "surface-container-low": "#eff1f2",
+                        "error-dim": "#9f0519",
+                        "tertiary-container": "#00dcfd",
+                        "primary-fixed": "#69f6b8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#004939",
+                        "surface-dim": "#d1d5d7",
+                        "secondary-container": "#5afcd2",
+                        "on-secondary": "#c4ffea",
+                        "on-surface-variant": "#595c5d",
+                        "surface-container-high": "#e0e3e4",
+                        "surface-bright": "#f5f6f7",
+                        "on-surface": "#2c2f30",
+                        "primary-dim": "#005c3d",
+                        "on-primary-fixed": "#00452d",
+                        "on-error-container": "#570008",
+                        "on-tertiary": "#dcf7ff",
+                        "tertiary-dim": "#005866",
+                        "inverse-primary": "#69f6b8",
+                        "on-primary": "#c8ffe0",
+                        "secondary": "#006853",
+                        "surface": "#f5f6f7",
+                        "on-tertiary-container": "#004955",
+                        "background": "#f5f6f7",
+                        "inverse-surface": "#0c0f10",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-secondary-fixed-variant": "#006853",
+                        "surface-container": "#e6e8ea",
+                        "tertiary-fixed": "#00dcfd",
+                        "on-primary-fixed-variant": "#006544",
+                        "primary-fixed-dim": "#58e7ab",
+                        "on-secondary-container": "#005d4a",
+                        "on-error": "#ffefee",
+                        "on-primary-container": "#005a3c",
+                        "on-tertiary-fixed-variant": "#005360",
+                        "surface-container-highest": "#dadddf",
+                        "primary-container": "#69f6b8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "display": ["Work Sans"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    }
+                }
             }
-          }
         }
-      }
     </script>
-<style>
-        body { font-family: 'Work Sans', sans-serif; }
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-panel {
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }
     </style>
 </head>
+
 <body class="bg-background text-on-surface">
-<!-- Top Navigation Shell -->
-<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-white/80 backdrop-blur-xl shadow-sm">
-<div class="flex items-center gap-8">
-<h1 class="text-xl font-bold tracking-tight text-emerald-900">Kinetic Inventory</h1>
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium" href="#">Dashboard</a>
-<a class="text-emerald-700 font-semibold border-b-2 border-emerald-600 px-3 py-1 text-sm" href="#">Inventory</a>
-<a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium" href="#">Suppliers</a>
-<a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium" href="#">Orders</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 text-slate-500 hover:bg-emerald-50 rounded-full transition-colors active:scale-95">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="p-2 text-slate-500 hover:bg-emerald-50 rounded-full transition-colors active:scale-95">
-<span class="material-symbols-outlined">settings</span>
-</button>
-<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary/10">
-<img alt="User profile" data-alt="Close up portrait of a professional warehouse manager in a clean office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdyRCAEZ4QKafm6jNREHzAwJNLDDuf8QRESQ0JJTRGR57yMzeIeJVmXKSfdSws6xyXku29MlyfCfyvuX7HzxMKMKxlboHMRrjMu2RqFB9GHwiHv_neszzUxblxV4Uh-pB9hrisDpO8GcNTtjFMnoKaNAAnq0823LU3JOQQJLABX9uAlDu-n2ud9WjYozKq2wMBK8JAM9468wKCbrBQ5MEgkP6Y4YL1J8jbjY8ekHMkegbvfKo-fKERCNN9STuyS7WdV2WeCZEOAYPq"/>
-</div>
-</div>
-</header>
-<!-- Side Navigation Shell -->
-<aside class="fixed left-0 top-0 h-full flex flex-col pt-20 pb-8 px-4 border-r border-slate-100 bg-slate-50 w-64 hidden lg:flex">
-<div class="mb-8 px-4">
-<span class="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block">Warehouse Alpha</span>
-<h2 class="text-lg font-black text-emerald-800 uppercase tracking-widest">Main Menu</h2>
-</div>
-<div class="space-y-1">
-<a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="text-sm font-medium">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 bg-white text-emerald-700 rounded-lg shadow-sm px-4 py-3 font-bold border-l-4 border-primary" href="#">
-<span class="material-symbols-outlined">inventory_2</span>
-<span class="text-sm font-medium">Inventory</span>
-</a>
-<a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg" href="#">
-<span class="material-symbols-outlined">local_shipping</span>
-<span class="text-sm font-medium">Suppliers</span>
-</a>
-<a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="text-sm font-medium">Orders</span>
-</a>
-<a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg" href="#">
-<span class="material-symbols-outlined">leaderboard</span>
-<span class="text-sm font-medium">Analytics</span>
-</a>
-</div>
-</aside>
-<!-- Main Content Area (List View) -->
-<main class="lg:ml-64 pt-20 px-8 min-h-screen">
-<div class="max-w-7xl mx-auto">
-<header class="flex justify-between items-end mb-8">
-<div>
-<span class="text-primary text-sm font-bold tracking-widest uppercase">Product Catalog</span>
-<h1 class="text-4xl font-black tracking-tight mt-1 text-on-surface">All Products</h1>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary-dim transition-colors shadow-lg shadow-primary/10">
-<span class="material-symbols-outlined text-sm">add</span>
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-white/80 backdrop-blur-xl shadow-sm">
+        <div class="flex items-center gap-8">
+            <h1 class="text-xl font-bold tracking-tight text-emerald-900">Kinetic Inventory</h1>
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium"
+                    href="#">Dashboard</a>
+                <a class="text-emerald-700 font-semibold border-b-2 border-emerald-600 px-3 py-1 text-sm"
+                    href="#">Inventory</a>
+                <a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium"
+                    href="#">Suppliers</a>
+                <a class="text-slate-500 hover:bg-emerald-50 transition-colors px-3 py-1 rounded-lg text-sm font-medium"
+                    href="#">Orders</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 text-slate-500 hover:bg-emerald-50 rounded-full transition-colors active:scale-95">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="p-2 text-slate-500 hover:bg-emerald-50 rounded-full transition-colors active:scale-95">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+            <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary/10">
+                <img alt="User profile"
+                    data-alt="Close up portrait of a professional warehouse manager in a clean office setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdyRCAEZ4QKafm6jNREHzAwJNLDDuf8QRESQ0JJTRGR57yMzeIeJVmXKSfdSws6xyXku29MlyfCfyvuX7HzxMKMKxlboHMRrjMu2RqFB9GHwiHv_neszzUxblxV4Uh-pB9hrisDpO8GcNTtjFMnoKaNAAnq0823LU3JOQQJLABX9uAlDu-n2ud9WjYozKq2wMBK8JAM9468wKCbrBQ5MEgkP6Y4YL1J8jbjY8ekHMkegbvfKo-fKERCNN9STuyS7WdV2WeCZEOAYPq" />
+            </div>
+        </div>
+    </header>
+    <!-- Side Navigation Shell -->
+    <aside
+        class="fixed left-0 top-0 h-full flex flex-col pt-20 pb-8 px-4 border-r border-slate-100 bg-slate-50 w-64 hidden lg:flex">
+        <div class="mb-8 px-4">
+            <span class="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block">Warehouse
+                Alpha</span>
+            <h2 class="text-lg font-black text-emerald-800 uppercase tracking-widest">Main Menu</h2>
+        </div>
+        <div class="space-y-1">
+            <a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="text-sm font-medium">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 bg-white text-emerald-700 rounded-lg shadow-sm px-4 py-3 font-bold border-l-4 border-primary"
+                href="#">
+                <span class="material-symbols-outlined">inventory_2</span>
+                <span class="text-sm font-medium">Inventory</span>
+            </a>
+            <a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <span class="text-sm font-medium">Suppliers</span>
+            </a>
+            <a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <span class="text-sm font-medium">Orders</span>
+            </a>
+            <a class="flex items-center gap-3 text-slate-600 px-4 py-3 hover:bg-slate-100 hover:text-emerald-600 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined">leaderboard</span>
+                <span class="text-sm font-medium">Analytics</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Area (List View) -->
+    <main class="lg:ml-64 pt-20 px-8 min-h-screen">
+        <div class="max-w-7xl mx-auto">
+            <header class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-primary text-sm font-bold tracking-widest uppercase">Product Catalog</span>
+                    <h1 class="text-4xl font-black tracking-tight mt-1 text-on-surface">All Products</h1>
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary-dim transition-colors shadow-lg shadow-primary/10">
+                    <span class="material-symbols-outlined text-sm">add</span>
                     Create Product
                 </button>
-</header>
-<!-- Product Table (Background Content) -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
-<table class="w-full text-left border-collapse">
-<thead class="bg-surface-container-low border-b border-outline-variant/10">
-<tr>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Product Name</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Category</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">Cost</th>
-<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-center">Status</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-surface-container-low">
-<tr class="hover:bg-surface-bright transition-colors cursor-pointer">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
-<span class="material-symbols-outlined">image</span>
-</div>
-<span class="font-bold text-on-surface">Aura Performance Jersey</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Apparel</td>
-<td class="px-6 py-4 text-sm font-mono text-right">$45.00</td>
-<td class="px-6 py-4 text-center">
-<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In Stock</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright transition-colors cursor-pointer bg-primary-container/10">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded bg-emerald-100 flex items-center justify-center">
-<img alt="Product thumbnail" data-alt="High resolution studio shot of a premium green performance fabric texture with subtle woven details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD06uc9UzG3pn2gQ9kihfuKvLlhvDHDJqzoZ7CIMQlKG_3vKNiw7QO4rWMXXR1ZkgI6ATywTEu21Hq88YM9lwToLMB80t8uyfoLz259O4XDrRm23B2srzP1UQyiSV6V5pW-_4ZVxS36Ji6SuNTpwV8ZGLdiPXuk1nRPL2FiG4PLRDQ4ZrBP2ZGWepEJtr5BXIQRzl-I731DyB8GBekbXGmYVAL6lKflUWhxwCEFZkPu2MEeZ4hZxhzZ2ymQNPU69cG9q-97UJw8Qzfv"/>
-</div>
-<span class="font-bold text-primary">Catalyst Eco-Thread Tee</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Sustainability Line</td>
-<td class="px-6 py-4 text-sm font-mono text-right">$32.00</td>
-<td class="px-6 py-4 text-center">
-<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In Stock</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright transition-colors cursor-pointer">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
-<span class="material-symbols-outlined">image</span>
-</div>
-<span class="font-bold text-on-surface">Velocity Grip Gloves</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Accessories</td>
-<td class="px-6 py-4 text-sm font-mono text-right">$18.50</td>
-<td class="px-6 py-4 text-center">
-<span class="bg-error-container text-on-error-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Low Stock</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-bright transition-colors cursor-pointer">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
-<span class="material-symbols-outlined">image</span>
-</div>
-<span class="font-bold text-on-surface">Momentum Compression Socks</span>
-</div>
-</td>
-<td class="px-6 py-4 text-sm text-on-surface-variant">Apparel</td>
-<td class="px-6 py-4 text-sm font-mono text-right">$12.00</td>
-<td class="px-6 py-4 text-center">
-<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In Stock</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</main>
-<!-- Drawer Overlay Backgrop -->
-<div class="fixed inset-0 bg-on-surface/20 backdrop-blur-sm z-[60]"></div>
-<!-- Product Details Side Drawer -->
-<aside class="fixed right-0 top-0 h-full w-full max-w-lg bg-surface-container-lowest z-[70] shadow-[0_0_80px_rgba(0,105,71,0.15)] flex flex-col border-l border-outline-variant/20 animate-in slide-in-from-right duration-300">
-<!-- Drawer Header -->
-<div class="px-8 pt-8 pb-6 border-b border-surface-container-low flex items-center justify-between">
-<div class="flex items-center gap-4">
-<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
-<span class="material-symbols-outlined">close</span>
-</button>
-<h2 class="text-2xl font-black tracking-tight text-on-surface">Product Details</h2>
-</div>
-<div class="flex gap-2">
-<button class="p-2 text-primary hover:bg-primary-container rounded-lg transition-colors">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="p-2 text-error hover:bg-error-container/10 rounded-lg transition-colors">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</div>
-<!-- Drawer Content -->
-<div class="flex-1 overflow-y-auto px-8 py-8 space-y-12">
-<!-- Section 1: Basic Information -->
-<section class="space-y-6">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[20px]">info</span>
-</div>
-<h3 class="text-sm font-bold uppercase tracking-widest text-primary">Basic Information</h3>
-</div>
-<div class="grid grid-cols-1 gap-6">
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Product Name</label>
-<p class="text-lg font-bold text-on-surface">Catalyst Eco-Thread Tee</p>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Category</label>
-<p class="font-semibold text-on-surface">Sustainability Line</p>
-</div>
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Status</label>
-<div class="flex items-center gap-2 mt-1">
-<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-<p class="font-bold text-emerald-700 text-sm">Active</p>
-</div>
-</div>
-</div>
-<!-- Moved Supplier and Unit of Measure -->
-<div class="grid grid-cols-2 gap-4">
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Supplier</label>
-<p class="font-semibold text-on-surface">EcoTextiles Global</p>
-</div>
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Unit of Measure</label>
-<p class="font-semibold text-on-surface">Unit (ea)</p>
-</div>
-</div>
-<!-- Moved Unit Cost -->
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Base Unit Cost</label>
-<p class="text-lg font-bold text-on-surface">$32.00</p>
-</div>
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Description</label>
-<p class="text-sm leading-relaxed text-on-surface-variant">Our premium moisture-wicking training tee crafted from 100% recycled polymers. Engineered for maximum airflow during high-intensity intervals while maintaining a tailored editorial fit.</p>
-</div>
-</div>
-</section>
-<!-- Section 2: Inventory (New Section) -->
-<section class="space-y-6">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-emerald-900/10 flex items-center justify-center text-emerald-900">
-<span class="material-symbols-outlined text-[20px]">inventory</span>
-</div>
-<h3 class="text-sm font-bold uppercase tracking-widest text-emerald-900">Inventory</h3>
-</div>
-<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10"><div>
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Stock Level</label>
-<p class="text-lg font-bold text-on-surface">1,240 Units</p>
-</div></div>
-</section>
-<!-- Section 3: Variant Options -->
-<section class="space-y-6 pb-12">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[20px]">layers</span>
-</div>
-<h3 class="text-sm font-bold uppercase tracking-widest text-secondary">Variant Options</h3>
-</div>
-<div class="space-y-6">
-<div>
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-3">Color Availability</label>
-<div class="flex flex-wrap gap-3">
-<!-- Color dots removed, no tags active -->
-<span class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
+            </header>
+            <!-- Product Table (Background Content) -->
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-surface-container-low border-b border-outline-variant/10">
+                        <tr>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+                                Product Name</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+                                Category</th>
+                            <th
+                                class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right">
+                                Cost</th>
+                            <th
+                                class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-center">
+                                Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container-low">
+                        <tr class="hover:bg-surface-bright transition-colors cursor-pointer">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+                                        <span class="material-symbols-outlined">image</span>
+                                    </div>
+                                    <span class="font-bold text-on-surface">Aura Performance Jersey</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-on-surface-variant">Apparel</td>
+                            <td class="px-6 py-4 text-sm font-mono text-right">$45.00</td>
+                            <td class="px-6 py-4 text-center">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In
+                                    Stock</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-bright transition-colors cursor-pointer bg-primary-container/10">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded bg-emerald-100 flex items-center justify-center">
+                                        <img alt="Product thumbnail"
+                                            data-alt="High resolution studio shot of a premium green performance fabric texture with subtle woven details"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD06uc9UzG3pn2gQ9kihfuKvLlhvDHDJqzoZ7CIMQlKG_3vKNiw7QO4rWMXXR1ZkgI6ATywTEu21Hq88YM9lwToLMB80t8uyfoLz259O4XDrRm23B2srzP1UQyiSV6V5pW-_4ZVxS36Ji6SuNTpwV8ZGLdiPXuk1nRPL2FiG4PLRDQ4ZrBP2ZGWepEJtr5BXIQRzl-I731DyB8GBekbXGmYVAL6lKflUWhxwCEFZkPu2MEeZ4hZxhzZ2ymQNPU69cG9q-97UJw8Qzfv" />
+                                    </div>
+                                    <span class="font-bold text-primary">Catalyst Eco-Thread Tee</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-on-surface-variant">Sustainability Line</td>
+                            <td class="px-6 py-4 text-sm font-mono text-right">$32.00</td>
+                            <td class="px-6 py-4 text-center">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In
+                                    Stock</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-bright transition-colors cursor-pointer">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+                                        <span class="material-symbols-outlined">image</span>
+                                    </div>
+                                    <span class="font-bold text-on-surface">Velocity Grip Gloves</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-on-surface-variant">Accessories</td>
+                            <td class="px-6 py-4 text-sm font-mono text-right">$18.50</td>
+                            <td class="px-6 py-4 text-center">
+                                <span
+                                    class="bg-error-container text-on-error-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Low
+                                    Stock</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-bright transition-colors cursor-pointer">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-400">
+                                        <span class="material-symbols-outlined">image</span>
+                                    </div>
+                                    <span class="font-bold text-on-surface">Momentum Compression Socks</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-on-surface-variant">Apparel</td>
+                            <td class="px-6 py-4 text-sm font-mono text-right">$12.00</td>
+                            <td class="px-6 py-4 text-center">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">In
+                                    Stock</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- Drawer Overlay Backgrop -->
+    <div class="fixed inset-0 bg-on-surface/20 backdrop-blur-sm z-[60]"></div>
+    <!-- Product Details Side Drawer -->
+    <aside
+        class="fixed right-0 top-0 h-full w-full max-w-lg bg-surface-container-lowest z-[70] shadow-[0_0_80px_rgba(0,105,71,0.15)] flex flex-col border-l border-outline-variant/20 animate-in slide-in-from-right duration-300">
+        <!-- Drawer Header -->
+        <div class="px-8 pt-8 pb-6 border-b border-surface-container-low flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <h2 class="text-2xl font-black tracking-tight text-on-surface">Product Details</h2>
+            </div>
+            <div class="flex gap-2">
+                <button class="p-2 text-primary hover:bg-primary-container rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="p-2 text-error hover:bg-error-container/10 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+            </div>
+        </div>
+        <!-- Drawer Content -->
+        <div class="flex-1 overflow-y-auto px-8 py-8 space-y-12">
+            <!-- Section 1: Basic Information -->
+            <section class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[20px]">info</span>
+                    </div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Basic Information</h3>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Product
+                            Name</label>
+                        <p class="text-lg font-bold text-on-surface">Catalyst Eco-Thread Tee</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Category</label>
+                            <p class="font-semibold text-on-surface">Sustainability Line</p>
+                        </div>
+                        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Status</label>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                <p class="font-bold text-emerald-700 text-sm">Active</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Moved Supplier and Unit of Measure -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Supplier</label>
+                            <p class="font-semibold text-on-surface">EcoTextiles Global</p>
+                        </div>
+                        <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                            <label
+                                class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Unit
+                                of Measure</label>
+                            <p class="font-semibold text-on-surface">Unit (ea)</p>
+                        </div>
+                    </div>
+                    <!-- Moved Unit Cost -->
+                    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Base
+                            Unit Cost</label>
+                        <p class="text-lg font-bold text-on-surface">$32.00</p>
+                    </div>
+                    <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Description</label>
+                        <p class="text-sm leading-relaxed text-on-surface-variant">Our premium moisture-wicking training
+                            tee crafted from 100% recycled polymers. Engineered for maximum airflow during
+                            high-intensity intervals while maintaining a tailored editorial fit.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 2: Inventory (New Section) -->
+            <section class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-900/10 flex items-center justify-center text-emerald-900">
+                        <span class="material-symbols-outlined text-[20px]">inventory</span>
+                    </div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-emerald-900">Inventory</h3>
+                </div>
+                <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+                    <div>
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-1">Stock
+                            Level</label>
+                        <p class="text-lg font-bold text-on-surface">1,240 Units</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 3: Variant Options -->
+            <section class="space-y-6 pb-12">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined text-[20px]">layers</span>
+                    </div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-secondary">Variant Options</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-3">Color
+                            Availability</label>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Color dots removed, no tags active -->
+                            <span
+                                class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
                                 Red
                             </span>
-<span class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
+                            <span
+                                class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
                                 Blue
                             </span>
-<span class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
+                            <span
+                                class="inline-flex items-center bg-surface-container-high px-4 py-2 rounded-lg text-sm font-bold text-on-surface">
                                 Kinetic Green
                             </span>
-</div>
-</div>
-<div>
-<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-3">Size Options</label>
-<div class="flex flex-wrap gap-2">
-<!-- Size options non-selectable / read-only -->
-<span class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">S</span>
-<span class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">M</span>
-<span class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">L</span>
-<span class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">XL</span>
-</div>
-</div>
-</div>
-</section>
-</div>
-<!-- Footer section removed as requested -->
-</aside>
-</body></html>
+                        </div>
+                    </div>
+                    <div>
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant block mb-3">Size
+                            Options</label>
+                        <div class="flex flex-wrap gap-2">
+                            <!-- Size options non-selectable / read-only -->
+                            <span
+                                class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">S</span>
+                            <span
+                                class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">M</span>
+                            <span
+                                class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">L</span>
+                            <span
+                                class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-sm font-black text-on-surface">XL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Footer section removed as requested -->
+    </aside>
+</body>
+
+</html>

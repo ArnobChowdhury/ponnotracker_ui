@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Create Supplier - SupplyCatalyst</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Create Supplier - SupplyCatalyst</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -84,204 +91,267 @@
             },
         }
     </script>
-<style>
-        body { font-family: 'Work Sans', sans-serif; }
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface antialiased min-h-screen">
-<!-- TopNavBar Shell -->
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-transparent">
-<div class="flex justify-between items-center px-6 h-16 w-full">
-<div class="flex items-center gap-8">
-<span class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">SupplyCatalyst</span>
-<nav class="hidden md:flex items-center space-x-6 font-['Work_Sans'] text-sm font-medium">
-<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Dashboard</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Products</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Categories</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Inventory</a>
-<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1" href="#">Suppliers</a>
-</nav>
-</div>
-<div class="flex items-center space-x-4">
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
-<span class="material-symbols-outlined text-slate-600 dark:text-slate-300" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
-<span class="material-symbols-outlined text-slate-600 dark:text-slate-300" data-icon="settings">settings</span>
-</button>
-<img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200" data-alt="A professional headshot of a logistics manager in a modern office environment. The lighting is soft and natural, emphasizing a bright, clinical aesthetic. The background is slightly blurred, showing architectural elements of a tech-forward workspace. The overall mood is confident and efficient, fitting a corporate supply chain setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnNxGha3qVXlEYA8_HNt_9bAxK9FaPC0U7v3ukQtG85ktiwUjOvjFU2ICNsdi9Vsce1RKX41g9vJi-xqK9oAdc_pIVRsFiv80-5Ju1jur_uFjJKIjrEKfY6JgHPLURzSalcuYuGOX1ikiDN35rbtFsm2TdpmgtuoHMe7wtyDSxZBtvGqpRi671ETsoLN52Ra4sAXbR0mdLTEs0H3GntPwLGomYAYzuFOC-kvzfVuoshT4pmIzmPU711Gf1oLKhA8DZCyztQhg9k2x"/>
-</div>
-</div>
-</header>
-<!-- SideNavBar Shell -->
-<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-lg hidden md:block">
-<div class="flex flex-col p-4 space-y-2">
-<div class="mb-6 px-2">
-<div class="flex items-center space-x-3 mb-1">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary text-sm" data-icon="person_search">person_search</span>
-</div>
-<div>
-<h3 class="text-emerald-800 dark:text-emerald-200 font-bold text-sm">Supplier Mgmt</h3>
-<p class="text-[10px] text-slate-500 uppercase tracking-wider">Global Network</p>
-</div>
-</div>
-</div>
-<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined group-hover:text-emerald-600" data-icon="person_search">person_search</span>
-<span class="font-['Work_Sans'] text-sm antialiased">All Suppliers</span>
-</a>
-<a class="flex items-center space-x-3 px-3 py-2 text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-50 dark:bg-emerald-900/20 rounded-lg transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-<span class="font-['Work_Sans'] text-sm antialiased">Create Supplier</span>
-</a>
-<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined group-hover:text-emerald-600" data-icon="query_stats">query_stats</span>
-<span class="font-['Work_Sans'] text-sm antialiased">Performance</span>
-</a>
-<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined group-hover:text-emerald-600" data-icon="verified">verified</span>
-<span class="font-['Work_Sans'] text-sm antialiased">Compliance</span>
-</a>
-<div class="pt-8 mt-auto border-t border-slate-200/50">
-<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
-<span class="font-['Work_Sans'] text-sm antialiased">Support</span>
-</a>
-<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group" href="#">
-<span class="material-symbols-outlined" data-icon="archive">archive</span>
-<span class="font-['Work_Sans'] text-sm antialiased">Archive</span>
-</a>
-</div>
-</div>
-</aside>
-<!-- Main Content Canvas -->
-<main class="md:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
-<header class="mb-12 relative">
-<span class="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Registration Flow</span>
-<h1 class="text-[3.5rem] font-extrabold leading-none tracking-tighter text-on-surface mb-4">Create Supplier</h1>
-<p class="text-on-surface-variant max-w-xl text-lg">Onboard a new strategic partner into the global supply network. Ensure all fields are precisely documented.</p>
-</header>
-<form class="space-y-6">
-<!-- Card 1: Basic Information -->
-<section class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary-container" data-icon="badge">badge</span>
-</div>
-<h2 class="text-1.5rem font-bold text-on-surface">Basic Information</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Name <span class="text-error">*</span></label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="Enter supplier legal name" required="" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Code</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="SUP-XXXX" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Phone</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="+1 (555) 000-0000" type="tel"/>
-</div>
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Email</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="contact@supplier.com" type="email"/>
-</div>
-</div>
-</section>
-<!-- Card 2: Address & Contact -->
-<section class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-10 h-10 bg-tertiary-container/30 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary" data-icon="location_on">location_on</span>
-</div>
-<h2 class="text-1.5rem font-bold text-on-surface">Address &amp; Contact</h2>
-</div>
-<div class="space-y-8">
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Address</label>
-<textarea class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="Full physical headquarters address" rows="3"></textarea>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Contact Person</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="Full name of representative" type="text"/>
-</div>
-<div class="flex items-center">
-<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 w-full">
-<span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
-<p class="text-sm text-on-surface-variant italic">Primary contact for logistical inquiries and contract negotiations.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Card 3: Additional Details -->
-<section class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-10 h-10 bg-secondary-container/30 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
-</div>
-<h2 class="text-1.5rem font-bold text-on-surface">Additional Details</h2>
-</div>
-<div class="space-y-8">
-<div class="space-y-2">
-<label class="block text-sm font-semibold text-on-surface-variant">Notes</label>
-<textarea class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline" placeholder="Special handling requirements, delivery preferences, or internal remarks..." rows="4"></textarea>
-</div>
-<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
-<div>
-<p class="font-semibold text-on-surface">Is Active</p>
-<p class="text-xs text-on-surface-variant">Enable immediate purchasing from this supplier</p>
-</div>
-</div>
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox" value=""/>
-<div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-</label>
-</div>
-</div>
-</section>
-<!-- Buttons -->
-<div class="flex justify-end items-center gap-4 pt-8">
-<button class="px-8 py-3 text-primary font-semibold hover:bg-primary/5 rounded-lg transition-all active:scale-95" type="button">Cancel</button>
-<button class="px-10 py-4 bg-primary text-on-primary rounded-lg font-bold shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim transition-all active:scale-95 flex items-center gap-2" type="submit">
-<span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+    <!-- TopNavBar Shell -->
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-transparent">
+        <div class="flex justify-between items-center px-6 h-16 w-full">
+            <div class="flex items-center gap-8">
+                <span
+                    class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">SupplyCatalyst</span>
+                <nav class="hidden md:flex items-center space-x-6 font-['Work_Sans'] text-sm font-medium">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                        href="#">Dashboard</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                        href="#">Products</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                        href="#">Categories</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                        href="#">Inventory</a>
+                    <a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1"
+                        href="#">Suppliers</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
+                    <span class="material-symbols-outlined text-slate-600 dark:text-slate-300"
+                        data-icon="notifications">notifications</span>
+                </button>
+                <button
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
+                    <span class="material-symbols-outlined text-slate-600 dark:text-slate-300"
+                        data-icon="settings">settings</span>
+                </button>
+                <img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200"
+                    data-alt="A professional headshot of a logistics manager in a modern office environment. The lighting is soft and natural, emphasizing a bright, clinical aesthetic. The background is slightly blurred, showing architectural elements of a tech-forward workspace. The overall mood is confident and efficient, fitting a corporate supply chain setting."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnNxGha3qVXlEYA8_HNt_9bAxK9FaPC0U7v3ukQtG85ktiwUjOvjFU2ICNsdi9Vsce1RKX41g9vJi-xqK9oAdc_pIVRsFiv80-5Ju1jur_uFjJKIjrEKfY6JgHPLURzSalcuYuGOX1ikiDN35rbtFsm2TdpmgtuoHMe7wtyDSxZBtvGqpRi671ETsoLN52Ra4sAXbR0mdLTEs0H3GntPwLGomYAYzuFOC-kvzfVuoshT4pmIzmPU711Gf1oLKhA8DZCyztQhg9k2x" />
+            </div>
+        </div>
+    </header>
+    <!-- SideNavBar Shell -->
+    <aside
+        class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-lg hidden md:block">
+        <div class="flex flex-col p-4 space-y-2">
+            <div class="mb-6 px-2">
+                <div class="flex items-center space-x-3 mb-1">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary text-sm"
+                            data-icon="person_search">person_search</span>
+                    </div>
+                    <div>
+                        <h3 class="text-emerald-800 dark:text-emerald-200 font-bold text-sm">Supplier Mgmt</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-wider">Global Network</p>
+                    </div>
+                </div>
+            </div>
+            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
+                href="#">
+                <span class="material-symbols-outlined group-hover:text-emerald-600"
+                    data-icon="person_search">person_search</span>
+                <span class="font-['Work_Sans'] text-sm antialiased">All Suppliers</span>
+            </a>
+            <a class="flex items-center space-x-3 px-3 py-2 text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-50 dark:bg-emerald-900/20 rounded-lg transition-all duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="description">description</span>
+                <span class="font-['Work_Sans'] text-sm antialiased">Create Supplier</span>
+            </a>
+            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
+                href="#">
+                <span class="material-symbols-outlined group-hover:text-emerald-600"
+                    data-icon="query_stats">query_stats</span>
+                <span class="font-['Work_Sans'] text-sm antialiased">Performance</span>
+            </a>
+            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
+                href="#">
+                <span class="material-symbols-outlined group-hover:text-emerald-600"
+                    data-icon="verified">verified</span>
+                <span class="font-['Work_Sans'] text-sm antialiased">Compliance</span>
+            </a>
+            <div class="pt-8 mt-auto border-t border-slate-200/50">
+                <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                    <span class="font-['Work_Sans'] text-sm antialiased">Support</span>
+                </a>
+                <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="archive">archive</span>
+                    <span class="font-['Work_Sans'] text-sm antialiased">Archive</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="md:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <header class="mb-12 relative">
+            <span class="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Registration Flow</span>
+            <h1 class="text-[3.5rem] font-extrabold leading-none tracking-tighter text-on-surface mb-4">Create Supplier
+            </h1>
+            <p class="text-on-surface-variant max-w-xl text-lg">Onboard a new strategic partner into the global supply
+                network. Ensure all fields are precisely documented.</p>
+        </header>
+        <form class="space-y-6">
+            <!-- Card 1: Basic Information -->
+            <section
+                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary-container" data-icon="badge">badge</span>
+                    </div>
+                    <h2 class="text-1.5rem font-bold text-on-surface">Basic Information</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Name <span
+                                class="text-error">*</span></label>
+                        <input
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="Enter supplier legal name" required="" type="text" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Code</label>
+                        <input
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="SUP-XXXX" type="text" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Phone</label>
+                        <input
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="+1 (555) 000-0000" type="tel" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Email</label>
+                        <input
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="contact@supplier.com" type="email" />
+                    </div>
+                </div>
+            </section>
+            <!-- Card 2: Address & Contact -->
+            <section
+                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-tertiary-container/30 rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary" data-icon="location_on">location_on</span>
+                    </div>
+                    <h2 class="text-1.5rem font-bold text-on-surface">Address &amp; Contact</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Address</label>
+                        <textarea
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="Full physical headquarters address" rows="3"></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-on-surface-variant">Contact Person</label>
+                            <input
+                                class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                placeholder="Full name of representative" type="text" />
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 w-full">
+                                <span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
+                                <p class="text-sm text-on-surface-variant italic">Primary contact for logistical
+                                    inquiries and contract negotiations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Card 3: Additional Details -->
+            <section
+                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-10 h-10 bg-secondary-container/30 rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
+                    </div>
+                    <h2 class="text-1.5rem font-bold text-on-surface">Additional Details</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-on-surface-variant">Notes</label>
+                        <textarea
+                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                            placeholder="Special handling requirements, delivery preferences, or internal remarks..."
+                            rows="4"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+                            <div>
+                                <p class="font-semibold text-on-surface">Is Active</p>
+                                <p class="text-xs text-on-surface-variant">Enable immediate purchasing from this
+                                    supplier</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input checked="" class="sr-only peer" type="checkbox" value="" />
+                            <div
+                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <!-- Buttons -->
+            <div class="flex justify-end items-center gap-4 pt-8">
+                <button
+                    class="px-8 py-3 text-primary font-semibold hover:bg-primary/5 rounded-lg transition-all active:scale-95"
+                    type="button">Cancel</button>
+                <button
+                    class="px-10 py-4 bg-primary text-on-primary rounded-lg font-bold shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim transition-all active:scale-95 flex items-center gap-2"
+                    type="submit">
+                    <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
                     Create Supplier
                 </button>
-</div>
-</form>
-<!-- Decorative Elements for Kinetic Catalyst feel -->
-<div class="fixed -bottom-10 -right-10 w-96 h-96 bg-primary-container/20 blur-3xl rounded-full -z-10"></div>
-<div class="fixed top-40 right-20 w-64 h-64 bg-tertiary-container/10 blur-3xl rounded-full -z-10"></div>
-</main>
-<!-- Bottom Nav for Mobile -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-xl border-t border-slate-100 flex justify-around items-center px-4 z-50">
-<button class="flex flex-col items-center text-slate-400">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="text-[10px]">Home</span>
-</button>
-<button class="flex flex-col items-center text-emerald-600">
-<span class="material-symbols-outlined" data-icon="person_search" data-weight="fill">person_search</span>
-<span class="text-[10px]">Suppliers</span>
-</button>
-<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center -mt-8 shadow-lg">
-<span class="material-symbols-outlined text-white" data-icon="add">add</span>
-</div>
-<button class="flex flex-col items-center text-slate-400">
-<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
-<span class="text-[10px]">Stock</span>
-</button>
-<button class="flex flex-col items-center text-slate-400">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-<span class="text-[10px]">Profile</span>
-</button>
-</nav>
-</body></html>
+            </div>
+        </form>
+        <!-- Decorative Elements for Kinetic Catalyst feel -->
+        <div class="fixed -bottom-10 -right-10 w-96 h-96 bg-primary-container/20 blur-3xl rounded-full -z-10"></div>
+        <div class="fixed top-40 right-20 w-64 h-64 bg-tertiary-container/10 blur-3xl rounded-full -z-10"></div>
+    </main>
+    <!-- Bottom Nav for Mobile -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/90 backdrop-blur-xl border-t border-slate-100 flex justify-around items-center px-4 z-50">
+        <button class="flex flex-col items-center text-slate-400">
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+            <span class="text-[10px]">Home</span>
+        </button>
+        <button class="flex flex-col items-center text-emerald-600">
+            <span class="material-symbols-outlined" data-icon="person_search" data-weight="fill">person_search</span>
+            <span class="text-[10px]">Suppliers</span>
+        </button>
+        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center -mt-8 shadow-lg">
+            <span class="material-symbols-outlined text-white" data-icon="add">add</span>
+        </div>
+        <button class="flex flex-col items-center text-slate-400">
+            <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+            <span class="text-[10px]">Stock</span>
+        </button>
+        <button class="flex flex-col items-center text-slate-400">
+            <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+            <span class="text-[10px]">Profile</span>
+        </button>
+    </nav>
+</body>
+
+</html>

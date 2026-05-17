@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Create User - Ponno Tracker</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Create User - Ponno Tracker</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -82,134 +89,194 @@
             }
         }
     </script>
-<style>
-        body { font-family: 'Work Sans', sans-serif; }
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
         .glass-effect {
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface min-h-screen">
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-0 flex flex-col h-full p-4 gap-2 z-40 bg-surface-container-low/60 dark:bg-surface-dim/20 backdrop-blur-2xl h-screen w-64 docked left-0">
-<div class="flex flex-col gap-1 mb-8 px-2">
-<h1 class="font-headline font-bold text-lg text-on-surface dark:text-inverse-on-surface">Ponno Tracker</h1>
-<p class="font-label text-label-md font-medium uppercase tracking-widest text-primary">Inventory Suite</p>
-</div>
-<nav class="flex flex-col gap-2 grow">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group" href="#">
-<span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200" data-icon="dashboard">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group" href="#">
-<span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200" data-icon="inventory_2">inventory_2</span>
-<span>Inventory</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group" href="#">
-<span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200" data-icon="location_on">location_on</span>
-<span>Locations</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group" href="#">
-<span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200" data-icon="local_shipping">local_shipping</span>
-<span>Suppliers</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] font-label text-label-md font-medium uppercase tracking-widest transition-all group" href="#">
-<span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200" data-icon="group">group</span>
-<span>User Management</span>
-</a>
-</nav>
-<button class="mt-auto bg-primary-container text-on-primary-container px-4 py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-<span>Add New Stock</span>
-</button>
-</aside>
-<!-- Main Canvas -->
-<div class="ml-64 min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<header class="sticky top-0 z-50 flex justify-between items-center px-6 h-16 w-full bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)]">
-<div class="flex items-center gap-8">
-<span class="font-headline font-black text-xl text-primary dark:text-inverse-primary tracking-tighter">Ponno Tracker</span>
-<div class="relative group">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
-<input class="bg-surface-container-high border-none rounded-lg py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary transition-all text-body-md font-body" placeholder="Search resources..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all active:scale-95">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all active:scale-95">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary-container">
-<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate manager in a high-tech office setting. The person has a friendly expression, captured with cinematic shallow depth of field. Soft natural light flows from a window, highlighting a modern, minimalist environment with clean lines and a hint of emerald office plants in the background to match the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIL8oU-WsPODJCjqDb0pL5P-j_2DhxpzCiFfn3mmWvX8AN3QjAQDRmFb2FtsbNU2C5E7thJnmJWqJlvPjJbl_wgavZeHcdMj_7ivj1Xdq_1CfRl7JHVTOXgL_dq3nKMIuzauVECm-ZFo4EQ-9ndMkRI9hbx6TjzRDmoKb49ZmYHthtAMpWKRtggB9UUebgyng8pmOGMVgCCNEp-aYaZ-yvOk_Bu12VqPmWUukvlVwKzGu5m3AJTX52OD1O-kvxqiqXY7vqzLgmQ_dt"/>
-</div>
-</div>
-</header>
-<!-- Content Area -->
-<main class="p-8 grow max-w-5xl">
-<div class="mb-12">
-<p class="font-label text-label-md font-bold text-primary uppercase tracking-widest mb-1">Administration Portal</p>
-<h2 class="text-[3.5rem] font-headline font-black tracking-tight leading-none text-on-surface">Create User</h2>
-</div>
-<!-- Form Card -->
-<div class="bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(0,105,71,0.04)] overflow-hidden">
-<div class="p-8">
-<form class="space-y-8">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Full Name -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Full Name *</label>
-<input class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all" placeholder="e.g. Sarah Jenkins" required="" type="text"/>
-</div>
-<!-- Username -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Username *</label>
-<input class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all" placeholder="sjenkins_ponno" required="" type="text"/>
-</div>
-<!-- Password -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Password *</label>
-<input class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all" placeholder="••••••••" required="" type="password"/>
-</div>
-<!-- Role -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Access Role *</label>
-<select class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all appearance-none cursor-pointer" required="">
-<option disabled="" selected="" value="">Select a role...</option>
-<option value="Admin">Admin</option>
-<option value="Staff">Staff</option>
-</select>
-</div>
-</div>
-<!-- Is Active Toggle -->
-<div class="flex items-center justify-between p-6 bg-surface-container-low rounded-lg">
-<div class="flex flex-col">
-<span class="font-label text-label-md font-bold text-on-surface uppercase tracking-wider">Account Status</span>
-</div>
-<label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
-<div class="w-14 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
-</label>
-</div>
-<!-- Form Actions -->
-<div class="flex items-center justify-end gap-4 pt-4 border-t border-outline-variant/10">
-<button class="px-8 py-3 rounded-lg font-bold text-primary hover:bg-primary-container/20 transition-all active:scale-95" type="button">
+    <!-- SideNavBar -->
+    <aside
+        class="fixed left-0 top-0 flex flex-col h-full p-4 gap-2 z-40 bg-surface-container-low/60 dark:bg-surface-dim/20 backdrop-blur-2xl h-screen w-64 docked left-0">
+        <div class="flex flex-col gap-1 mb-8 px-2">
+            <h1 class="font-headline font-bold text-lg text-on-surface dark:text-inverse-on-surface">Ponno Tracker</h1>
+            <p class="font-label text-label-md font-medium uppercase tracking-widest text-primary">Inventory Suite</p>
+        </div>
+        <nav class="flex flex-col gap-2 grow">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group"
+                href="#">
+                <span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200"
+                    data-icon="dashboard">dashboard</span>
+                <span>Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group"
+                href="#">
+                <span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200"
+                    data-icon="inventory_2">inventory_2</span>
+                <span>Inventory</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group"
+                href="#">
+                <span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200"
+                    data-icon="location_on">location_on</span>
+                <span>Locations</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label text-label-md font-medium uppercase tracking-widest rounded-lg transition-all group"
+                href="#">
+                <span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200"
+                    data-icon="local_shipping">local_shipping</span>
+                <span>Suppliers</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] font-label text-label-md font-medium uppercase tracking-widest transition-all group"
+                href="#">
+                <span class="material-symbols-outlined transition-all group-hover:translate-x-1 duration-200"
+                    data-icon="group">group</span>
+                <span>User Management</span>
+            </a>
+        </nav>
+        <button
+            class="mt-auto bg-primary-container text-on-primary-container px-4 py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+            <span class="material-symbols-outlined" data-icon="add">add</span>
+            <span>Add New Stock</span>
+        </button>
+    </aside>
+    <!-- Main Canvas -->
+    <div class="ml-64 min-h-screen flex flex-col">
+        <!-- TopNavBar -->
+        <header
+            class="sticky top-0 z-50 flex justify-between items-center px-6 h-16 w-full bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)]">
+            <div class="flex items-center gap-8">
+                <span
+                    class="font-headline font-black text-xl text-primary dark:text-inverse-primary tracking-tighter">Ponno
+                    Tracker</span>
+                <div class="relative group">
+                    <span
+                        class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant"
+                        data-icon="search">search</span>
+                    <input
+                        class="bg-surface-container-high border-none rounded-lg py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary transition-all text-body-md font-body"
+                        placeholder="Search resources..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <button
+                    class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                </button>
+                <div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary-container">
+                    <img alt="User profile avatar" class="w-full h-full object-cover"
+                        data-alt="A professional headshot of a corporate manager in a high-tech office setting. The person has a friendly expression, captured with cinematic shallow depth of field. Soft natural light flows from a window, highlighting a modern, minimalist environment with clean lines and a hint of emerald office plants in the background to match the brand identity."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIL8oU-WsPODJCjqDb0pL5P-j_2DhxpzCiFfn3mmWvX8AN3QjAQDRmFb2FtsbNU2C5E7thJnmJWqJlvPjJbl_wgavZeHcdMj_7ivj1Xdq_1CfRl7JHVTOXgL_dq3nKMIuzauVECm-ZFo4EQ-9ndMkRI9hbx6TjzRDmoKb49ZmYHthtAMpWKRtggB9UUebgyng8pmOGMVgCCNEp-aYaZ-yvOk_Bu12VqPmWUukvlVwKzGu5m3AJTX52OD1O-kvxqiqXY7vqzLgmQ_dt" />
+                </div>
+            </div>
+        </header>
+        <!-- Content Area -->
+        <main class="p-8 grow max-w-5xl">
+            <div class="mb-12">
+                <p class="font-label text-label-md font-bold text-primary uppercase tracking-widest mb-1">Administration
+                    Portal</p>
+                <h2 class="text-[3.5rem] font-headline font-black tracking-tight leading-none text-on-surface">Create
+                    User</h2>
+            </div>
+            <!-- Form Card -->
+            <div
+                class="bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(0,105,71,0.04)] overflow-hidden">
+                <div class="p-8">
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Full Name -->
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Full
+                                    Name *</label>
+                                <input
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all"
+                                    placeholder="e.g. Sarah Jenkins" required="" type="text" />
+                            </div>
+                            <!-- Username -->
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Username
+                                    *</label>
+                                <input
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all"
+                                    placeholder="sjenkins_ponno" required="" type="text" />
+                            </div>
+                            <!-- Password -->
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Password
+                                    *</label>
+                                <input
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all"
+                                    placeholder="••••••••" required="" type="password" />
+                            </div>
+                            <!-- Role -->
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="font-label text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Access
+                                    Role *</label>
+                                <select
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-lg p-4 text-body-md transition-all appearance-none cursor-pointer"
+                                    required="">
+                                    <option disabled="" selected="" value="">Select a role...</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Staff">Staff</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Is Active Toggle -->
+                        <div class="flex items-center justify-between p-6 bg-surface-container-low rounded-lg">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label text-label-md font-bold text-on-surface uppercase tracking-wider">Account
+                                    Status</span>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input checked="" class="sr-only peer" type="checkbox" />
+                                <div
+                                    class="w-14 h-7 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary">
+                                </div>
+                            </label>
+                        </div>
+                        <!-- Form Actions -->
+                        <div class="flex items-center justify-end gap-4 pt-4 border-t border-outline-variant/10">
+                            <button
+                                class="px-8 py-3 rounded-lg font-bold text-primary hover:bg-primary-container/20 transition-all active:scale-95"
+                                type="button">
                                 Cancel
                             </button>
-<button class="bg-primary text-on-primary px-10 py-3 rounded-lg font-bold shadow-[0_8px_20px_rgba(0,105,71,0.2)] transition-all hover:brightness-110 active:scale-95" type="submit">
+                            <button
+                                class="bg-primary text-on-primary px-10 py-3 rounded-lg font-bold shadow-[0_8px_20px_rgba(0,105,71,0.2)] transition-all hover:brightness-110 active:scale-95"
+                                type="submit">
                                 Create User
                             </button>
-</div>
-</form>
-</div>
-</div>
-<!-- Visual Context - Side Card -->
-</main>
-</div>
-</body></html>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Visual Context - Side Card -->
+        </main>
+    </div>
+</body>
+
+</html>

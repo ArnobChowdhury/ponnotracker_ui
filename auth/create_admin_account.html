@@ -1,155 +1,188 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Create Admin Account - Ponno Tracker</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Create Admin Account - Ponno Tracker</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           "colors": {
-                  "on-surface": "#2c2f30",
-                  "on-secondary-fixed-variant": "#006853",
-                  "inverse-on-surface": "#9b9d9e",
-                  "inverse-primary": "#69f6b8",
-                  "surface-tint": "#006947",
-                  "surface-container-high": "#e0e3e4",
-                  "primary": "#006947",
-                  "background": "#f5f6f7",
-                  "on-secondary-fixed": "#004939",
-                  "surface-container-highest": "#dadddf",
-                  "outline-variant": "#abadae",
-                  "secondary-container": "#5afcd2",
-                  "on-background": "#2c2f30",
-                  "secondary-fixed": "#5afcd2",
-                  "secondary": "#006853",
-                  "primary-fixed": "#69f6b8",
-                  "surface-container": "#e6e8ea",
-                  "on-primary-container": "#005a3c",
-                  "surface": "#f5f6f7",
-                  "surface-dim": "#d1d5d7",
-                  "on-error": "#ffefee",
-                  "on-primary": "#c8ffe0",
-                  "primary-container": "#69f6b8",
-                  "primary-fixed-dim": "#58e7ab",
-                  "on-error-container": "#570008",
-                  "tertiary-fixed": "#00dcfd",
-                  "surface-container-low": "#eff1f2",
-                  "error": "#b31b25",
-                  "on-tertiary-fixed": "#00343c",
-                  "outline": "#757778",
-                  "tertiary-fixed-dim": "#00cdeb",
-                  "on-tertiary": "#dcf7ff",
-                  "error-dim": "#9f0519",
-                  "secondary-fixed-dim": "#47edc4",
-                  "error-container": "#fb5151",
-                  "on-surface-variant": "#595c5d",
-                  "secondary-dim": "#005b48",
-                  "on-primary-fixed-variant": "#006544",
-                  "on-tertiary-fixed-variant": "#005360",
-                  "surface-container-lowest": "#ffffff",
-                  "tertiary-dim": "#005866",
-                  "on-secondary": "#c4ffea",
-                  "primary-dim": "#005c3d",
-                  "on-tertiary-container": "#004955",
-                  "inverse-surface": "#0c0f10",
-                  "on-secondary-container": "#005d4a",
-                  "tertiary": "#006575",
-                  "tertiary-container": "#00dcfd",
-                  "on-primary-fixed": "#00452d",
-                  "surface-variant": "#dadddf",
-                  "surface-bright": "#f5f6f7"
+            "on-surface": "#2c2f30",
+            "on-secondary-fixed-variant": "#006853",
+            "inverse-on-surface": "#9b9d9e",
+            "inverse-primary": "#69f6b8",
+            "surface-tint": "#006947",
+            "surface-container-high": "#e0e3e4",
+            "primary": "#006947",
+            "background": "#f5f6f7",
+            "on-secondary-fixed": "#004939",
+            "surface-container-highest": "#dadddf",
+            "outline-variant": "#abadae",
+            "secondary-container": "#5afcd2",
+            "on-background": "#2c2f30",
+            "secondary-fixed": "#5afcd2",
+            "secondary": "#006853",
+            "primary-fixed": "#69f6b8",
+            "surface-container": "#e6e8ea",
+            "on-primary-container": "#005a3c",
+            "surface": "#f5f6f7",
+            "surface-dim": "#d1d5d7",
+            "on-error": "#ffefee",
+            "on-primary": "#c8ffe0",
+            "primary-container": "#69f6b8",
+            "primary-fixed-dim": "#58e7ab",
+            "on-error-container": "#570008",
+            "tertiary-fixed": "#00dcfd",
+            "surface-container-low": "#eff1f2",
+            "error": "#b31b25",
+            "on-tertiary-fixed": "#00343c",
+            "outline": "#757778",
+            "tertiary-fixed-dim": "#00cdeb",
+            "on-tertiary": "#dcf7ff",
+            "error-dim": "#9f0519",
+            "secondary-fixed-dim": "#47edc4",
+            "error-container": "#fb5151",
+            "on-surface-variant": "#595c5d",
+            "secondary-dim": "#005b48",
+            "on-primary-fixed-variant": "#006544",
+            "on-tertiary-fixed-variant": "#005360",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-dim": "#005866",
+            "on-secondary": "#c4ffea",
+            "primary-dim": "#005c3d",
+            "on-tertiary-container": "#004955",
+            "inverse-surface": "#0c0f10",
+            "on-secondary-container": "#005d4a",
+            "tertiary": "#006575",
+            "tertiary-container": "#00dcfd",
+            "on-primary-fixed": "#00452d",
+            "surface-variant": "#dadddf",
+            "surface-bright": "#f5f6f7"
           },
           "borderRadius": {
-                  "DEFAULT": "0.25rem",
-                  "lg": "0.5rem",
-                  "xl": "0.75rem",
-                  "full": "9999px"
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
           },
           "fontFamily": {
-                  "headline": ["Work Sans"],
-                  "display": ["Work Sans"],
-                  "body": ["Work Sans"],
-                  "label": ["Work Sans"]
+            "headline": ["Work Sans"],
+            "display": ["Work Sans"],
+            "body": ["Work Sans"],
+            "label": ["Work Sans"]
           }
         },
       },
     }
   </script>
-<style>
-    body { font-family: 'Work Sans', sans-serif; }
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+    }
+
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
   </style>
 </head>
+
 <body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6">
-<!-- Background Decorative Element (Kinetic Catalyst Aesthetic) -->
-<!-- Simplified Centered Card Layout -->
-<main class="w-full max-w-[640px] bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] overflow-hidden">
-<!-- Right Side (Now the Main Content): The Form -->
-<div class="p-8 md:p-12 flex flex-col justify-center bg-surface-container-lowest">
-<div class="mb-10 text-center">
-<div class="flex items-center justify-center gap-2 mb-6">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary text-lg" style="font-variation-settings: 'FILL' 1;">shield_person</span>
-</div>
-<span class="font-headline font-black text-lg tracking-tighter uppercase text-primary">Ponno Tracker</span>
-</div>
-<span class="font-label text-label-md font-bold uppercase tracking-widest text-primary block mb-2">Account Setup</span>
-<h2 class="font-headline font-bold text-3xl text-on-surface">Create Admin Account</h2>
-<p class="text-on-surface-variant mt-2 text-body-md">This account will have full access to manage the system.</p>
-</div>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Full Name -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant" for="full_name">Full Name</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
-<input class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant" id="full_name" placeholder="Enter full name" required="" type="text"/>
-</div>
-</div>
-<!-- Username -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant" for="username">Username</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">alternate_email</span>
-<input class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant" id="username" placeholder="admin_user" required="" type="text"/>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Password -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant" for="password">Password</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
-<input class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant" id="password" placeholder="••••••••" required="" type="password"/>
-</div>
-</div>
-<!-- Confirm Password -->
-<div class="flex flex-col gap-2">
-<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant" for="confirm_password">Confirm Password</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock_reset</span>
-<input class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant" id="confirm_password" placeholder="••••••••" required="" type="password"/>
-</div>
-</div>
-</div>
-<div class="pt-8">
-<button class="w-full px-10 py-4 bg-primary text-on-primary font-bold rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-3" type="submit">
+  <!-- Background Decorative Element (Kinetic Catalyst Aesthetic) -->
+  <!-- Simplified Centered Card Layout -->
+  <main
+    class="w-full max-w-[640px] bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] overflow-hidden">
+    <!-- Right Side (Now the Main Content): The Form -->
+    <div class="p-8 md:p-12 flex flex-col justify-center bg-surface-container-lowest">
+      <div class="mb-10 text-center">
+        <div class="flex items-center justify-center gap-2 mb-6">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-lg"
+              style="font-variation-settings: 'FILL' 1;">shield_person</span>
+          </div>
+          <span class="font-headline font-black text-lg tracking-tighter uppercase text-primary">Ponno Tracker</span>
+        </div>
+        <span class="font-label text-label-md font-bold uppercase tracking-widest text-primary block mb-2">Account
+          Setup</span>
+        <h2 class="font-headline font-bold text-3xl text-on-surface">Create Admin Account</h2>
+        <p class="text-on-surface-variant mt-2 text-body-md">This account will have full access to manage the system.
+        </p>
+      </div>
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Full Name -->
+          <div class="flex flex-col gap-2">
+            <label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+              for="full_name">Full Name</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
+              <input
+                class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant"
+                id="full_name" placeholder="Enter full name" required="" type="text" />
+            </div>
+          </div>
+          <!-- Username -->
+          <div class="flex flex-col gap-2">
+            <label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+              for="username">Username</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">alternate_email</span>
+              <input
+                class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant"
+                id="username" placeholder="admin_user" required="" type="text" />
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Password -->
+          <div class="flex flex-col gap-2">
+            <label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+              for="password">Password</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+              <input
+                class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant"
+                id="password" placeholder="••••••••" required="" type="password" />
+            </div>
+          </div>
+          <!-- Confirm Password -->
+          <div class="flex flex-col gap-2">
+            <label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant"
+              for="confirm_password">Confirm Password</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock_reset</span>
+              <input
+                class="w-full pl-12 pr-4 py-3 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all text-on-surface placeholder:text-outline-variant"
+                id="confirm_password" placeholder="••••••••" required="" type="password" />
+            </div>
+          </div>
+        </div>
+        <div class="pt-8">
+          <button
+            class="w-full px-10 py-4 bg-primary text-on-primary font-bold rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-3"
+            type="submit">
             Finish Setup
             <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</form>
-</div>
-</main>
-<!-- Illustration Component (Asymmetric & Editorial) -->
-</body></html>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- Illustration Component (Asymmetric & Editorial) -->
+</body>
+
+</html>

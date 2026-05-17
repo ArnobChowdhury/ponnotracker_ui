@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>All Stock Inventory | Kinetic Stock</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>All Stock Inventory | Kinetic Stock</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -81,325 +86,428 @@
             },
         }
     </script>
-<style>
-        body { font-family: 'Work Sans', sans-serif; }
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dadddf; border-radius: 10px; }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dadddf;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<header class="bg-[#f5f6f7]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_12px_40px_rgba(0,105,71,0.08)]">
-<div class="flex justify-between items-center w-full px-8 h-16">
-<div class="flex items-center gap-8">
-<span class="text-2xl font-black tracking-tighter text-[#006947]">Kinetic Stock</span>
-<nav class="hidden md:flex gap-6 font-['Work_Sans'] font-medium text-sm">
-<a class="text-[#2c2f30] hover:bg-[#eff1f2] transition-colors px-3 py-2 rounded-lg" href="#">Marketplace</a>
-<a class="text-[#006947] border-b-2 border-[#006947] px-3 py-2" href="#">Inventory Management</a>
-<a class="text-[#2c2f30] hover:bg-[#eff1f2] transition-colors px-3 py-2 rounded-lg" href="#">Reports</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
-<input class="bg-surface-container-high border-none rounded-full py-1.5 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Global search..." type="text"/>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 text-[#2c2f30] hover:bg-[#eff1f2] rounded-full transition-colors active:scale-95">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="p-2 text-[#2c2f30] hover:bg-[#eff1f2] rounded-full transition-colors active:scale-95">
-<span class="material-symbols-outlined">settings</span>
-</button>
-<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ml-2 border-2 border-surface-container-lowest">
-<img alt="User Profile" data-alt="professional headshot of an inventory manager in a clean studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUevaRrhhIfnj1tBTQaAASC-1aDVhgUK9uJuluPmSew-3aXOWwwAYYXQnaTNKJa7UGG-LRJl1cvY-_fZJO4OaUpm3nzXi3U35dvAbrV6UAuaejAQOznxTkKN7qJtzXOFqbD2G0lxuaRtPbezkIU03Vv7NoIFHEZaaOFfxsXMIuZ5AnO6AowSMEothp_kj3GbV-quZB8bbRPihbWp-4Fwif5ARbL5EMIIkYOiI5WwEyK84bXmtoqjsHaJlg9GxtISc2rs2lU-gRS8QD"/>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="flex min-h-screen">
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-6 bg-[#eff1f2]/60 backdrop-blur-2xl font-['Work_Sans'] font-semibold z-40">
-<div class="px-6 mb-8">
-<div class="flex flex-col">
-<span class="text-[#006947] font-bold uppercase tracking-widest text-[10px]">Inventory Ops</span>
-<span class="text-on-surface text-sm">Clinical Precision</span>
-</div>
-</div>
-<nav class="flex-1 space-y-2 px-4 overflow-y-auto custom-scrollbar">
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
-<span class="material-symbols-outlined text-xl">dashboard</span>
-<span class="text-sm">Dashboard</span>
-</div>
-<div class="bg-[#ffffff] text-[#006947] rounded-lg shadow-sm flex items-center gap-3 p-3 cursor-pointer">
-<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
-<span class="text-sm">Inventory</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
-<span class="material-symbols-outlined text-xl">local_shipping</span>
-<span class="text-sm">Suppliers</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
-<span class="material-symbols-outlined text-xl">receipt_long</span>
-<span class="text-sm">Orders</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
-<span class="material-symbols-outlined text-xl">leaderboard</span>
-<span class="text-sm">Analytics</span>
-</div>
-<div class="pt-8 pb-2">
-<span class="px-4 text-[10px] uppercase tracking-widest text-outline">Stock Actions</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">swap_horiz</span>
-<span class="text-sm">Stock Transfers</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">fact_check</span>
-<span class="text-sm">Inventory Audit</span>
-</div>
-<div class="text-tertiary hover:bg-tertiary-container/20 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">temp_preferences_custom</span>
-<span class="text-sm">AI Insights</span>
-</div>
-</nav>
-<div class="mt-auto px-4 space-y-2">
-<button class="w-full bg-primary text-on-primary py-2.5 rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all">
-<span class="material-symbols-outlined text-lg">add</span>
-                Add New Stock
-            </button>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">help</span>
-<span class="text-sm">Help</span>
-</div>
-<div class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">logout</span>
-<span class="text-sm">Logout</span>
-</div>
-</div>
-</aside>
-<!-- Main Content Area -->
-<main class="flex-1 ml-64 p-8">
-<div class="max-w-7xl mx-auto space-y-8">
-<!-- Page Title Section -->
-<header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-1 block">Live Operations</span>
-<h1 class="text-4xl font-extrabold tracking-tight text-on-surface">All Stock Inventory</h1>
-<p class="text-on-surface-variant text-sm mt-2 max-w-lg">Real-time status of SKU items across all distribution centers.</p>
-</div>
-</header>
-<!-- Search & Filters -->
-<section class="bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row gap-4 items-center">
-<div class="relative flex-1">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-lg pl-10 py-3 text-sm" placeholder="Search by SKU, Product Name or Location..." type="text"/>
-</div>
-<div class="flex gap-2 w-full md:w-auto">
-<select class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-lg py-3 px-4 text-sm font-medium">
-<option>All Locations</option>
-<option>North Distribution</option>
-<option>South Logistics</option>
-</select>
-<button class="bg-surface-container-lowest text-on-surface p-3 rounded-lg hover:bg-white transition-colors border border-outline-variant/10">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</div>
-</section>
-<!-- Inventory Table -->
-<section class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/5">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-low/50 border-b border-outline-variant/10">
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Product</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">SKU</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Variation</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Location</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-center">Stock Level</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Status</th>
-<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-surface-container-low">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-low/30 transition-colors group">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
-<img alt="Product Image" data-alt="close-up studio product shot of a sleek industrial carbon fiber mechanical part on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABgiBNahNdS5Ij9bS5ZQDmFsLJ59rJpzCvwq1jxp06bk7UFNFxOZCZ6tsfTFKL6A3AfEro3dNTPGByl1OLSHOhCwS1m-nrstj6CF6XL34tPvmwIFYVZo_MYpku5MlIJ3zod8t2mYubIqRXw0ClGwfrWcrthwF8cZF1byPO_vUHWsTZnye5Aa6jsrXnWlp-yuP32Z090FN2Pb5b_gTGOntYNpOi1-IAb3JwKVlY0imSXxAgHeNMicmhqpN4xj1Yxocfjoq9yKoFrzyP"/>
-</div>
-<div class="font-bold text-on-surface text-sm">Carbon-X Bearing</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="text-[10px] text-primary font-mono font-bold">SKU-2024-CX01</span>
-</td>
-<td class="px-6 py-5 text-sm font-medium">Size: 45mm</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-sm">
-<span class="material-symbols-outlined text-primary text-base">location_on</span>
-                                    North DC
-                                </div>
-</td>
-<td class="px-6 py-5 text-center">
-<span class="text-lg font-black tracking-tight">842</span>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
-                                    In Stock
-                                </span>
-</td>
-<td class="px-6 py-5 text-right">
-<button class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">edit</span>
-</button>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low/30 transition-colors group">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
-<img alt="Product Image" data-alt="professional studio shot of high-end copper electrical connectors on a neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM3b5avQfsJBCvWz3BbSRqzS97aK7oatbax4BySOp9NUu2dGWvIzK-affhlutdpAX-08XN4lxnR_Q9pimxDkacrQd6y3wZLYd9M9QvdVhM5tAd-L612k7xTnOxl7FdpgRH_eGWhW-AvHHVd9Ic_7Df9cjbO2wn2SrkFUbzEgwJ05V1V9bdc33659REbn-R3jsLVUKmoA2H5jN46A6exTqtOomVaLJ6Krm_GXp9nXovvHCl3C7hdSgJl4yRuE9VNN1L2g9_mU-Z_sMI"/>
-</div>
-<div class="font-bold text-on-surface text-sm">Titanium Connector</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="text-[10px] text-primary font-mono font-bold">SKU-2024-TC09</span>
-</td>
-<td class="px-6 py-5 text-sm font-medium">Type: 3-Phase</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-sm">
-<span class="material-symbols-outlined text-primary text-base">location_on</span>
-                                    South DC
-                                </div>
-</td>
-<td class="px-6 py-5 text-center">
-<span class="text-lg font-black tracking-tight">12</span>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-error-container text-on-error-container">
-                                    Low Stock
-                                </span>
-</td>
-<td class="px-6 py-5 text-right">
-<button class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">edit</span>
-</button>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low/30 transition-colors group">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
-<img alt="Product Image" data-alt="detailed industrial close-up of a precision engineered steel gear assembly with subtle metallic reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJt7PTymp5TcCo0u3cZYnR31izGKKH2AsaQEPxdH7mNGhVOP_5k132HN3qNmIakY5gzjoMU8U0rVkYBqrl3PurZ3zSqpGsz9ZRTza5zZJXJ7F_zitws3cYi4kt3NwFQX1pYiyMC62eYdpaw_ToGAMmeuGgblMKQlgN7lNNzmfw308r7wJofTySMyWy1nmLQlezR-o2w--ayPpxRwJj1LBpfzacrfF6aLD-xym2XdPBuBxxEkRRe1wgecL2FKnZv36fJR7h2mWtvUFr"/>
-</div>
-<div class="font-bold text-on-surface text-sm">Hydraulic Valve</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="text-[10px] text-primary font-mono font-bold">SKU-2024-HV44</span>
-</td>
-<td class="px-6 py-5 text-sm font-medium">Color: Onyx</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-sm">
-<span class="material-symbols-outlined text-primary text-base">location_on</span>
-                                    East DC
-                                </div>
-</td>
-<td class="px-6 py-5 text-center">
-<span class="text-lg font-black tracking-tight">3,241</span>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
-                                    In Stock
-                                </span>
-</td>
-<td class="px-6 py-5 text-right">
-<button class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">edit</span>
-</button>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container-low/30 transition-colors group">
-<td class="px-6 py-5">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
-<img alt="Product Image" data-alt="lithium power cell array on a modern testing bench with glowing indicator lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAugTWpHP2wLGilnvCrkQxNA8KlKlnZQHz20Juyk6KaDXx0yJAw-v2fjSPvwI4yhRwZZZTexMQ9Fs8DXOOqUI0weeZHGDGrnpPcdAtkUTyTEcfUvO9KWJn4knbkx2wv9Ju4z1iz66LlG4cz5bUSLCfGyWMqNuOz5BbZYUdaH6jU89Ngfr5zsXztNfSFvA4clcYtvzOFzvEOGGhGoR6rSaS-MHgot_SwWdVdBcOI3Ja7EAnRqAm410YcPrwbhrzon1JhOan7RgRyhxW3"/>
-</div>
-<div class="font-bold text-on-surface text-sm">Power Cell L4</div>
-</div>
-</td>
-<td class="px-6 py-5">
-<span class="text-[10px] text-primary font-mono font-bold">SKU-2024-PC22</span>
-</td>
-<td class="px-6 py-5 text-sm font-medium">Cap: 4800mAh</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-sm">
-<span class="material-symbols-outlined text-primary text-base">location_on</span>
-                                    North DC
-                                </div>
-</td>
-<td class="px-6 py-5 text-center">
-<span class="text-lg font-black tracking-tight">156</span>
-</td>
-<td class="px-6 py-5">
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
-                                    In Stock
-                                </span>
-</td>
-<td class="px-6 py-5 text-right">
-<button class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">edit</span>
-</button>
-</td>
-</tr>
-</tbody>
-</table>
-<!-- Pagination Footer -->
-<div class="px-6 py-4 bg-surface-container-low/50 flex items-center justify-between">
-<span class="text-xs font-semibold text-on-surface-variant">Showing 1-4 of 1,280 items</span>
-<div class="flex gap-2">
-<button class="p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:bg-white text-outline disabled:opacity-50" disabled="">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="px-3 py-1 rounded-lg bg-primary text-on-primary font-bold text-xs">1</button>
-<button class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-semibold text-xs hover:bg-white">2</button>
-<button class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-semibold text-xs hover:bg-white">3</button>
-<button class="p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:bg-white text-outline">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</div>
-</div>
-</section>
-<!-- AI Insights Overlay (Small Bento Card) -->
-<section class="mt-12 bg-tertiary-container/10 p-1 rounded-2xl">
-<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border border-tertiary-container/20 relative overflow-hidden">
-<div class="absolute right-0 top-0 w-32 h-32 bg-tertiary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-<div class="flex-shrink-0 p-4 bg-tertiary-container/30 rounded-2xl">
-<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
-</div>
-<div class="flex-1 text-center md:text-left">
-<h4 class="text-xl font-extrabold text-on-surface tracking-tight">Predictive Stock Optimization</h4>
-<p class="text-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">Based on current demand trajectories, SKU-2024-CX01 is likely to experience a 15% stock-out risk within 12 days. We recommend transferring 200 units from South DC to North DC by Thursday.</p>
-</div>
-<div class="flex-shrink-0">
-<button class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Execute Transfer Plan</button>
-</div>
-</div>
-</section>
-</div>
-</main>
-</div>
-<!-- Background Decoration for Catalyst Vibe -->
-<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-<div class="fixed bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px] pointer-events-none"></div>
-</body></html>
+    <!-- TopNavBar -->
+    <header
+        class="bg-[#f5f6f7]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_12px_40px_rgba(0,105,71,0.08)]">
+        <div class="flex justify-between items-center w-full px-8 h-16">
+            <div class="flex items-center gap-8">
+                <span class="text-2xl font-black tracking-tighter text-[#006947]">Kinetic Stock</span>
+                <nav class="hidden md:flex gap-6 font-['Work_Sans'] font-medium text-sm">
+                    <a class="text-[#2c2f30] hover:bg-[#eff1f2] transition-colors px-3 py-2 rounded-lg"
+                        href="#">Marketplace</a>
+                    <a class="text-[#006947] border-b-2 border-[#006947] px-3 py-2" href="#">Inventory Management</a>
+                    <a class="text-[#2c2f30] hover:bg-[#eff1f2] transition-colors px-3 py-2 rounded-lg"
+                        href="#">Reports</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+                    <input
+                        class="bg-surface-container-high border-none rounded-full py-1.5 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary"
+                        placeholder="Global search..." type="text" />
+                </div>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="p-2 text-[#2c2f30] hover:bg-[#eff1f2] rounded-full transition-colors active:scale-95">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <button
+                        class="p-2 text-[#2c2f30] hover:bg-[#eff1f2] rounded-full transition-colors active:scale-95">
+                        <span class="material-symbols-outlined">settings</span>
+                    </button>
+                    <div
+                        class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ml-2 border-2 border-surface-container-lowest">
+                        <img alt="User Profile"
+                            data-alt="professional headshot of an inventory manager in a clean studio setting with soft lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUevaRrhhIfnj1tBTQaAASC-1aDVhgUK9uJuluPmSew-3aXOWwwAYYXQnaTNKJa7UGG-LRJl1cvY-_fZJO4OaUpm3nzXi3U35dvAbrV6UAuaejAQOznxTkKN7qJtzXOFqbD2G0lxuaRtPbezkIU03Vv7NoIFHEZaaOFfxsXMIuZ5AnO6AowSMEothp_kj3GbV-quZB8bbRPihbWp-4Fwif5ARbL5EMIIkYOiI5WwEyK84bXmtoqjsHaJlg9GxtISc2rs2lU-gRS8QD" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="flex min-h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-6 bg-[#eff1f2]/60 backdrop-blur-2xl font-['Work_Sans'] font-semibold z-40">
+            <div class="px-6 mb-8">
+                <div class="flex flex-col">
+                    <span class="text-[#006947] font-bold uppercase tracking-widest text-[10px]">Inventory Ops</span>
+                    <span class="text-on-surface text-sm">Clinical Precision</span>
+                </div>
+            </div>
+            <nav class="flex-1 space-y-2 px-4 overflow-y-auto custom-scrollbar">
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
+                    <span class="material-symbols-outlined text-xl">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </div>
+                <div
+                    class="bg-[#ffffff] text-[#006947] rounded-lg shadow-sm flex items-center gap-3 p-3 cursor-pointer">
+                    <span class="material-symbols-outlined text-xl"
+                        style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    <span class="text-sm">Inventory</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
+                    <span class="material-symbols-outlined text-xl">local_shipping</span>
+                    <span class="text-sm">Suppliers</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
+                    <span class="material-symbols-outlined text-xl">receipt_long</span>
+                    <span class="text-sm">Orders</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 p-3 rounded-lg">
+                    <span class="material-symbols-outlined text-xl">leaderboard</span>
+                    <span class="text-sm">Analytics</span>
+                </div>
+                <div class="pt-8 pb-2">
+                    <span class="px-4 text-[10px] uppercase tracking-widest text-outline">Stock Actions</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">swap_horiz</span>
+                    <span class="text-sm">Stock Transfers</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">fact_check</span>
+                    <span class="text-sm">Inventory Audit</span>
+                </div>
+                <div
+                    class="text-tertiary hover:bg-tertiary-container/20 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">temp_preferences_custom</span>
+                    <span class="text-sm">AI Insights</span>
+                </div>
+            </nav>
+            <div class="mt-auto px-4 space-y-2">
+                <button
+                    class="w-full bg-primary text-on-primary py-2.5 rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    Add New Stock
+                </button>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">help</span>
+                    <span class="text-sm">Help</span>
+                </div>
+                <div
+                    class="text-[#2c2f30] hover:bg-[#ffffff]/40 hover:translate-x-1 transition-all duration-200 cursor-pointer p-3 rounded-lg flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">logout</span>
+                    <span class="text-sm">Logout</span>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 ml-64 p-8">
+            <div class="max-w-7xl mx-auto space-y-8">
+                <!-- Page Title Section -->
+                <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <span class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-1 block">Live
+                            Operations</span>
+                        <h1 class="text-4xl font-extrabold tracking-tight text-on-surface">All Stock Inventory</h1>
+                        <p class="text-on-surface-variant text-sm mt-2 max-w-lg">Real-time status of SKU items across
+                            all distribution centers.</p>
+                    </div>
+                </header>
+                <!-- Search & Filters -->
+                <section class="bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row gap-4 items-center">
+                    <div class="relative flex-1">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+                        <input
+                            class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-lg pl-10 py-3 text-sm"
+                            placeholder="Search by SKU, Product Name or Location..." type="text" />
+                    </div>
+                    <div class="flex gap-2 w-full md:w-auto">
+                        <select
+                            class="bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary rounded-lg py-3 px-4 text-sm font-medium">
+                            <option>All Locations</option>
+                            <option>North Distribution</option>
+                            <option>South Logistics</option>
+                        </select>
+                        <button
+                            class="bg-surface-container-lowest text-on-surface p-3 rounded-lg hover:bg-white transition-colors border border-outline-variant/10">
+                            <span class="material-symbols-outlined">filter_list</span>
+                        </button>
+                    </div>
+                </section>
+                <!-- Inventory Table -->
+                <section
+                    class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/5">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface-container-low/50 border-b border-outline-variant/10">
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Product</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    SKU</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Variation</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Location</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-center">
+                                    Stock Level</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">
+                                    Status</th>
+                                <th
+                                    class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">
+                                    Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-surface-container-low">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
+                                            <img alt="Product Image"
+                                                data-alt="close-up studio product shot of a sleek industrial carbon fiber mechanical part on a clean white background"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABgiBNahNdS5Ij9bS5ZQDmFsLJ59rJpzCvwq1jxp06bk7UFNFxOZCZ6tsfTFKL6A3AfEro3dNTPGByl1OLSHOhCwS1m-nrstj6CF6XL34tPvmwIFYVZo_MYpku5MlIJ3zod8t2mYubIqRXw0ClGwfrWcrthwF8cZF1byPO_vUHWsTZnye5Aa6jsrXnWlp-yuP32Z090FN2Pb5b_gTGOntYNpOi1-IAb3JwKVlY0imSXxAgHeNMicmhqpN4xj1Yxocfjoq9yKoFrzyP" />
+                                        </div>
+                                        <div class="font-bold text-on-surface text-sm">Carbon-X Bearing</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[10px] text-primary font-mono font-bold">SKU-2024-CX01</span>
+                                </td>
+                                <td class="px-6 py-5 text-sm font-medium">Size: 45mm</td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-base">location_on</span>
+                                        North DC
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5 text-center">
+                                    <span class="text-lg font-black tracking-tight">842</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
+                                        In Stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <button
+                                        class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-xl">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
+                                            <img alt="Product Image"
+                                                data-alt="professional studio shot of high-end copper electrical connectors on a neutral gray background"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM3b5avQfsJBCvWz3BbSRqzS97aK7oatbax4BySOp9NUu2dGWvIzK-affhlutdpAX-08XN4lxnR_Q9pimxDkacrQd6y3wZLYd9M9QvdVhM5tAd-L612k7xTnOxl7FdpgRH_eGWhW-AvHHVd9Ic_7Df9cjbO2wn2SrkFUbzEgwJ05V1V9bdc33659REbn-R3jsLVUKmoA2H5jN46A6exTqtOomVaLJ6Krm_GXp9nXovvHCl3C7hdSgJl4yRuE9VNN1L2g9_mU-Z_sMI" />
+                                        </div>
+                                        <div class="font-bold text-on-surface text-sm">Titanium Connector</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[10px] text-primary font-mono font-bold">SKU-2024-TC09</span>
+                                </td>
+                                <td class="px-6 py-5 text-sm font-medium">Type: 3-Phase</td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-base">location_on</span>
+                                        South DC
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5 text-center">
+                                    <span class="text-lg font-black tracking-tight">12</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-error-container text-on-error-container">
+                                        Low Stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <button
+                                        class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-xl">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
+                                            <img alt="Product Image"
+                                                data-alt="detailed industrial close-up of a precision engineered steel gear assembly with subtle metallic reflections"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJt7PTymp5TcCo0u3cZYnR31izGKKH2AsaQEPxdH7mNGhVOP_5k132HN3qNmIakY5gzjoMU8U0rVkYBqrl3PurZ3zSqpGsz9ZRTza5zZJXJ7F_zitws3cYi4kt3NwFQX1pYiyMC62eYdpaw_ToGAMmeuGgblMKQlgN7lNNzmfw308r7wJofTySMyWy1nmLQlezR-o2w--ayPpxRwJj1LBpfzacrfF6aLD-xym2XdPBuBxxEkRRe1wgecL2FKnZv36fJR7h2mWtvUFr" />
+                                        </div>
+                                        <div class="font-bold text-on-surface text-sm">Hydraulic Valve</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[10px] text-primary font-mono font-bold">SKU-2024-HV44</span>
+                                </td>
+                                <td class="px-6 py-5 text-sm font-medium">Color: Onyx</td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-base">location_on</span>
+                                        East DC
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5 text-center">
+                                    <span class="text-lg font-black tracking-tight">3,241</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
+                                        In Stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <button
+                                        class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-xl">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr class="hover:bg-surface-container-low/30 transition-colors group">
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 border border-outline-variant/5">
+                                            <img alt="Product Image"
+                                                data-alt="lithium power cell array on a modern testing bench with glowing indicator lights"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAugTWpHP2wLGilnvCrkQxNA8KlKlnZQHz20Juyk6KaDXx0yJAw-v2fjSPvwI4yhRwZZZTexMQ9Fs8DXOOqUI0weeZHGDGrnpPcdAtkUTyTEcfUvO9KWJn4knbkx2wv9Ju4z1iz66LlG4cz5bUSLCfGyWMqNuOz5BbZYUdaH6jU89Ngfr5zsXztNfSFvA4clcYtvzOFzvEOGGhGoR6rSaS-MHgot_SwWdVdBcOI3Ja7EAnRqAm410YcPrwbhrzon1JhOan7RgRyhxW3" />
+                                        </div>
+                                        <div class="font-bold text-on-surface text-sm">Power Cell L4</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span class="text-[10px] text-primary font-mono font-bold">SKU-2024-PC22</span>
+                                </td>
+                                <td class="px-6 py-5 text-sm font-medium">Cap: 4800mAh</td>
+                                <td class="px-6 py-5">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-base">location_on</span>
+                                        North DC
+                                    </div>
+                                </td>
+                                <td class="px-6 py-5 text-center">
+                                    <span class="text-lg font-black tracking-tight">156</span>
+                                </td>
+                                <td class="px-6 py-5">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">
+                                        In Stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <button
+                                        class="p-2 text-outline hover:text-primary hover:bg-primary-container/20 rounded-lg transition-all">
+                                        <span class="material-symbols-outlined text-xl">edit</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Pagination Footer -->
+                    <div class="px-6 py-4 bg-surface-container-low/50 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-on-surface-variant">Showing 1-4 of 1,280 items</span>
+                        <div class="flex gap-2">
+                            <button
+                                class="p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:bg-white text-outline disabled:opacity-50"
+                                disabled="">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <button class="px-3 py-1 rounded-lg bg-primary text-on-primary font-bold text-xs">1</button>
+                            <button
+                                class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-semibold text-xs hover:bg-white">2</button>
+                            <button
+                                class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-semibold text-xs hover:bg-white">3</button>
+                            <button
+                                class="p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/10 hover:bg-white text-outline">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- AI Insights Overlay (Small Bento Card) -->
+                <section class="mt-12 bg-tertiary-container/10 p-1 rounded-2xl">
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-xl flex flex-col md:flex-row items-center gap-8 border border-tertiary-container/20 relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-32 h-32 bg-tertiary/5 rounded-full -mr-16 -mt-16 blur-3xl">
+                        </div>
+                        <div class="flex-shrink-0 p-4 bg-tertiary-container/30 rounded-2xl">
+                            <span class="material-symbols-outlined text-tertiary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">temp_preferences_custom</span>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h4 class="text-xl font-extrabold text-on-surface tracking-tight">Predictive Stock
+                                Optimization</h4>
+                            <p class="text-sm text-on-surface-variant mt-2 max-w-2xl leading-relaxed">Based on current
+                                demand trajectories, SKU-2024-CX01 is likely to experience a 15% stock-out risk within
+                                12 days. We recommend transferring 200 units from South DC to North DC by Thursday.</p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <button
+                                class="bg-tertiary text-on-tertiary px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 active:scale-95 transition-all">Execute
+                                Transfer Plan</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Background Decoration for Catalyst Vibe -->
+    <div
+        class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none">
+    </div>
+    <div
+        class="fixed bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-tertiary/5 rounded-full blur-[100px] pointer-events-none">
+    </div>
+</body>
+
+</html>
