@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Stock | Catalyst Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f5f6f7",
+                        "secondary-container": "#5afcd2",
+                        "on-primary-container": "#005a3c",
+                        "on-secondary": "#c4ffea",
+                        "error-container": "#fb5151",
+                        "surface-bright": "#f5f6f7",
+                        "primary": "#006947",
+                        "surface-dim": "#d1d5d7",
+                        "on-primary": "#c8ffe0",
+                        "on-secondary-container": "#005d4a",
+                        "on-tertiary-container": "#004955",
+                        "primary-fixed": "#69f6b8",
+                        "on-surface-variant": "#595c5d",
+                        "outline": "#757778",
+                        "primary-dim": "#005c3d",
+                        "tertiary-container": "#00dcfd",
+                        "on-error-container": "#570008",
+                        "surface-container": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dadddf",
+                        "error": "#b31b25",
+                        "secondary-fixed": "#5afcd2",
+                        "primary-container": "#69f6b8",
+                        "outline-variant": "#abadae",
+                        "tertiary-dim": "#005866",
+                        "primary-fixed-dim": "#58e7ab",
+                        "inverse-primary": "#69f6b8",
+                        "surface-variant": "#dadddf",
+                        "on-tertiary-fixed": "#00343c",
+                        "on-secondary-fixed-variant": "#006853",
+                        "tertiary": "#006575",
+                        "secondary-fixed-dim": "#47edc4",
+                        "on-tertiary-fixed-variant": "#005360",
+                        "background": "#f5f6f7",
+                        "on-background": "#2c2f30",
+                        "tertiary-fixed-dim": "#00cdeb",
+                        "secondary": "#006853",
+                        "on-secondary-fixed": "#004939",
+                        "secondary-dim": "#005b48",
+                        "on-error": "#ffefee",
+                        "surface-container-high": "#e0e3e4",
+                        "surface-tint": "#006947",
+                        "inverse-surface": "#0c0f10",
+                        "tertiary-fixed": "#00dcfd",
+                        "on-primary-fixed-variant": "#006544",
+                        "on-primary-fixed": "#00452d",
+                        "error-dim": "#9f0519",
+                        "surface-container-low": "#eff1f2",
+                        "on-tertiary": "#dcf7ff",
+                        "on-surface": "#2c2f30",
+                        "inverse-on-surface": "#9b9d9e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "display": ["Work Sans"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-zinc-50/80 dark:bg-zinc-900/80 backdrop-blur-3xl font-['Work_Sans'] text-sm font-medium tracking-tight docked full-width top-0 sticky z-50 flex items-center justify-between w-full px-8 h-16 transition-all duration-200">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tighter text-emerald-800 dark:text-emerald-400 uppercase">Catalyst Inventory</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 transition-all duration-200" href="#">Dashboard</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 transition-all duration-200" href="#">Products</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 transition-all duration-200" href="#">Categories</a>
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-500 pb-1 active:scale-[0.98] transition-transform" href="#">Inventory</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-zinc-500 p-2 rounded-full hover:bg-zinc-200/50 cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined text-zinc-500 p-2 rounded-full hover:bg-zinc-200/50 cursor-pointer" data-icon="settings">settings</span>
+</div>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-emerald-500/20" data-alt="professional portrait of a warehouse manager in a clean modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPrAnsKIgdlUuMfmOF1bhWzeJ4KdcXQVac6SoYx15RFkI4mlfJTXqq1LyWLZL6GEYye0AceOWzNefoH5K2biZkFO_e2PtDf9r10ee3GOH5rZ87BE_n5O7h9AK8vrqBKwVXNTWPeIhNBi9rY3mDbBpTkVm3IzD3lrmqLOWjaXRlDeWOD_LtNhkR4Dnoq7RFpueiqw4qqG1antII14I6eMHlijN2FRbYtVTWCOVwDnOb-q9sswvzBidBuzUX5U_B93FSUcMkdWM_2tzx"/>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="bg-zinc-100/60 dark:bg-zinc-950/60 backdrop-blur-2xl font-['Work_Sans'] text-sm font-semibold uppercase tracking-widest flex flex-col gap-y-4 p-6 w-64 fixed top-16 bottom-0 z-40">
+<div class="mb-6">
+<div class="flex items-center gap-3 px-2 py-3 bg-white/50 rounded-xl mb-4">
+<img alt="Warehouse Alpha" class="w-10 h-10 rounded-lg object-cover" data-alt="industrial warehouse interior with neatly organized shelving systems and high ceilings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpCXf2mie3l2nIjVGXUE2-6ZID2d7UzBmv_aNmQ-lfHQQhoXQcWQp4oYFL1EoHQGSaO0IU9XtkyWdSwn1PDtoOEWQw9BgkqEqzHCl3CdJ9-IUnxN8QFCcab7s2R-rxUEQGiuv5Ibo1IkeTGfhxrugorNcw_MDEfEVL1nOGUNckGqK3_jvxWOTdI0NNWkZjgHVmHgozrqXYP3ZwPrY6SUFLaNO_pYBNoP3Tf5IpcibfvwA3du7v9lRC3BI19-pM54Dyz_JKw0T75cUy"/>
+<div class="overflow-hidden">
+<p class="text-[10px] text-emerald-700 block">Management</p>
+<p class="text-xs font-bold text-on-surface truncate uppercase">Contextual Nav</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.08)] hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Stock Levels</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 rounded-lg hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span>Adjustments</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 p-8 min-h-[calc(100vh-64px)] bg-surface">
+<div class="max-w-5xl mx-auto">
+<!-- Page Header -->
+<div class="mb-10">
+<p class="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-1">Inventory Management</p>
+<h1 class="text-[3.5rem] font-black tracking-tight leading-none text-on-surface mb-2">Create Stock</h1>
+<p class="text-on-surface-variant text-lg">Add stock for a specific product variation at a selected location.</p>
+</div>
+<!-- Form Layout -->
+<form class="space-y-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Column 1 -->
+<div class="space-y-6">
+<!-- Product Selection Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)] transition-all">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<h2 class="text-xl font-bold tracking-tight">Product Selection</h2>
+</div>
+<div class="space-y-5">
+<div class="group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Product</label>
+<div class="relative">
+<select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all appearance-none cursor-pointer">
+<option>Search and select product...</option>
+<option>AeroFlow Running Shoes</option>
+<option>Zenith Pro Smartphone</option>
+<option>Terra Cotton T-Shirt</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Location</label>
+<div class="relative">
+<select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all appearance-none cursor-pointer">
+<option>Search and select location...</option>
+<option>Main Distribution Hub (Alpha)</option>
+<option>Regional Retail - North</option>
+<option>West Coast Logistics</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="location_on">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Variation Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)]">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="layers">layers</span>
+<h2 class="text-xl font-bold tracking-tight">Product Variation</h2>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Color</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all">
+<option>Select Color</option>
+<option>Red</option>
+<option>Yellow</option>
+</select>
+</div>
+<div class="group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Size</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all">
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+</div>
+</div>
+<div class="mt-4 p-4 rounded-lg bg-tertiary-container/10 border-l-4 border-tertiary">
+<p class="text-xs text-on-tertiary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                                        Variation attributes are dynamically loaded based on product selection.
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="space-y-6">
+<!-- Inventory Details Card -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)] h-full">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<h2 class="text-xl font-bold tracking-tight">Inventory Details</h2>
+</div>
+<div class="space-y-6"><div class="group">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">SKU</label>
+<div class="relative">
+<input class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all" placeholder="SKU-XXXX-XXXX" type="text" value="SKU-001-AERO"/>
+</div>
+<p class="mt-2 text-[11px] text-outline italic">Auto-generated but editable</p>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Product Image</label>
+<div class="relative group">
+<label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-low hover:bg-surface-container hover:border-primary transition-all cursor-pointer group">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-2 transition-colors" data-icon="cloud_upload">cloud_upload</span>
+<p class="text-xs text-outline group-hover:text-on-surface transition-colors"><span class="font-bold">Drop image here</span> or click to browse</p>
+<p class="text-[10px] text-outline-variant mt-1 italic uppercase tracking-tighter">PNG, JPG, or WEBP (Max 2MB)</p>
+</div>
+<input accept="image/*" class="hidden" type="file"/>
+</label>
+</div>
+</div><div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Quantity</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all" placeholder="0" type="number"/>
+<p class="mt-2 text-[11px] text-outline italic">Current stock quantity available</p>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Selling Price</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg py-3 pl-8 pr-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all" placeholder="0.00" step="0.01" type="number"/>
+</div>
+<p class="mt-2 text-[11px] text-outline italic">Selling price for this exact variation</p>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Reorder Level</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all" placeholder="10" type="number"/>
+<p class="mt-2 text-[11px] text-outline italic">Low stock alert threshold</p>
+</div>
+<!-- Signature Component: Catalyst Progress -->
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row items-center justify-end gap-4 pt-8">
+<button class="w-full md:w-auto px-10 py-3 rounded-lg font-bold text-sm text-primary hover:bg-primary-container/20 active:scale-95 transition-all" type="button">
+                            Cancel
+                        </button>
+<button class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-lg font-black text-sm uppercase tracking-widest shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim active:scale-[0.98] transition-all" type="submit">
+                            Create Stock
+                        </button>
+</div>
+</form>
+<!-- Visual Decorative Element -->
+</div>
+</main>
+</div>
+</body></html>

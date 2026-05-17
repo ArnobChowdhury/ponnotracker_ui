@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In - Ponno Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-dim": "#005866",
+                      "primary-container": "#69f6b8",
+                      "on-tertiary-fixed-variant": "#005360",
+                      "secondary-fixed": "#5afcd2",
+                      "on-primary-container": "#005a3c",
+                      "surface-container-high": "#e0e3e4",
+                      "on-error": "#ffefee",
+                      "surface": "#f5f6f7",
+                      "error": "#b31b25",
+                      "tertiary-fixed": "#00dcfd",
+                      "error-dim": "#9f0519",
+                      "on-secondary-fixed-variant": "#006853",
+                      "primary-dim": "#005c3d",
+                      "on-surface-variant": "#595c5d",
+                      "on-tertiary-container": "#004955",
+                      "surface-variant": "#dadddf",
+                      "surface-container-low": "#eff1f2",
+                      "secondary": "#006853",
+                      "on-secondary-container": "#005d4a",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#f5f6f7",
+                      "on-error-container": "#570008",
+                      "tertiary": "#006575",
+                      "primary-fixed-dim": "#58e7ab",
+                      "tertiary-fixed-dim": "#00cdeb",
+                      "on-tertiary-fixed": "#00343c",
+                      "on-primary": "#c8ffe0",
+                      "surface-bright": "#f5f6f7",
+                      "secondary-dim": "#005b48",
+                      "primary": "#006947",
+                      "outline": "#757778",
+                      "surface-dim": "#d1d5d7",
+                      "on-tertiary": "#dcf7ff",
+                      "on-surface": "#2c2f30",
+                      "on-background": "#2c2f30",
+                      "surface-container": "#e6e8ea",
+                      "on-secondary": "#c4ffea",
+                      "inverse-on-surface": "#9b9d9e",
+                      "secondary-container": "#5afcd2",
+                      "inverse-surface": "#0c0f10",
+                      "secondary-fixed-dim": "#47edc4",
+                      "on-primary-fixed-variant": "#006544",
+                      "on-primary-fixed": "#00452d",
+                      "surface-tint": "#006947",
+                      "outline-variant": "#abadae",
+                      "tertiary-container": "#00dcfd",
+                      "primary-fixed": "#69f6b8",
+                      "error-container": "#fb5151",
+                      "surface-container-highest": "#dadddf",
+                      "on-secondary-fixed": "#004939",
+                      "inverse-primary": "#69f6b8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Work Sans"],
+                      "display": ["Work Sans"],
+                      "body": ["Work Sans"],
+                      "label": ["Work Sans"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] rounded-full bg-primary-container/20 blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[35rem] h-[35rem] rounded-full bg-tertiary-container/10 blur-[100px] pointer-events-none"></div>
+<main class="w-full max-w-[480px] z-10">
+<div class="mb-12 flex flex-col items-center">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<h1 class="text-headline-sm font-headline font-extrabold text-primary tracking-tight">Ponno Tracker</h1>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 border border-outline-variant/10 shadow-[0_12px_40px_rgba(0,105,71,0.06)]">
+<div class="mb-10">
+<span class="text-[0.625rem] font-bold tracking-[0.2em] text-primary block mb-1">ACCESS PORTAL</span>
+<h2 class="text-[2rem] font-bold text-on-surface leading-none mb-3">Sign In</h2>
+<p class="text-body-md text-on-surface-variant font-medium">Sign in to access your inventory management system.</p>
+</div>
+<form class="space-y-6" onsubmit="return false;">
+<div class="space-y-1.5">
+<label class="text-[0.75rem] font-bold text-on-surface-variant ml-1" for="username">Username</label>
+<div class="relative group">
+<input class="w-full h-12 px-4 bg-surface-container-high border-none rounded-lg focus:ring-0 focus:outline-none focus:border-b-2 focus:border-primary transition-all text-on-surface font-medium placeholder:text-outline" id="username" name="username" placeholder="e.g. warehouse_manager_01" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-[0.75rem] font-bold text-on-surface-variant ml-1" for="password">Password</label>
+<div class="relative group">
+<input class="w-full h-12 px-4 bg-surface-container-high border-none rounded-lg focus:ring-0 focus:outline-none focus:border-b-2 focus:border-primary transition-all text-on-surface font-medium" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="mt-4 p-4 rounded-lg bg-surface-container-low border-l-4 border-tertiary">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary text-[1.25rem]">info</span>
+<p class="text-[0.75rem] leading-relaxed text-on-surface-variant">
+<span class="font-bold text-on-surface">Forgot password?</span> Please contact your administrator to reset your password and restore access to Warehouse A-12 systems.
+                            </p>
+</div>
+</div>
+</div>
+<button class="w-full h-14 bg-primary text-on-primary rounded-lg font-bold text-body-md flex items-center justify-center gap-2 hover:bg-primary-dim transition-all duration-200 shadow-[0_8px_20px_rgba(0,105,71,0.15)] active:scale-[0.98]" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[1.25rem]">login</span>
+</button>
+</form>
+</div>
+<div class="mt-8 flex justify-center items-center gap-8 text-on-surface-variant">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-[1rem]">verified_user</span>
+<span class="text-[0.7rem] font-bold tracking-wider uppercase">Secure Link</span>
+</div>
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-[1rem]">database</span>
+<span class="text-[0.7rem] font-bold tracking-wider uppercase">v2.4.0-kinetic</span>
+</div>
+</div>
+</main>
+<div class="fixed bottom-8 right-8 hidden lg:block opacity-20 hover:opacity-100 transition-opacity">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-4 rounded-xl border border-outline-variant/10">
+<img alt="System Status Visual" class="w-16 h-16 rounded-lg object-cover" data-alt="A futuristic holographic inventory display showing abstract green and blue data visualizations. The image is minimalist and clean with a clinical high-tech aesthetic, using the Ponno Tracker Emerald and Electric Blue color palette. Soft ambient lighting and sharp geometric lines create a sophisticated industrial interface look. The overall mood is one of high-velocity efficiency and modern precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4aHDP1blJZ3Yf-ydtZ0Rtxr4PjCNS-bbz1vz8jsQbj6s5dCyyxE9XwJUuAl7uGjyYFKm9dKpaOs9CT1oXaOZIKMsUdeC-6VqXBq4nAQao2SLR98PFuJBwgl1x24B8sdioq-32QO4gKJFlDYQ1gCFpyu4mZEeS0Oxyczq0AegbdO6wNLHtVkKIf-xZ1VhTT6SlntXBDHtJjvjvny3kUtz2vSwZXwxHMj8KbVpRuCJgauE2AtIjTTDdORNTsuu8KUG-2hr1Ys8ulsgJ"/>
+</div>
+</div>
+</body></html>

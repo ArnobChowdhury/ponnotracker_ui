@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ponno Tracker - Location Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#dcf7ff",
+                        "on-primary-fixed": "#00452d",
+                        "on-background": "#2c2f30",
+                        "error-dim": "#9f0519",
+                        "tertiary-fixed": "#00dcfd",
+                        "outline-variant": "#abadae",
+                        "inverse-surface": "#0c0f10",
+                        "surface-bright": "#f5f6f7",
+                        "primary-container": "#69f6b8",
+                        "on-primary-container": "#005a3c",
+                        "on-primary": "#c8ffe0",
+                        "secondary": "#006853",
+                        "on-error": "#ffefee",
+                        "surface-container-low": "#eff1f2",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-secondary": "#c4ffea",
+                        "on-tertiary-fixed": "#00343c",
+                        "surface-container": "#e6e8ea",
+                        "tertiary-fixed-dim": "#00cdeb",
+                        "on-tertiary-fixed-variant": "#005360",
+                        "secondary-container": "#5afcd2",
+                        "primary": "#006947",
+                        "on-surface": "#2c2f30",
+                        "background": "#f5f6f7",
+                        "primary-fixed": "#69f6b8",
+                        "secondary-fixed": "#5afcd2",
+                        "outline": "#757778",
+                        "surface-dim": "#d1d5d7",
+                        "surface-container-highest": "#dadddf",
+                        "on-secondary-container": "#005d4a",
+                        "tertiary-container": "#00dcfd",
+                        "surface-variant": "#dadddf",
+                        "secondary-fixed-dim": "#47edc4",
+                        "on-secondary-fixed-variant": "#006853",
+                        "surface": "#f5f6f7",
+                        "primary-dim": "#005c3d",
+                        "on-primary-fixed-variant": "#006544",
+                        "tertiary": "#006575",
+                        "tertiary-dim": "#005866",
+                        "primary-fixed-dim": "#58e7ab",
+                        "on-error-container": "#570008",
+                        "surface-tint": "#006947",
+                        "secondary-dim": "#005b48",
+                        "error": "#b31b25",
+                        "on-tertiary-container": "#004955",
+                        "surface-container-high": "#e0e3e4",
+                        "error-container": "#fb5151",
+                        "on-surface-variant": "#595c5d",
+                        "on-secondary-fixed": "#004939",
+                        "inverse-primary": "#69f6b8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "display": ["Work Sans"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-[#f5f6f7] dark:bg-slate-950 font-['Work_Sans'] font-medium antialiased docked full-width top-0 z-50 bg-[#eff1f2] dark:bg-slate-900 flat no shadows flex justify-between items-center w-full px-8 py-4 fixed">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tighter text-[#006947] dark:text-[#69f6b8]">Ponno Tracker</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-400 hover:text-[#006947] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-slate-400 hover:text-[#006947] transition-colors duration-200" href="#">Products</a>
+<a class="text-slate-400 hover:text-[#006947] transition-colors duration-200" href="#">Categories</a>
+<a class="text-slate-400 hover:text-[#006947] transition-colors duration-200" href="#">Inventory</a>
+<a class="text-[#006947] dark:text-[#69f6b8] border-b-2 border-[#006947] dark:border-[#69f6b8] pb-1" href="#">Locations</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-primary" placeholder="Search..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-[#eff1f2] dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#eff1f2] dark:hover:bg-slate-800 transition-colors duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="professional headshot of a warehouse manager in a clean environment, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2h95sb8gR0zkHvcZNi9DgBqARVdbk7d-aSrFo0sb3bUb9lpv7E7pRHulp2zErbQFKgmy8-NdbmST2xHHdz--HtGnY9jjj5-vJ2clxgvGy4zA0oW9pH8fcWmLfyFF87AuQnRjX9FW9bjrt0CnjGoAT94ICD2F6YrSO_kwTnXEi0zYz-wkG6K_l69mHAlkVts8NpdVsfJmBdqphhSX8sqK4jVVhICww1wiMr3OyLxImm_EJ9UlPXa4an0QI-0DCtTa36hOfaZBT7Yp"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-[#eff1f2]/60 dark:bg-slate-900/60 backdrop-blur-xl h-screen w-64 fixed left-0 top-16 no-line logic using surface shifts shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex flex-col gap-2 p-4 border-r border-[#abadae]/15 z-40">
+<div class="mb-6 px-2">
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Management</p>
+<h2 class="text-xl font-bold text-on-surface">Locations</h2>
+</div>
+<div class="flex flex-col gap-1">
+<a class="bg-white dark:bg-slate-800 text-[#006947] dark:text-[#69f6b8] font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-['Work_Sans'] text-sm">All Locations</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-white/40 flex items-center gap-3 px-4 py-3 hover:translate-x-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">add_location</span>
+<span class="font-['Work_Sans'] text-sm">Create Location</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas (Background List View) -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Global Network</span>
+<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">All Locations</h1>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold flex items-center gap-2 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl">add</span>
+                New Facility
+            </button>
+</div>
+<!-- Background Grid (Visualizing the "underneath" state) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-40 grayscale pointer-events-none">
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<div class="w-full h-32 mb-4 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="high-tech logistics warehouse interior with organized shelving and bright clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMMj-QrUPFCZniKNuZBE1MTdcdX_vGOiRbiK7J3b5unhfH6nqwhVie9rKq8IpTZe5P6jE6mvUfnFdHjniQIcotyrf6NGk8_bPVJSAvP5u9DUTU74KpHi3Cfov_lN-C-QRHVqEfRyJvm4eUNhgngsFBk18RyoF2X1ud8h6tx_aSZp7ABIimaTMyvaEPjys3wleLfdtGQkhNbn5UaYtCalgzB7bNvKjkSneLiYpETQFTxhQpAuJzf9DY11vlNmmTd7sm3cy1YB_QO1yH"/>
+</div>
+<h3 class="font-bold text-lg mb-1">Central Distribution</h3>
+<p class="text-sm text-on-surface-variant">L-9920 • Hub</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<div class="w-full h-32 mb-4 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern shipping container terminal with vibrant blue and green containers at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2QXL9xe7SXcR5q1mMNHT0jgkDbpXO9cCpTnVX3pr97Dok1vzlJYvZawFs5pIlTEO7K6usiFuN5stn-qw0k0pvrzVMM5Q5gk1AZSPpFPyCGPDKcCk6HaYyWTsjoxmDQy7hDcPgJRZ8j7TgqehXdA_RhW7MeKUGluWo3wsJLAPpp-8waETnNhyPld5Ca0r_uBAvuin-z2LpeVNmyNK3nqBYtgvGUGxjIZ4z8Oqb7CofXQAu1JAfZid93AqyZI2VcJGrDXgkCR01DBfe"/>
+</div>
+<h3 class="font-bold text-lg mb-1">North Port Annex</h3>
+<p class="text-sm text-on-surface-variant">L-8841 • Transit</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<div class="w-full h-32 mb-4 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="clean minimal industrial warehouse space with white walls and natural light from skylights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuGRB_J1T6jIM4dbvCbxJ0-IG2iZg0yL3H_Aa_5m73Bmoz1j8YrRIQ99Qt3Z_YUnqZqYvzmslpWlI17jTXAjWTauK7SMwRQxVUDAUhkRO5-yzZe3Gd6QUqcXvbgQE3p6aexthOfFG1AlVSjRSTxpm2dlIwQ_-c7qEBQ0ONGOgKkutH1PGQm5ET4i5-dGJuJLHztgOR0ap3sFvPQTSJSN2A8LwZxs_L2w8BBv91Fl9Z1PUaxksRCKeat6JyhcnVwcvJ7NCE1fXaBuUG"/>
+</div>
+<h3 class="font-bold text-lg mb-1">East Side Depot</h3>
+<p class="text-sm text-on-surface-variant">L-7722 • Cold Storage</p>
+</div>
+</div>
+</main>
+<!-- Overlay Backdrop -->
+<div class="fixed inset-0 bg-on-surface/20 backdrop-blur-sm z-[60]"></div>
+<!-- Location Details Side Drawer -->
+<div class="fixed top-0 right-0 h-screen w-full md:w-[480px] bg-surface-container-lowest shadow-[0_12px_40px_rgba(0,105,71,0.15)] z-[70] flex flex-col overflow-y-auto">
+<!-- Drawer Header -->
+<div class="sticky top-0 bg-surface-container-lowest/80 backdrop-blur-md px-8 py-6 flex items-center justify-between z-10">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="text-2xl font-extrabold tracking-tight">Location Details</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2.5 bg-primary-container text-on-primary-container rounded-lg hover:brightness-95 transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+<div class="px-8 pb-12 flex flex-col gap-8">
+<!-- Hero Map/Visual -->
+<!-- Section: Basic Information -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">inventory_2</span>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Basic Information</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 grid grid-cols-2 gap-y-6 gap-x-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Name</p>
+<p class="font-semibold text-on-surface">Central Distribution Hub</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Code</p>
+<p class="font-semibold text-on-surface">CDH-BER-01</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Type</p>
+<span class="inline-flex px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">Main Warehouse</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Status</p>
+<span class="inline-flex px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container text-[11px] font-bold">Active</span>
+</div>
+<div class="col-span-2">
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Address</p>
+<p class="text-sm leading-relaxed text-on-surface">Wittenbergplatz 5, 10789 Berlin, Germany</p>
+</div>
+</div>
+</section>
+<!-- Section: Contact Details -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">contact_page</span>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Contact Details</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 space-y-4">
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">person</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-0.5">Contact Person</p>
+<p class="font-semibold text-on-surface">Marcus Thorne</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between group pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">call</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-outline mb-0.5">Phone Number</p>
+<p class="font-semibold text-on-surface">+49 30 12345678</p>
+</div>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined text-primary">chat</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section: Inventory Summary -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">monitoring</span>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Inventory Summary</span>
+</div>
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant/20 p-5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-tertiary mb-2">category</span>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Total Stock Items</p>
+<p class="text-2xl font-black text-on-surface">1,248</p>
+<div class="mt-2 w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full w-[70%] bg-gradient-to-r from-tertiary to-primary"></div>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant/20 p-5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2">inventory</span>
+<p class="text-[10px] uppercase font-bold text-outline mb-1">Total Quantity</p>
+<p class="text-2xl font-black text-on-surface">45.2k</p>
+<p class="text-[10px] text-primary font-bold mt-2">+12% from last month</p>
+</div>
+</div>
+</section>
+<!-- Actions Footer -->
+<div class="mt-4 flex gap-4">
+<button class="flex-1 bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">edit</span>
+                    Edit Location
+                </button>
+<button class="px-6 py-4 rounded-xl border-2 border-error text-error font-bold flex items-center justify-center gap-2 hover:bg-error/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl">block</span>
+                    Deactivate
+                </button>
+</div>
+</div>
+</div>
+</body></html>

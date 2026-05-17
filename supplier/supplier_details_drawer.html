@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supplier Details | SupplyCatalyst</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-dim": "#005c3d",
+                "surface-container": "#e6e8ea",
+                "secondary-fixed-dim": "#47edc4",
+                "on-secondary-fixed": "#004939",
+                "on-surface": "#2c2f30",
+                "outline-variant": "#abadae",
+                "inverse-on-surface": "#9b9d9e",
+                "on-tertiary": "#dcf7ff",
+                "tertiary-fixed": "#00dcfd",
+                "surface-variant": "#dadddf",
+                "tertiary-container": "#00dcfd",
+                "surface-tint": "#006947",
+                "primary": "#006947",
+                "on-secondary-container": "#005d4a",
+                "secondary-container": "#5afcd2",
+                "secondary": "#006853",
+                "on-tertiary-container": "#004955",
+                "on-primary-container": "#005a3c",
+                "inverse-surface": "#0c0f10",
+                "tertiary": "#006575",
+                "on-background": "#2c2f30",
+                "primary-fixed-dim": "#58e7ab",
+                "outline": "#757778",
+                "secondary-dim": "#005b48",
+                "primary-fixed": "#69f6b8",
+                "on-error": "#ffefee",
+                "on-primary-fixed": "#00452d",
+                "error-dim": "#9f0519",
+                "secondary-fixed": "#5afcd2",
+                "on-error-container": "#570008",
+                "surface-container-low": "#eff1f2",
+                "surface-container-highest": "#dadddf",
+                "error-container": "#fb5151",
+                "on-secondary-fixed-variant": "#006853",
+                "inverse-primary": "#69f6b8",
+                "tertiary-fixed-dim": "#00cdeb",
+                "surface-container-high": "#e0e3e4",
+                "surface-dim": "#d1d5d7",
+                "on-surface-variant": "#595c5d",
+                "on-secondary": "#c4ffea",
+                "surface": "#f5f6f7",
+                "background": "#f5f6f7",
+                "on-primary-fixed-variant": "#006544",
+                "error": "#b31b25",
+                "on-primary": "#c8ffe0",
+                "primary-container": "#69f6b8",
+                "on-tertiary-fixed": "#00343c",
+                "tertiary-dim": "#005866",
+                "surface-container-lowest": "#ffffff",
+                "surface-bright": "#f5f6f7",
+                "on-tertiary-fixed-variant": "#005360"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Work Sans"],
+                "display": ["Work Sans"],
+                "body": ["Work Sans"],
+                "label": ["Work Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; background-color: #f5f6f7; color: #2c2f30; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(24px); background-color: rgba(255, 255, 255, 0.8); }
+    </style>
+</head>
+<body class="overflow-hidden">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">SupplyCatalyst</div>
+<div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Inventory</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Orders</a>
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1" href="#">Suppliers</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Logistics</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors" href="#">Analytics</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a supply chain manager in a modern office setting. The lighting is soft and high-key, maintaining a clean light-mode aesthetic with emerald accents in the background. The manager is wearing a charcoal suit, looking confident and focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACeHyDQctaRgk4pQGYySMGLonmGWLcMy4GryjT4FlaCcdZtfqsyg14ZQEM4APMGjvRjMIeogFbA0lWE6wE4JIsXfEIH5bufnBO0VlNcIeg8_ZbkjIaFCZnFjY9kpo3fyjIUUVTi6L-HzTwLaIEC4D-O13YpcDOmxE8d2pnn2ajOzTAzFgOzbm9wB_x3S-_O4lRGPZbqYi3-rc4wNvghjoLvsqRwGb0AdcCdvGy7ngL7ZrmbZFZde8Q9AGZ1kgP0oXd4Ua9Dul3nFx6"/>
+</div>
+</div>
+</nav>
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-lg flex flex-col p-4 space-y-2 font-['Work_Sans'] text-sm antialiased">
+<div class="px-3 py-4 mb-2">
+<div class="text-emerald-800 dark:text-emerald-200 font-bold">Supplier Mgmt</div>
+<div class="text-xs text-on-surface-variant">Global Network</div>
+</div>
+<a class="flex items-center space-x-3 px-3 py-2 text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-50 dark:bg-emerald-900/20 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span>Directory</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Active Contracts</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>Performance</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span>Compliance</span>
+</a>
+<div class="mt-auto pt-4 space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-emerald-600 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<main class="ml-64 mt-16 p-8 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<header class="flex justify-between items-end mb-12">
+<div>
+<span class="text-xs font-bold tracking-widest text-primary uppercase block mb-1">Network Directory</span>
+<h1 class="text-5xl font-extrabold tracking-tighter text-on-surface leading-none">All Suppliers</h1>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-medium shadow-lg shadow-emerald-900/10 active:scale-95 transition-transform flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Add New Supplier</span>
+</button>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Strategic</span>
+</div>
+<h3 class="font-bold text-lg mb-1">Global Precision Tooling</h3>
+<p class="text-sm text-on-surface-variant mb-4">ID: GPT-9082</p>
+<div class="flex items-center text-xs text-primary font-semibold">
+<span>View Details</span>
+<span class="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 opacity-60">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Standard</span>
+</div>
+<h3 class="font-bold text-lg mb-1">Nexus Logistics Solutions</h3>
+<p class="text-sm text-on-surface-variant mb-4">ID: NLS-4412</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 opacity-60">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">eco</span>
+</div>
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Sustainability</span>
+</div>
+<h3 class="font-bold text-lg mb-1">GreenFlow Paper Co.</h3>
+<p class="text-sm text-on-surface-variant mb-4">ID: GPC-1104</p>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed inset-0 z-[60] flex justify-end bg-on-surface/20 backdrop-blur-[2px]">
+<div class="w-full max-w-xl bg-surface shadow-[0_12px_40px_rgba(0,105,71,0.12)] flex flex-col h-full transform transition-transform duration-500 ease-out">
+<div class="p-8 border-b border-outline-variant/10 flex justify-between items-start bg-surface-container-lowest">
+<div class="space-y-1">
+<div class="flex items-center space-x-2">
+<span class="text-[10px] font-black uppercase tracking-tighter text-primary px-2 py-0.5 bg-primary-container rounded">SUP-CORE</span>
+<h2 class="text-sm font-bold text-primary tracking-widest uppercase">Supplier Details</h2>
+</div>
+<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">Global Precision Tooling</h1>
+<p class="text-sm text-on-surface-variant font-medium">System Reference ID: GPT-9082-2024</p>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-12">
+<section>
+<div class="flex items-center space-x-2 mb-6">
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<h3 class="text-xs font-black uppercase text-on-surface-variant tracking-[0.2em]">Basic Info</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-8 gap-x-12">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Contact Person</label>
+<p class="text-base font-semibold text-on-surface">Sarah J. Jenkins</p>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Phone Number</label>
+<p class="text-base font-semibold text-on-surface">+1 (555) 098-4421</p>
+</div>
+<div class="col-span-2 space-y-1">
+<label class="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Email Address</label>
+<p class="text-base font-semibold text-on-surface border-b border-primary/10 inline-block pb-0.5">s.jenkins@precisiontooling.global</p>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center space-x-2 mb-6">
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<h3 class="text-xs font-black uppercase text-on-surface-variant tracking-[0.2em]">Address &amp; Notes</h3>
+</div>
+<div class="space-y-8">
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Operational Headquarters</label>
+<p class="text-base font-medium text-on-surface leading-relaxed max-w-sm">
+                                442 Industrial Parkway, Suite 900<br/>
+                                Tech Hub North, CA 94103<br/>
+                                United States
+                            </p>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Administrative Notes</label>
+<div class="bg-surface-container-low p-4 rounded-lg italic text-sm text-on-surface-variant leading-relaxed">
+                                "Primary strategic partner for high-tolerance CNC milling. Consistently maintains 99.8% quality compliance. Key contact for emergency supply chain rerouting."
+                            </div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest p-8 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="flex items-center space-x-2 mb-8">
+<span class="w-1 h-4 bg-tertiary rounded-full"></span>
+<h3 class="text-xs font-black uppercase text-tertiary tracking-[0.2em]">Sourcing Summary</h3>
+</div>
+<div class="grid grid-cols-2 gap-8 relative z-10">
+<div class="space-y-2">
+<div class="text-4xl font-extrabold tracking-tighter text-on-surface">1,248</div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Total Products Sourced</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-tertiary to-primary h-full w-3/4"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="text-4xl font-extrabold tracking-tighter text-on-surface">15,902</div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Total Stock Items Linked</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-tertiary to-primary h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="p-8 bg-surface-container-lowest border-t border-outline-variant/10 flex items-center space-x-4">
+<button class="flex-1 bg-primary text-on-primary py-4 rounded-lg font-bold text-sm tracking-wide shadow-lg shadow-emerald-900/10 hover:brightness-110 active:scale-[0.98] transition-all flex justify-center items-center space-x-2">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Edit Supplier</span>
+</button>
+<button class="flex-1 border-2 border-error/20 text-error py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-error/5 active:scale-[0.98] transition-all flex justify-center items-center space-x-2">
+<span class="material-symbols-outlined text-sm">block</span>
+<span>Deactivate</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

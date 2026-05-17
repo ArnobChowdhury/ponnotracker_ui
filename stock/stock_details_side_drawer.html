@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catalyst Inventory - All Stock</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#dadddf",
+                    "primary-fixed": "#69f6b8",
+                    "on-background": "#2c2f30",
+                    "tertiary": "#006575",
+                    "on-tertiary-fixed-variant": "#005360",
+                    "surface-container": "#e6e8ea",
+                    "inverse-surface": "#0c0f10",
+                    "outline-variant": "#abadae",
+                    "surface-container-high": "#e0e3e4",
+                    "primary-container": "#69f6b8",
+                    "primary-dim": "#005c3d",
+                    "on-primary-container": "#005a3c",
+                    "on-error": "#ffefee",
+                    "outline": "#757778",
+                    "surface-tint": "#006947",
+                    "on-secondary-fixed": "#004939",
+                    "on-primary": "#c8ffe0",
+                    "surface-container-low": "#eff1f2",
+                    "secondary-fixed": "#5afcd2",
+                    "surface-bright": "#f5f6f7",
+                    "primary": "#006947",
+                    "tertiary-fixed": "#00dcfd",
+                    "on-surface": "#2c2f30",
+                    "secondary-fixed-dim": "#47edc4",
+                    "inverse-on-surface": "#9b9d9e",
+                    "tertiary-container": "#00dcfd",
+                    "on-tertiary-container": "#004955",
+                    "on-tertiary-fixed": "#00343c",
+                    "on-surface-variant": "#595c5d",
+                    "on-primary-fixed-variant": "#006544",
+                    "on-tertiary": "#dcf7ff",
+                    "on-primary-fixed": "#00452d",
+                    "background": "#f5f6f7",
+                    "secondary": "#006853",
+                    "on-error-container": "#570008",
+                    "secondary-dim": "#005b48",
+                    "secondary-container": "#5afcd2",
+                    "inverse-primary": "#69f6b8",
+                    "on-secondary-fixed-variant": "#006853",
+                    "on-secondary-container": "#005d4a",
+                    "error-dim": "#9f0519",
+                    "error": "#b31b25",
+                    "tertiary-dim": "#005866",
+                    "surface-dim": "#d1d5d7",
+                    "primary-fixed-dim": "#58e7ab",
+                    "surface": "#f5f6f7",
+                    "tertiary-fixed-dim": "#00cdeb",
+                    "surface-variant": "#dadddf",
+                    "on-secondary": "#c4ffea",
+                    "error-container": "#fb5151",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Work Sans"],
+                    "display": ["Work Sans"],
+                    "body": ["Work Sans"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-emerald-950/80 backdrop-blur-xl font-['Work_Sans'] text-sm tracking-tight docked full-width top-0 z-50 shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center w-full px-6 h-16 fixed">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-emerald-50">Catalyst Inventory</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-emerald-100/70 hover:text-emerald-50 hover:bg-emerald-800/40 transition-colors px-2 py-1 rounded" href="#">Dashboard</a>
+<a class="text-emerald-400 border-b-2 border-emerald-400 pb-1 font-medium" href="#">Inventory</a>
+<a class="text-emerald-100/70 hover:text-emerald-50 hover:bg-emerald-800/40 transition-colors px-2 py-1 rounded" href="#">Reports</a>
+<a class="text-emerald-100/70 hover:text-emerald-50 hover:bg-emerald-800/40 transition-colors px-2 py-1 rounded" href="#">Suppliers</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-100/70 hover:bg-emerald-800/40 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-emerald-100/70 hover:bg-emerald-800/40 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-emerald-500/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2AI-EZ_BHBsy1Fobx_Hk3LVndkHM9Z_R_aX71irGTy8GVq8aMWMQX5Y3ts4JT6f_aOtUl-Ju-UWt7_0HY53zT9D4Awfh-eiUrPD-qaTHr2XTIUzFwbh_BeDhYfY-fzVJUOLA-YtKuZVtqv-aOxFy6Z5BH6zdOKBIZPS8m5PDU7EqmHjPmo-pa_yxQPowHd4x8bojt7hsDJpP_9UOPfhWpAuDWUDtQcHjrfTkV5E90Y5t1XNcbU7pRWEw76LdaWCzequLBWQa_3V7R"/>
+</div>
+</header>
+<div class="flex pt-16 h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900/60 backdrop-blur-2xl h-screen w-64 border-r-0 flat no shadows flex flex-col h-full pt-20 pb-6 px-4 fixed left-0 top-0 z-40">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">warehouse</span>
+</div>
+<div>
+<h3 class="text-emerald-900 dark:text-emerald-50 font-bold text-sm">Main Warehouse</h3>
+<p class="text-xs text-on-surface-variant opacity-70">Sector 7G</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-r-4 border-emerald-600 font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Stock Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span>Movements</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+<span>Audits</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span>Archive</span>
+</a>
+</nav>
+<button class="mt-4 w-full py-2.5 bg-primary text-on-primary rounded-lg font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Entry
+            </button>
+<div class="mt-auto border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Help Center</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 p-8 bg-surface-container-low overflow-y-auto">
+<div class="max-w-6xl mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-1 block">MANAGEMENT</span>
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight">All Stock Inventory</h1>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container-high rounded-lg flex items-center px-4 py-2 border border-outline-variant/10 focus-within:ring-2 ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-outline mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64" placeholder="Search SKU or Product..." type="text"/>
+</div>
+<button class="bg-surface-container-lowest text-on-surface px-4 py-2 rounded-lg font-medium border border-outline-variant/20 hover:bg-surface-bright transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filters
+                        </button>
+</div>
+</div>
+<!-- Bento Style Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-primary">inventory</span>
+</div>
+<span class="text-xs font-bold text-primary">+12%</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Total Items</p>
+<h2 class="text-3xl font-extrabold">2,482</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary">trending_up</span>
+</div>
+<span class="text-xs font-bold text-tertiary">Active</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Valuation</p>
+<h2 class="text-3xl font-extrabold">$142.8k</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/5 shadow-sm border-l-4 border-l-error">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-error-container/20 rounded-lg">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<span class="text-xs font-bold text-error">Critical</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Low Stock</p>
+<h2 class="text-3xl font-extrabold">14</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<span class="text-xs font-bold text-primary-dim">In Transit</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant mb-1">Pending Orders</p>
+<h2 class="text-3xl font-extrabold">48</h2>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/5 overflow-hidden">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Product &amp; SKU</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Location</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Stock Level</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Price</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">
+<img alt="Bearing" class="w-8 h-8 object-contain" data-alt="close-up of a high-precision industrial metal ball bearing with oily texture and metallic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB6-AT-GguIgAXaZlW9EvR0oHxUMn7LCSlVsSMFdF9QSuBmMhxN1NzGvmdSld00eyb7fOiFeab_zdhbHG1RpPdJpIRWpluEqFMhQBKix_3-9YKCDT5xSFqlqLTy4vRyA8xXMrOUXWrbjBsTbHmfTsPr_8lLTV98Rlc_VwJUn9I77ydf2O9k-RFxP7Zf1R9QFTbW6Mmj8wIikt0QU84gV-A5TcAp1MpgCQGvZcosD7IreMzaDZZ1K8h60tKku4IHGo5HLecryRXkBtd"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Carbon-X Bearing</p>
+<p class="text-xs text-outline">SKU-2024-CX01</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">North DC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">842</span>
+<div class="w-20 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-[80%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$142.50</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-container text-on-primary-container">
+                                        In Stock
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Repeat Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer bg-surface-container-low/30">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">
+<img alt="Inverter" class="w-8 h-8 object-contain" data-alt="professional photography of a sleek industrial power inverter unit with glowing led indicators and brushed metal casing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVIyKgIBuxxI3n6l_etXjlZUX4T-Gdv5ckIDI0YocCjOMYTKQ-I0exnSX31_ZyTCHGTrTT7fwSSfiXbd3ppPN2dhrdkrsIt1PlRzDoay4glt5Dzwqhmwb1eht2_U8XNdk_66R0IRHMjLlLTHHdTGn8y7e9B-7n2EfFf8gubtg9xiAXcP_0IGx_aiXX33ef-apVjBPo5BpPKV2Z3A8zb6q8tcMORkvAp6mcoXgyDiR9GjPu2EB00kopxFgherjSTBwWb7zqK228ajJ"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">PowerLink Inverter</p>
+<p class="text-xs text-outline">SKU-2024-PL45</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">East DC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">12</span>
+<div class="w-20 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error-container w-[15%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$890.00</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error-container/20 text-error">
+                                        Low Stock
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Repeat Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">
+<img alt="Cable" class="w-8 h-8 object-contain" data-alt="ultra-detailed macro shot of high-grade copper industrial cables with blue insulation coiled neatly in a warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkTHRx4mI-6zCOnt0mjstkc861YV39zfqqopP11xUg3alppkoEe7dXtIUjt7e828C6UK4_xYOLFo2XbuZ2PrkRkXfAYLWJpag0gWuqJFY7J3kXWMSEha-39p9WSEfWEnrCNbrBe9t79v_l1mts7CEFoOmVTUQKsrzGiiWzc7nTmENdO5-qEPVGReESQgRegidFO5LZX7VwGKYYd254i6GUTqblV5DzlskkWddkaz_SFqjbEwsW0WeYhpFktL40WCuerCKIm_nMWkHf"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Titan-Flex Cable</p>
+<p class="text-xs text-outline">SKU-2024-TF09</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">North DC</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold">420</span>
+<div class="w-20 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-[50%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-bold">$42.25</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-container text-on-primary-container">
+                                        In Stock
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+<!-- DRAWER OVERLAY -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-[100] flex justify-end">
+<!-- Stock Details Side Drawer -->
+<div class="w-full max-w-md h-full bg-surface-container-lowest shadow-[0_12px_40px_rgba(0,105,71,0.15)] overflow-y-auto animate-in slide-in-from-right duration-300">
+<!-- Header -->
+<div class="sticky top-0 z-10 bg-surface-container-lowest px-8 pt-8 pb-4 flex justify-between items-start">
+<div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-1 block">STOCK DETAIL</span>
+<h2 class="text-2xl font-extrabold text-on-surface tracking-tight">Product Overview</h2>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-8 pb-12 space-y-10">
+<!-- Image Header -->
+<div class="relative group mt-2">
+<div class="w-full h-48 bg-surface-container-low rounded-xl overflow-hidden flex items-center justify-center">
+<img alt="Carbon-X Bearing" class="w-32 h-32 object-contain drop-shadow-xl" data-alt="clinical studio shot of an industrial carbon steel bearing on a clean white background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByFiMwhbZFdGULNf9MXv3muc9ZKy_JJXRM9rpmok23JFz8G-xNvA1CdGTJXwnXscCCMxt0X5rzOV3Wjx3PLfkaOAy0wA9a2yeMiCF4K2bdB36m7yWueT7-Gpsq82GHfVJcz9VCALrjX9EE34QmFxCX8gq2X0JlF5GxbCF0BuqXqdiPRgNbSHuADd7_C8jas-XI5hH79JyOCACTp_AvIgqoFwsugqc93ADAIQeYwekiK5rIvLbZ81bk--Fk6hYfApSv1qR3exswoWEl"/>
+</div>
+</div>
+<!-- 1. Basic Information -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<div class="p-1.5 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl">info</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface tracking-tight">Basic Information</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-4">
+<div>
+<p class="text-xs font-bold text-outline uppercase tracking-wider mb-1">Product Name</p>
+<p class="text-sm font-semibold text-on-surface">Carbon-X Bearing</p>
+</div>
+<div>
+<p class="text-xs font-bold text-outline uppercase tracking-wider mb-1">SKU</p>
+<p class="text-sm font-semibold text-on-surface">SKU-2024-CX01</p>
+</div>
+<div>
+<p class="text-xs font-bold text-outline uppercase tracking-wider mb-1">Location</p>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-primary">location_on</span>
+<p class="text-sm font-semibold text-on-surface">North DC</p>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-outline uppercase tracking-wider mb-1">Status</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-primary-container text-on-primary-container border border-primary/10">
+                                IN STOCK
+                            </span>
+</div>
+</div>
+</section>
+<!-- 2. Product Variation -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<div class="p-1.5 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-xl">layers</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface tracking-tight">Product Variation</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant">Size: 45mm</span>
+<span class="bg-surface-container-high px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant">Material: Carbon Steel</span>
+<span class="bg-surface-container-high px-3 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant">Grade: Industrial</span>
+</div>
+</section>
+<!-- 3. Financials -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<div class="p-1.5 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface tracking-tight">Financials</h3>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center">
+<p class="text-xs font-bold text-outline uppercase tracking-wider">Selling Price</p>
+<p class="text-2xl font-black text-primary">$142.50</p>
+</div>
+</div>
+</section>
+<!-- 4. Inventory -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<div class="p-1.5 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary text-xl">analytics</span>
+</div>
+<h3 class="text-sm font-extrabold text-on-surface tracking-tight">Inventory</h3>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-end mb-3">
+<div>
+<p class="text-xs font-bold text-outline uppercase tracking-wider mb-1">Stock Level</p>
+<p class="text-2xl font-black text-on-surface">842 Units</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-primary mb-1 uppercase tracking-tighter">84% Capacity</p>
+</div>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-[84%]"></div>
+</div>
+</div>
+<div class="flex justify-between items-center px-4">
+<p class="text-xs font-bold text-outline uppercase tracking-wider">Reorder Level</p>
+<span class="text-sm font-bold text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                                50 Units
+                            </span>
+</div>
+</div>
+</section>
+<!-- Action Bar (Read Only) -->
+<div class="pt-6 border-t border-outline-variant/10">
+<p class="text-[10px] text-center text-outline uppercase font-bold tracking-widest">Read Only View</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

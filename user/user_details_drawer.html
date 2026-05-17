@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catalyst Inventory - User Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#00343c",
+                      "on-error": "#ffefee",
+                      "background": "#f5f6f7",
+                      "on-tertiary-fixed-variant": "#005360",
+                      "on-tertiary": "#dcf7ff",
+                      "surface-variant": "#dadddf",
+                      "secondary": "#006853",
+                      "surface-container": "#e6e8ea",
+                      "on-primary-fixed-variant": "#006544",
+                      "tertiary-container": "#00dcfd",
+                      "on-primary-fixed": "#00452d",
+                      "outline-variant": "#abadae",
+                      "on-surface-variant": "#595c5d",
+                      "surface-dim": "#d1d5d7",
+                      "surface-bright": "#f5f6f7",
+                      "surface": "#f5f6f7",
+                      "on-primary": "#c8ffe0",
+                      "on-secondary-fixed-variant": "#006853",
+                      "primary-fixed-dim": "#58e7ab",
+                      "secondary-container": "#5afcd2",
+                      "outline": "#757778",
+                      "primary-container": "#69f6b8",
+                      "on-secondary-container": "#005d4a",
+                      "inverse-surface": "#0c0f10",
+                      "secondary-fixed-dim": "#47edc4",
+                      "on-secondary": "#c4ffea",
+                      "on-background": "#2c2f30",
+                      "tertiary-fixed": "#00dcfd",
+                      "error-dim": "#9f0519",
+                      "tertiary": "#006575",
+                      "surface-container-highest": "#dadddf",
+                      "surface-tint": "#006947",
+                      "inverse-on-surface": "#9b9d9e",
+                      "secondary-fixed": "#5afcd2",
+                      "primary": "#006947",
+                      "surface-container-high": "#e0e3e4",
+                      "surface-container-low": "#eff1f2",
+                      "on-surface": "#2c2f30",
+                      "on-primary-container": "#005a3c",
+                      "error-container": "#fb5151",
+                      "on-error-container": "#570008",
+                      "primary-dim": "#005c3d",
+                      "primary-fixed": "#69f6b8",
+                      "error": "#b31b25",
+                      "tertiary-fixed-dim": "#00cdeb",
+                      "secondary-dim": "#005b48",
+                      "on-secondary-fixed": "#004939",
+                      "on-tertiary-container": "#004955",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-dim": "#005866",
+                      "inverse-primary": "#69f6b8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Work Sans"],
+                      "display": ["Work Sans"],
+                      "body": ["Work Sans"],
+                      "label": ["Work Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-emerald-50/80 backdrop-blur-xl shadow-sm shadow-emerald-900/5 flex items-center justify-between px-6 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-emerald-900">Catalyst Inventory</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-zinc-600 font-medium font-work-sans text-sm hover:bg-emerald-100/50 transition-colors px-3 py-1 rounded-lg" href="#">Dashboard</a>
+<a class="text-emerald-700 font-semibold border-b-2 border-emerald-600 font-work-sans text-sm px-3 py-1" href="#">Inventory</a>
+<a class="text-zinc-600 font-medium font-work-sans text-sm hover:bg-emerald-100/50 transition-colors px-3 py-1 rounded-lg" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">search</span>
+<input class="bg-white border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 ring-1 ring-zinc-200 focus:ring-2 focus:ring-primary outline-none" placeholder="Global search..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-zinc-600 hover:bg-emerald-100/50 p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-zinc-600 hover:bg-emerald-100/50 p-2 rounded-full transition-colors">settings</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpfVR02uyWbZ_iFLC-yi-rfeezyrRDkAKbGEnPhaYF-9tERVfmJsVIdcFN2ci6QMlYHrPmkjMpXwjjrSkL7yDN4mQ4acn7kql5di7_ibqFmlEQyhG6K9CMsam8WJ3pOExNIf3T9vu06m61ZL6uqN93Z1HZScXYluMaHQ_QFYlnpaiLL9SO6IZ2V-_h0BJPOR4m5GOpl1PGBvQGZSHmWG2rFm8rmb1Lk8tVjC30aL1Q9kUF0kogcxVb8_QybvzWZqCR9wwh8LM3VoV"/>
+</div>
+</header>
+<div class="flex h-screen pt-16">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col h-full w-64 border-r border-zinc-200/30 bg-zinc-50/60 backdrop-blur-2xl py-4">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-black text-emerald-800">System Admin</h2>
+<p class="text-xs text-zinc-500">Global Operations</p>
+</div>
+<nav class="space-y-1 px-3 flex-grow">
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-100 rounded-lg transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-work-sans text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-emerald-50 text-emerald-700 font-semibold rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-work-sans text-sm">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-100 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-work-sans text-sm">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-100 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-work-sans text-sm">Attributes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-100 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-work-sans text-sm">Reports</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span>New Category</span>
+</button>
+</div>
+</aside>
+<!-- Main Content (All Users List) -->
+<main class="flex-grow bg-surface p-8 overflow-y-auto">
+<header class="mb-10">
+<p class="text-primary font-bold text-xs tracking-widest uppercase mb-1">Administrative Panel</p>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface">System Users</h1>
+</header>
+<!-- Data Table Layout -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ring-1 ring-outline-variant/15">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">User</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Role</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Last Activity</th>
+<th class="px-6 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container-low/50 transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Sarah Jenkins" class="w-10 h-10 rounded-full border border-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5V_1i9oaXaXSvsVwqqlYyrZnMcptPi1Oa-4Uv2H6DwAU6l9fuAD6P73MMG86V56te9Zf59NV_5JCQb_C-5mtgdu2j4zl1ObCkFaHgBfnQwQ3MB2pxw5OEIsd8KpsEiSMg7aXmRgOBcTO9yfQ2ptILcq_AXP533rq3oeAg5Jf4ErKSwofDyfw9gc-3wY6j_OCZ29-XoL9vIst_GlBT-juYebBcjbH8JOo16Jj2sMlvDi3HB4FJVGhN391thqHs2JSQkkwYjlYEMMXS"/>
+<div>
+<div class="font-bold text-on-surface">Sarah Jenkins</div>
+<div class="text-xs text-on-surface-variant">s.jenkins@catalyst.io</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-tertiary-container/20 text-tertiary px-2 py-1 rounded text-xs font-bold">Inventory Lead</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">2 mins ago</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-zinc-400 hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<!-- More rows would be here -->
+</tbody>
+</table>
+</div>
+</main>
+</div>
+<!-- Right Side Drawer (User Details Overlay) -->
+<div class="fixed inset-0 z-[100] flex justify-end pointer-events-none">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-on-tertiary-fixed/40 backdrop-blur-sm pointer-events-auto"></div>
+<!-- Drawer Panel -->
+<aside class="relative w-full max-w-lg bg-surface-container-lowest h-screen shadow-2xl shadow-primary/20 pointer-events-auto overflow-hidden flex flex-col">
+<!-- Drawer Header -->
+<div class="p-6 flex items-center justify-between border-b border-outline-variant/10">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full text-zinc-500 transition-colors">arrow_forward</button>
+<h2 class="text-xl font-bold tracking-tight text-on-surface">User Details</h2>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:brightness-95 transition-all">
+<span class="material-symbols-outlined text-sm">edit</span>
+                        Edit
+                    </button>
+<button class="material-symbols-outlined p-2 hover:bg-error-container/10 hover:text-error rounded-lg text-zinc-500 transition-colors">delete</button>
+</div>
+</div>
+<div class="flex-grow overflow-y-auto p-8 space-y-12">
+<!-- Profile Section -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary bg-primary-container/20 p-2 rounded-lg" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<h3 class="text-sm font-bold text-primary uppercase tracking-[0.2em]">Profile Information</h3>
+</div>
+<div class="flex flex-col items-center text-center mb-8 bg-surface-container-low p-8 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tertiary to-primary"></div>
+<div class="relative mb-4"><div class="w-24 h-24 rounded-full border-4 border-surface-container-lowest shadow-lg bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 0, 'wght' 200;">person</span>
+</div>
+<span class="absolute bottom-1 right-1 w-6 h-6 bg-primary border-4 border-surface-container-low rounded-full"></span></div>
+<h4 class="text-2xl font-extrabold text-on-surface tracking-tight">Sarah Jenkins</h4>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-4">
+<div>
+<label class="text-[10px] font-bold text-outline uppercase tracking-wider block mb-1">Username</label>
+<p class="text-on-surface font-medium">sjenkins_admin</p>
+</div>
+<div>
+<label class="text-[10px] font-bold text-outline uppercase tracking-wider block mb-1">Password</label>
+<p class="text-on-surface font-medium">••••••••••••</p>
+</div>
+<div>
+<label class="text-[10px] font-bold text-outline uppercase tracking-wider block mb-1">Access Role</label>
+<p class="text-on-surface font-medium">Inventory Lead</p>
+</div>
+<div>
+<label class="text-[10px] font-bold text-outline uppercase tracking-wider block mb-1">Account Status</label>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">Active</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Access Logs -->
+<!-- Administrative Actions -->
+<section class="pb-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-error bg-error-container/10 p-2 rounded-lg" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+<h3 class="text-sm font-bold text-error uppercase tracking-[0.2em]">Administrative Actions</h3>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-between p-4 border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-all text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500">lock_reset</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Reset Password</p>
+<p class="text-xs text-on-surface-variant">Send a temporary link to user email</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-zinc-400">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 border border-outline-variant/30 rounded-xl hover:bg-error-container/5 hover:border-error-container transition-all text-left group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-error group-hover:scale-110 transition-transform">block</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Deactivate Account</p>
+<p class="text-xs text-on-surface-variant">Instantly revoke all system access</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-zinc-400">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-4 border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-all text-left">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-zinc-500">manage_accounts</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Change Role</p>
+<p class="text-xs text-on-surface-variant">Update permissions and access level</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-zinc-400">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Footer Action Sticky (Optional context clue) -->
+<div class="p-6 bg-surface-container-low flex justify-center">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[12px]">verified_user</span>
+                    Security Managed by Ponno Catalyst Core
+                </p>
+</div>
+</aside>
+</div>
+</body></html>

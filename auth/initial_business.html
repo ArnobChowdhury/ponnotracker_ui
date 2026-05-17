@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ponno Tracker - Business Setup</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#2c2f30",
+                        "on-secondary-fixed-variant": "#006853",
+                        "inverse-on-surface": "#9b9d9e",
+                        "inverse-primary": "#69f6b8",
+                        "surface-tint": "#006947",
+                        "surface-container-high": "#e0e3e4",
+                        "primary": "#006947",
+                        "background": "#f5f6f7",
+                        "on-secondary-fixed": "#004939",
+                        "surface-container-highest": "#dadddf",
+                        "outline-variant": "#abadae",
+                        "secondary-container": "#5afcd2",
+                        "on-background": "#2c2f30",
+                        "secondary-fixed": "#5afcd2",
+                        "secondary": "#006853",
+                        "primary-fixed": "#69f6b8",
+                        "surface-container": "#e6e8ea",
+                        "on-primary-container": "#005a3c",
+                        "surface": "#f5f6f7",
+                        "surface-dim": "#d1d5d7",
+                        "on-error": "#ffefee",
+                        "on-primary": "#c8ffe0",
+                        "primary-container": "#69f6b8",
+                        "primary-fixed-dim": "#58e7ab",
+                        "on-error-container": "#570008",
+                        "tertiary-fixed": "#00dcfd",
+                        "surface-container-low": "#eff1f2",
+                        "error": "#b31b25",
+                        "on-tertiary-fixed": "#00343c",
+                        "outline": "#757778",
+                        "tertiary-fixed-dim": "#00cdeb",
+                        "on-tertiary": "#dcf7ff",
+                        "error-dim": "#9f0519",
+                        "secondary-fixed-dim": "#47edc4",
+                        "error-container": "#fb5151",
+                        "on-surface-variant": "#595c5d",
+                        "secondary-dim": "#005b48",
+                        "on-primary-fixed-variant": "#006544",
+                        "on-tertiary-fixed-variant": "#005360",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-dim": "#005866",
+                        "on-secondary": "#c4ffea",
+                        "primary-dim": "#005c3d",
+                        "on-tertiary-container": "#004955",
+                        "inverse-surface": "#0c0f10",
+                        "on-secondary-container": "#005d4a",
+                        "tertiary": "#006575",
+                        "tertiary-container": "#00dcfd",
+                        "on-primary-fixed": "#00452d",
+                        "surface-variant": "#dadddf",
+                        "surface-bright": "#f5f6f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "display": ["Work Sans"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Background Accents (Kinetic Catalyst Aesthetics) -->
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[5%] -right-[5%] w-[30%] h-[30%] bg-tertiary-container/15 rounded-full blur-[100px]"></div>
+<!-- Main Setup Canvas -->
+<main class="w-full max-w-2xl z-10">
+<!-- Logo & Branding -->
+<div class="flex flex-col items-center mb-12 space-y-4">
+<div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dim rounded-xl flex items-center justify-center shadow-[0_12px_40px_rgba(0,105,71,0.15)]">
+<span class="material-symbols-outlined text-on-primary text-4xl" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+<div class="text-center">
+<span class="text-primary font-label text-[0.75rem] font-bold uppercase tracking-[0.2em] block mb-1">Onboarding Phase 01</span>
+<h1 class="text-on-surface font-headline font-black text-4xl tracking-tighter">Ponno Tracker</h1>
+</div>
+</div>
+<!-- Setup Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-[0_12px_40px_rgba(0,105,71,0.06)] border border-outline-variant/10">
+<div class="mb-10">
+<h2 class="text-on-surface font-headline font-bold text-2xl tracking-tight mb-2">Set Up Your Business</h2>
+<p class="text-on-surface-variant text-body-md">Configure your business details to get started.</p>
+</div>
+<form class="space-y-8">
+<!-- Business Identity Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Logo Upload Section -->
+<div class="flex flex-col items-center md:items-start space-y-4">
+<label class="text-primary font-label text-xs font-bold uppercase tracking-widest">Logo</label>
+<div class="relative group cursor-pointer">
+<div class="w-32 h-32 rounded-xl bg-surface-container-high flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/30 group-hover:border-primary transition-colors overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary mb-2 text-3xl">add_photo_alternate</span>
+<span class="text-[0.65rem] font-bold text-on-surface-variant group-hover:text-primary uppercase tracking-tighter">Upload Image</span>
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+</div>
+<!-- Main Fields -->
+<div class="md:col-span-2 space-y-6">
+<!-- Business Name -->
+<div class="space-y-2">
+<label class="text-primary font-label text-xs font-bold uppercase tracking-widest block" for="business-name">Business Name *</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-300 placeholder:text-outline-variant/60" id="business-name" placeholder="e.g. Acme Global Logistics" required="" type="text"/>
+</div>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Currency -->
+<div class="space-y-2">
+<label class="text-primary font-label text-xs font-bold uppercase tracking-widest block" for="currency">Currency *</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border-none rounded-lg p-4 pr-10 text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-300" id="currency" required="">
+<option value="BDT">BDT (৳)</option>
+<option selected="" value="USD">USD ($)</option>
+<option value="EUR">EUR (€)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Timezone -->
+<div class="space-y-2">
+<label class="text-primary font-label text-xs font-bold uppercase tracking-widest block" for="timezone">Timezone *</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border-none rounded-lg p-4 pr-10 text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all duration-300" id="timezone" required="">
+<option value="UTC">UTC (Universal)</option>
+<option value="EST">EST (New York)</option>
+<option selected="" value="BST">BST (Dhaka)</option>
+<option value="GMT">GMT (London)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">schedule</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Progressive Visual Element -->
+<div class="pt-4">
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-gradient-to-r from-tertiary to-primary rounded-full"></div>
+</div>
+<p class="text-[0.65rem] font-bold text-on-surface-variant mt-2 uppercase tracking-widest">Step 1 of 3: Identity Setup</p>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<button class="text-on-surface-variant font-label text-sm font-semibold hover:text-primary transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+                        Need Help?
+                    </button>
+<button class="bg-primary text-on-primary font-label font-bold text-sm uppercase tracking-widest py-4 px-10 rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] hover:bg-primary-dim active:scale-95 transition-all duration-300 flex items-center gap-2" type="submit">
+                        Continue
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Footer Visual Hint -->
+</main>
+<!-- Illustrative Floating Background Image (Kinetic Concept) -->
+</body></html>

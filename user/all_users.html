@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All Users - Ponno Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#2c2f30",
+                      "on-secondary-fixed-variant": "#006853",
+                      "inverse-on-surface": "#9b9d9e",
+                      "inverse-primary": "#69f6b8",
+                      "surface-tint": "#006947",
+                      "surface-container-high": "#e0e3e4",
+                      "primary": "#006947",
+                      "background": "#f5f6f7",
+                      "on-secondary-fixed": "#004939",
+                      "surface-container-highest": "#dadddf",
+                      "outline-variant": "#abadae",
+                      "secondary-container": "#5afcd2",
+                      "on-background": "#2c2f30",
+                      "secondary-fixed": "#5afcd2",
+                      "secondary": "#006853",
+                      "primary-fixed": "#69f6b8",
+                      "surface-container": "#e6e8ea",
+                      "on-primary-container": "#005a3c",
+                      "surface": "#f5f6f7",
+                      "surface-dim": "#d1d5d7",
+                      "on-error": "#ffefee",
+                      "on-primary": "#c8ffe0",
+                      "primary-container": "#69f6b8",
+                      "primary-fixed-dim": "#58e7ab",
+                      "on-error-container": "#570008",
+                      "tertiary-fixed": "#00dcfd",
+                      "surface-container-low": "#eff1f2",
+                      "error": "#b31b25",
+                      "on-tertiary-fixed": "#00343c",
+                      "outline": "#757778",
+                      "tertiary-fixed-dim": "#00cdeb",
+                      "on-tertiary": "#dcf7ff",
+                      "error-dim": "#9f0519",
+                      "secondary-fixed-dim": "#47edc4",
+                      "error-container": "#fb5151",
+                      "on-surface-variant": "#595c5d",
+                      "secondary-dim": "#005b48",
+                      "on-primary-fixed-variant": "#006544",
+                      "on-tertiary-fixed-variant": "#005360",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-dim": "#005866",
+                      "on-secondary": "#c4ffea",
+                      "primary-dim": "#005c3d",
+                      "on-tertiary-container": "#004955",
+                      "inverse-surface": "#0c0f10",
+                      "on-secondary-container": "#005d4a",
+                      "tertiary": "#006575",
+                      "tertiary-container": "#00dcfd",
+                      "on-primary-fixed": "#00452d",
+                      "surface-variant": "#dadddf",
+                      "surface-bright": "#f5f6f7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Work Sans"],
+                      "display": ["Work Sans"],
+                      "body": ["Work Sans"],
+                      "label": ["Work Sans"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-6 h-16 w-full bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)]">
+<div class="flex items-center gap-8">
+<div class="font-headline font-black text-xl text-primary dark:text-inverse-primary tracking-tighter">Ponno Tracker</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body-md tracking-tight" href="#">Overview</a>
+<a class="text-primary font-bold border-b-2 border-primary font-body text-body-md tracking-tight" href="#">Management</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body text-body-md tracking-tight" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="bg-surface-container-high border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search system..." type="text"/>
+</div>
+<button class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high dark:hover:bg-on-surface-variant/10 rounded-lg text-on-surface-variant transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-primary-container">
+<img alt="User profile avatar" data-alt="A professional close-up headshot of a corporate manager with a friendly expression. The lighting is bright and clean, characteristic of a high-end modern office. The background is softly blurred with hints of emerald and white office decor, maintaining the Kinetic Catalyst design system aesthetic. The image is crisp, with natural skin tones and a minimalist, high-velocity professional vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnRdwsxX-yTGkvoP6BiuqAOtcK-XvdfNcK21nH-pizWXf2_UOTJ7Y_tFW02uj65vFtwer02acCSXs4FaEOL8IyMpMJa9bFuI7_3CrI5GiR84cLkjroKUlfS5CJIRdzWN40HzvV58UwdnM4v0UJH-_7C-puWnAmmd66PPcoXebq3dHAfLJLB-xt9iJNw8-ZkehUVXv3eiZPDJ5COBiGXJEJ7Bt0JqoUhq_2DHsLATiQjVSrsfihbNP6qcuNfDtiiotfH5FvxO6y31Eh"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 flex flex-col h-full p-4 gap-2 z-40 bg-surface-container-low/60 dark:bg-surface-dim/20 backdrop-blur-2xl w-64 pt-20">
+<div class="mb-6 px-2">
+<p class="font-label text-xs font-medium uppercase tracking-widest text-primary mb-1">Ponno Tracker</p>
+<p class="font-headline font-bold text-lg text-on-surface dark:text-inverse-on-surface">Inventory Suite</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-on-surface-variant/20 rounded-lg transition-all font-label text-label-md font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-on-surface-variant/20 rounded-lg transition-all font-label text-label-md font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Inventory
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-on-surface-variant/20 rounded-lg transition-all font-label text-label-md font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                    Locations
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest dark:hover:bg-on-surface-variant/20 rounded-lg transition-all font-label text-label-md font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+                    Suppliers
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg shadow-[0_8px_20px_rgba(0,105,71,0.2)] font-label text-label-md font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+                    User Management
+                </a>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-3 px-4 bg-primary-container text-on-primary-container font-bold rounded-lg flex items-center justify-center gap-2 hover:brightness-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                    Add New Stock
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 p-8 bg-surface">
+<!-- Header Section with Asymmetry -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label text-label-md font-medium uppercase tracking-widest text-primary mb-2 block">Administration Console</span>
+<h1 class="text-[3.5rem] font-bold tracking-tighter leading-none text-on-surface">All Users</h1>
+<p class="mt-4 text-on-surface-variant max-w-lg font-body">Manage system access, monitor activity status, and define administrative privileges across your enterprise workspace.</p>
+</div>
+<div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center gap-3 hover:brightness-110 shadow-[0_12px_40px_rgba(0,105,71,0.08)] transition-all transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                        Create User
+                    </button>
+</div>
+</div>
+<!-- Stats Bar (Kinetic Catalyst Style) -->
+<!-- Data Table Container -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(0,105,71,0.05)] border border-outline-variant/10">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/10">
+<th class="px-6 py-5 font-label text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Name</th>
+<th class="px-6 py-5 font-label text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Username</th>
+<th class="px-6 py-5 font-label text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Role</th>
+<th class="px-6 py-5 font-label text-label-md font-semibold uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-6 py-5 font-label text-label-md font-semibold uppercase tracking-widest text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-primary-container flex-shrink-0">
+<img alt="User Avatar" data-alt="A sophisticated portrait of a young professional woman wearing modern business attire in a bright, airy architectural setting. Sunlight highlights her features against a background of sleek glass and emerald-colored structural elements. The color palette is dominated by whites, light greys, and deep forest greens, perfectly matching the Kinetic Catalyst brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2bDxk7tMUJ0dlIAtdV6_YW8TEvBAt_CjuLsJ0OPv-jiyTErj2lgjozVPBATfvrfoMTE2tGRWk6txdvKJn4IDUveuvqqPVx_BEdRsfG9SOQ-eX3RQ3xsUtvLMcAQ6a1M9eEjhLtY0wHrTY29FZbkRfyt2FVAlr14sctgYY8XH7igzJXslREN8jeQUAjqoI4hbckh2gKduAYyjvJw72WiQ0O8wQLR8qRFwj64rstW420fvJVhO4-mgtEYVLD_7XwAMvJ6IQxoNCde2u"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Alexandria D'Angelo</p>
+<p class="text-xs text-on-surface-variant">alexandria.d@ponno.io</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-tertiary">@adangelo_lead</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-container text-on-primary-container">
+                                        Admin
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-secondary-container flex-shrink-0">
+<img alt="User Avatar" data-alt="A high-definition image of a male tech lead with glasses, working in a minimalist studio. The lighting is cold and clinical with blue and green undertones. The scene conveys a sense of high focus and technological precision. Background features include blurred monitor screens and modern office furniture in shades of grey and emerald." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTEfg25ZZuEMnVRqhmzFnOK0NMVicVZHZ_GjIkDx1MEd7jp4V6g1Lm8cG_hyOrVy5fTL-bVZkNg1MZWh8NMe1knfS6ciKnMPIwv-RIItjnN42RHWDoJj8qeXlv5xEooqlpp97m7GCir-kobGcx54Ena-iPkJsGwtMADLD8fW1tLP3RbB98CvkXxTwyk8Boor-B_tZgiFNEKFvrDnA26zY8g6IvxsnKmGNmVXBajLlVygxSc8IMtnhSJopIomh-mG-DG0k_jeifb0Tz"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">m.chen@ponno.io</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-tertiary">@mchen_staff</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant">
+                                        Staff
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-tertiary-container flex-shrink-0">
+<img alt="User Avatar" data-alt="Portrait of a diverse female engineer with a confident smile. The setting is a bright, modern technology lab with high-key lighting. The background features geometric patterns and emerald lighting accents. The overall vibe is high-velocity, professional, and optimistic, maintaining a strict adherence to the light-mode Kinetic Catalyst aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1criYc2xmsCncyDdJQOOXBn89VlJFVDMMw8xYXjiEQVt4I201F-oYnEfjqFHmbQjQWA7Pldoo1eCVt5IIpeBApABmxj9ErVAhlTECuUSpOBNM7-u5UcNxC8qJPelqZdFcIGtedlYlDpP8VtJWT2lnky_ZXtTfsPreKaX5dZVKSGd12TI0XgGQ2fsKPLUogdyzy-37Z-E9fBcSQ3jbkrkc-9ioZvhUaG0sGEWzMTC0rnv7tvL3xCZ8-OUqIb6fyCra0FWzS5YImZTm"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Sarah Koppel</p>
+<p class="text-xs text-on-surface-variant">sarah.k@ponno.io</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-tertiary">@skoppel_admin</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary-container text-on-primary-container">
+                                        Admin
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span class="text-sm font-medium text-on-surface">Inactive</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="User Avatar" data-alt="Professional headshot of an older senior analyst with white hair, exuding wisdom and calm authority. He is in a modern office with floor-to-ceiling windows showing a hint of a green urban garden. High-contrast lighting and surgical precision in detail. The color scheme is clinical white and deep emerald, creating a premium, established professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG6qv2MnyUHJxHPxbXL_Hna7EyFfOUeP9XxXLGfbWUpCor5AQApUEHneIU14GR38lmLFiXv_RNN6b7wyJR94rHT5vGgk_HoO6XalcC5dHp72Um_rl-V-vYtMy6-tkBwoDCyc_edblXYDToT__bbWpE6k4jVtC7QHwiHA96kte3gQUKWeEJLChcvdEom0_nDoEYKqX7L0AqK4VXgSYkccfZYnkGYwX_8bfU2ZZ9P2JbEFgQ0J_wuhhfExU5w9NhG-csevw3uqNYM1dM"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Julian Ross</p>
+<p class="text-xs text-on-surface-variant">j.ross@ponno.io</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-tertiary">@jross_ops</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant">
+                                        Staff
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-primary-container/20 flex-shrink-0">
+<img alt="User Avatar" data-alt="A portrait of a creative director in a high-velocity environment. The individual has a modern, stylish look. The lighting is dynamic, with sharp shadows and bright highlights on emerald textures in the background. The scene feels alive and efficient, perfectly capturing the Active Minimalism of the Kinetic Catalyst brand philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJeg6Od2rVvgrHR_ThFsFWmOfgKk7LThbEiCgsVjwjpU1NIX6T626L_4nUnT2PuZgirG5DUpnmO-BiuGn5cv8RbwCEN2n6ykwnsdq-Am6uO8MzFqyuhilmbinKyTi5Jt2mKqbzjchX7NOdX1CHhAEO2BbD5idN4nQKZ_69JOtQhA8MvZuAzSR-O8w6qkrrK3sfcwsIYghRl3CsPhX8StrCPKVYEH64Zysaw03EwnyjDIMWalQhS1B989k6yNAELsVNWLHYz7RmlpIu"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Elena Belova</p>
+<p class="text-xs text-on-surface-variant">e.belova@ponno.io</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-mono text-sm text-tertiary">@ebelova_hq</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-surface-container-high text-on-surface-variant">
+                                        Staff
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between">
+<p class="text-sm text-on-surface-variant font-body">Showing 1 to 5 of 1,284 users</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-bold text-on-surface-variant bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">Previous</button>
+<button class="px-4 py-2 text-sm font-bold text-on-primary bg-primary rounded-lg hover:brightness-110 transition-all">Next</button>
+</div>
+</div>
+</div>
+<!-- Contextual Insights (Asymmetric Bento Element) -->
+</main>
+</div>
+</body></html>

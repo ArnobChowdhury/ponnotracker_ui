@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All Products | InventoryCatalyst</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#005360",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006947",
+                        "on-secondary-fixed": "#004939",
+                        "surface-dim": "#d1d5d7",
+                        "secondary-dim": "#005b48",
+                        "on-secondary-fixed-variant": "#006853",
+                        "on-background": "#2c2f30",
+                        "secondary-fixed-dim": "#47edc4",
+                        "on-primary-fixed": "#00452d",
+                        "primary": "#006947",
+                        "surface-container": "#e6e8ea",
+                        "outline": "#757778",
+                        "inverse-surface": "#0c0f10",
+                        "error-dim": "#9f0519",
+                        "on-surface": "#2c2f30",
+                        "on-surface-variant": "#595c5d",
+                        "surface-container-highest": "#dadddf",
+                        "primary-fixed": "#69f6b8",
+                        "on-primary-fixed-variant": "#006544",
+                        "surface-container-high": "#e0e3e4",
+                        "on-tertiary-container": "#004955",
+                        "on-secondary": "#c4ffea",
+                        "secondary-fixed": "#5afcd2",
+                        "surface-variant": "#dadddf",
+                        "secondary-container": "#5afcd2",
+                        "background": "#f5f6f7",
+                        "surface": "#f5f6f7",
+                        "on-error": "#ffefee",
+                        "tertiary-container": "#00dcfd",
+                        "surface-container-low": "#eff1f2",
+                        "tertiary-fixed-dim": "#00cdeb",
+                        "inverse-primary": "#69f6b8",
+                        "on-tertiary": "#dcf7ff",
+                        "tertiary-dim": "#005866",
+                        "inverse-on-surface": "#9b9d9e",
+                        "error-container": "#fb5151",
+                        "on-secondary-container": "#005d4a",
+                        "primary-dim": "#005c3d",
+                        "primary-container": "#69f6b8",
+                        "on-primary": "#c8ffe0",
+                        "error": "#b31b25",
+                        "secondary": "#006853",
+                        "primary-fixed-dim": "#58e7ab",
+                        "on-primary-container": "#005a3c",
+                        "outline-variant": "#abadae",
+                        "surface-bright": "#f5f6f7",
+                        "tertiary": "#006575",
+                        "tertiary-fixed": "#00dcfd",
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed": "#00343c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Work Sans"],
+                        "display": ["Work Sans"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #abadae; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-[#f5f6f7] dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-8 h-16 w-full docked full-width top-0 sticky z-50">
+<div class="flex items-center gap-12">
+<span class="text-xl font-bold tracking-tighter text-[#006947] dark:text-[#69f6b8]">InventoryCatalyst</span>
+<nav class="hidden md:flex gap-8 items-center h-16">
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#006947] font-['Work_Sans'] text-[0.875rem] tracking-tight transition-colors active:scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-[#006947] dark:text-[#69f6b8] font-semibold border-b-2 border-[#006947] dark:border-[#69f6b8] font-['Work_Sans'] text-[0.875rem] tracking-tight h-full flex items-center" href="#">Inventory</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#006947] font-['Work_Sans'] text-[0.875rem] tracking-tight transition-colors active:scale-95 duration-200" href="#">Orders</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#006947] font-['Work_Sans'] text-[0.875rem] tracking-tight transition-colors active:scale-95 duration-200" href="#">Suppliers</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#006947] font-['Work_Sans'] text-[0.875rem] tracking-tight transition-colors active:scale-95 duration-200" href="#">Warehouse</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-[#006947] font-['Work_Sans'] text-[0.875rem] tracking-tight transition-colors active:scale-95 duration-200" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#eff1f2] dark:hover:bg-slate-800 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#eff1f2] dark:hover:bg-slate-800 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden ml-2">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="professional portrait of a warehouse manager in business casual attire with a soft office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJCGQelqLMIAbQF3XG8HktPWilxC3VgydtNcm97UBYAOKhonVJv6_SxD7OLzGW4PbEDYNBD4vHqYgc4-Ay0DrrYb0ljRHpxUz5SBfc7S9BrqyHdQXQNFqq7QUHUBz7egIWP9p7cXsIllB9ejqx1rIKG1gl0p5bwThJPS6PVY4MTd2AYQh2IYDVXmh1VQ3RGo8Yp_wOKynnP4dq4Q-0EAOKMTisCdvCOJtqNsxzp4-yD5HYgW2Vhil6L_rMKV0CpyMdWQWBj-eEZTDi"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="bg-[#eff1f2] dark:bg-slate-900/60 backdrop-blur-2xl h-[calc(100vh-64px)] w-64 sticky top-16 hidden md:flex flex-col py-6 space-y-2 tonal-shift-only no-border">
+<div class="px-6 mb-8">
+<p class="font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium text-[#006947] mb-1">Inventory Control</p>
+<p class="text-on-surface-variant text-xs">Warehouse Alpha</p>
+</div>
+<nav class="flex-grow">
+<a class="flex items-center gap-4 px-6 py-3 bg-white dark:bg-slate-800 text-[#006947] dark:text-[#69f6b8] rounded-l-none rounded-r-lg border-l-4 border-[#006947] font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium hover:translate-x-1 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                    Stock Levels
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/40 font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium hover:translate-x-1 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="edit_notifications">edit_notifications</span>
+                    Adjustments
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/40 font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium hover:translate-x-1 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                    Categories
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/40 font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium hover:translate-x-1 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="move_up">move_up</span>
+                    Transfers
+                </a>
+<a class="flex items-center gap-4 px-6 py-3 text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-800/40 font-['Work_Sans'] uppercase tracking-widest text-[0.75rem] font-medium hover:translate-x-1 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    History
+                </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-semibold text-xs tracking-widest uppercase hover:bg-primary-dim transition-colors active:scale-95 duration-200">
+                    Generate Report
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow p-8">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="label-md uppercase tracking-widest text-primary font-bold text-[0.75rem] block mb-2">Inventory Overview</span>
+<h1 class="text-[3.5rem] font-extrabold tracking-tighter text-on-surface leading-none">All Products</h1>
+</div>
+<button class="bg-primary text-on-primary px-6 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-primary-dim transition-all shadow-lg shadow-primary/10 active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Add New Product
+                    </button>
+</div>
+<!-- Table Controls -->
+<div class="mb-6">
+<div class="relative max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-high border-none rounded-lg focus:ring-2 focus:ring-primary text-body-md placeholder:text-outline transition-all" placeholder="Search by SKU, Name, or Category..." type="text"/>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-5 text-[0.75rem] font-bold uppercase tracking-widest text-on-surface-variant">Product Name</th>
+<th class="px-6 py-5 text-[0.75rem] font-bold uppercase tracking-widest text-on-surface-variant">Category</th>
+<th class="px-6 py-5 text-[0.75rem] font-bold uppercase tracking-widest text-on-surface-variant">Stock Level</th>
+<th class="px-6 py-5 text-[0.75rem] font-bold uppercase tracking-widest text-on-surface-variant">Unit</th>
+<th class="px-6 py-5 text-[0.75rem] font-bold uppercase tracking-widest text-on-surface-variant text-right">Cost</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="minimalist white smartwatch on a clean grey background, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD0T3qo8sJEjJtOTYq2gfLN-jX2lakPQoKV4VYuZpCBpOB2SUmI3e0iGUvy_wrv6SivbgWQqdSzLU6nnC02SwWKgHy90i9sqTo0U4DYb0ksogtU7e6Gj2yYZNCuU2nnMY533oMLdkBxtwybpD5QiChkFfzTmZWJ3_kx5ku0-VKMp822y0EFKxuBFloy7JvZeIDkrpxVqLEKdqE5OlHHLnYy5tiuj4eH0bJRIGE388jU7FVdecV2477NXclkiEbM4UHe4QH8A4p3vnY"/>
+</div>
+<span class="font-semibold text-on-surface">Vanguard Elite Watch</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Wearables</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">1,240</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$89.00</span></div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="professional studio headphones on a plain background, metallic accents, soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY_c4RR_aNf6nLXbacdy1tKpA_bLQW4DN0OhYzP6AB5elIFQsel8AhMoH8b4ypEsbm_dZJofKU9vtJch6M0Yq2n9gc7cS8b4rpBvaMyVkXHiGNPPGPBpPO0u2Yh0K3FcQmoHCqOawtpZz7cfvKo2ryfvGto4efTffo_opcoBzwvGBDCuPsn3q0hWLe4uAlN4BRQOQGkFEUQ7dewpUVJgRf_4igrIGly610f8Pfh5i6TjeUD0i5melWecBLmMsmevFSUa4xEq6-MgpC"/>
+</div>
+<span class="font-semibold text-on-surface">SonicPro Wireless</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Audio</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">42</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$120.00</span></div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="vintage style instant film camera in a bright turquoise color on a pastel surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3409sNgbOUf3Xjjt2pLUFyrwKDeGbdtU3ESAN2fpp0p-i-Yd-BpKBZ4ZKddiQOT51Vz4YLDirfu1Uhkqb3-YkFNlNqXqwUNtwwpIvMA7MkJawiQktw-IGdBJKBMfIwk9KQX3eyQOjbMmuluBkfmyAa5-KC-LvELoQA_bC1Igqugu4LDO8DDTQNhzXERH2LeUK7q1dm4KRLRO1jATVkZICs6XHW1O-eUoOArDnCtjpEj2pz8hCTDvwmBraHCX5nmG71p0P5cEhXM6R"/>
+</div>
+<span class="font-semibold text-on-surface">RetroShot X1</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Electronics</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">215</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$40.00</span></div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="red athletic running shoe on a minimalist white background, high dynamic range" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC3YUzAHydWzG_ueZhynerCC6nmW-EJNmDx3gahyXpRCF2tKUeQBwE69jZqn_maa2dzq8uPrL7-qECenMBDOJqeTyKJSzvXq2ge4Vj_b1A4eQ3pKzbC2aKEoz7rze_RXgFmgibqkl3lCsAvSsZzxgg0oBv6ykjDioWAMHYtOC9m9fvQXaS51RhW5bxozqDDOOvb-pxU7FljCBMsSmIE-P-neSV6RQ7OBnKtzYcU97tsKkkYXTnsm6_EJh9YlAS1EO_sk8CMfN8rKM8"/>
+</div>
+<span class="font-semibold text-on-surface">AeroStride Runner</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Footwear</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">512</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$55.00</span></div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="industrial grade high tensile steel bolts and nuts in a clean warehouse setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU44Uc2mjZBz_YS2ItYVio-A-V9LW1nXy0xC02R6EGuyDruABvTODFUWoAkBWUfbIzBx3VESUAh6q58B4iGgoJfOe-pUG0xiQOPNac8twq040fTZnY37pDOYUDBcef-v2HcNuz0uDPAILcsjKvzjBgS_O7mQzK-4fFXoBpru7UP5kvo8fk1kDLcrqFzqsFtNKOlF-_0LljSlNs3-RgPvI4NH_sEWMgps0-9SpWeKNHDcJMpFvwP89zqB0kVRaQbPDrs30igg9BwcNV"/>
+</div>
+<span class="font-semibold text-on-surface">Industrial Steel Bolts</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Hardware</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">5,400</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Kg</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$4.20</span></div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="modern ergonomic office chair with mesh back on a bright office floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqYulF6JyBk4EdkxYLqLc8Etg5ykf-vXidOg0ODLnvj5g48MFboekXOR8uJoa7XdLSyrk3i8cf7QbpGePfwqY8jpuONBAedyeB1XN0aC47dPxi3owbZ4dvfZZdcCR_qzkGCryFspDwn0ErZox-xH9uH2g1RFOpGfe27XkNXqv2kugyQ6ke3JbSpM4bScgFrC2kf67mi_WA_cjSAKnaXnFbaTUVvziTEorHFgmbO8ftFEV82Tc8ajSQoCaWNhjiBOH2ZXY4WUoiZ970"/>
+</div>
+<span class="font-semibold text-on-surface">ErgoTask Pro Chair</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Furniture</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">18</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$195.00</span></div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="smart light bulb in a designer lamp socket, showing a warm ambient glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtmmjgkBrgoJ_b9rsGgucrR1pkgsjXHGTvtKjc0Faz8P9ArZqZay9rmYnM_nAKPHnpKrAR8WqXna3CoV_RQhqBfpO-dNspK-7ir1FA0KHxbt-6pmBiBDGH-q538iJZ1Jjw1E4YyRnxVWizivIhDzM_snKquaHWDDFqy2e1JwAarO1gHOpUdkn_H_x-AeIwbjljsfxVEq27DXb64Jtkh1Hb87cl0UrMBSNBZzBtLo5jUldOztDTsrMQbwWIDmWf-fCwHa7eMucZc0F"/>
+</div>
+<span class="font-semibold text-on-surface">Lumina Smart Bulb</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Lighting</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">890</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$8.50</span></div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="Product" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="high performance mechanical keyboard with glowing green backlight on dark desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy6BX21slXphzJI8hAdbSoWKtxcyhWu5bcXVocqIcS6FM-Df4YCwacUjindN9Srp-r8nlr5-MekeXzzbB-HtS6bK9GUqoWznJOWGgu3BDkCHjOjz9ULt8sXw9tQYtmDFqXDi1wYrElJU-02el04lcym-h11xJD2gOn7uNjb8MU108c-9wCgB4kLBCIDNTcZTGtKl06bCyyNca8JX5rGds4m0QytZzWRrxXjDQ_An78u8C7Ur3T4pzsnEm4_CxqeWrFNMO-KCdD9Y0M"/>
+</div>
+<span class="font-semibold text-on-surface">KeyMaster Elite</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Accessories</span>
+</td>
+<td class="px-6 py-4"><div class="flex flex-col gap-1"><span class="font-bold text-primary">304</span></div></td>
+<td class="px-6 py-4 text-on-surface-variant">Piece</td>
+<td class="px-6 py-4 text-right">
+<div class="flex flex-col"><span class="font-bold text-on-surface">$72.00</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination/Footer Stats -->
+<div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-on-surface-variant">Showing 1 to 8 of 420 products</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
