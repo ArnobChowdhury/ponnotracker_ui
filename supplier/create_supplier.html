@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Create Supplier - SupplyCatalyst</title>
+    <title>Create Supplier | Kinetic Inventory</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"
@@ -109,57 +109,43 @@
 <body class="bg-surface text-on-surface antialiased min-h-screen">
     <!-- TopNavBar Shell -->
     <header
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-transparent">
-        <div class="flex justify-between items-center px-6 h-16 w-full">
-            <div class="flex items-center gap-8">
-                <span
-                    class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">SupplyCatalyst</span>
-                <nav class="hidden md:flex items-center space-x-6 font-['Work_Sans'] text-sm font-medium">
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                        href="#">Dashboard</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                        href="#">Products</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                        href="#">Categories</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                        href="#">Inventory</a>
-                    <a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1"
-                        href="#">Suppliers</a>
-                </nav>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button
-                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
-                    <span class="material-symbols-outlined text-slate-600 dark:text-slate-300"
-                        data-icon="notifications">notifications</span>
-                </button>
-                <button
-                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:opacity-80">
-                    <span class="material-symbols-outlined text-slate-600 dark:text-slate-300"
-                        data-icon="settings">settings</span>
-                </button>
-                <img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-slate-200"
-                    data-alt="A professional headshot of a logistics manager in a modern office environment. The lighting is soft and natural, emphasizing a bright, clinical aesthetic. The background is slightly blurred, showing architectural elements of a tech-forward workspace. The overall mood is confident and efficient, fitting a corporate supply chain setting."
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnNxGha3qVXlEYA8_HNt_9bAxK9FaPC0U7v3ukQtG85ktiwUjOvjFU2ICNsdi9Vsce1RKX41g9vJi-xqK9oAdc_pIVRsFiv80-5Ju1jur_uFjJKIjrEKfY6JgHPLURzSalcuYuGOX1ikiDN35rbtFsm2TdpmgtuoHMe7wtyDSxZBtvGqpRi671ETsoLN52Ra4sAXbR0mdLTEs0H3GntPwLGomYAYzuFOC-kvzfVuoshT4pmIzmPU711Gf1oLKhA8DZCyztQhg9k2x" />
-            </div>
+        class="fixed top-0 w-full z-50 border-b-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center px-8 h-16 w-full font-work-sans text-sm font-medium tracking-tight">
+        <div class="flex items-center gap-8">
+            <span class="text-xl font-bold tracking-tighter text-emerald-800 dark:text-emerald-300">Kinetic
+                Inventory</span>
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Dashboard</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Categories</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Products</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Inventory</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Locations</a>
+                <a class="text-emerald-700 dark:text-emerald-400 font-bold border-b-2 border-emerald-600 transition-colors h-16 flex items-center"
+                    href="#">Suppliers</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+            </button>
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="settings">settings</span>
+            </button>
+            <img alt="User profile" class="w-8 h-8 rounded-full object-cover ml-2"
+                data-alt="professional headshot of a person with a friendly expression in a modern office setting, soft corporate lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRKHFbkBq99DldqYnJJvawG8v81-e2Yv9wHr9O7C7lbaxE3wL8Tq8HOZEHBHNunzr2enE9Kdr8NR2nlzpcLfSoYxv3HXcHkd-S5pyTOi-fYIdGhClDsYTxCEYWDNdkVMB1RYs26SJ9uJBxDorxxJ2T-nMxPxjmCtd0KVWESCZu0UjTd5CJ4RlYebEq2-PisUpZab3v3bNAubTtJsSdfzQQoWr1wJPn6RvwU62TN0Y_K9lmBdWe456kNdDsgfF11yOWWF6biCvE760" />
         </div>
     </header>
     <!-- SideNavBar Shell -->
     <aside
         class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-lg hidden md:block">
         <div class="flex flex-col p-4 space-y-2">
-            <div class="mb-6 px-2">
-                <div class="flex items-center space-x-3 mb-1">
-                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="material-symbols-outlined text-on-primary text-sm"
-                            data-icon="person_search">person_search</span>
-                    </div>
-                    <div>
-                        <h3 class="text-emerald-800 dark:text-emerald-200 font-bold text-sm">Supplier Mgmt</h3>
-                        <p class="text-[10px] text-slate-500 uppercase tracking-wider">Global Network</p>
-                    </div>
-                </div>
-            </div>
             <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
                 href="#">
                 <span class="material-symbols-outlined group-hover:text-emerald-600"
@@ -171,34 +157,11 @@
                 <span class="material-symbols-outlined" data-icon="description">description</span>
                 <span class="font-['Work_Sans'] text-sm antialiased">Create Supplier</span>
             </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
-                href="#">
-                <span class="material-symbols-outlined group-hover:text-emerald-600"
-                    data-icon="query_stats">query_stats</span>
-                <span class="font-['Work_Sans'] text-sm antialiased">Performance</span>
-            </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
-                href="#">
-                <span class="material-symbols-outlined group-hover:text-emerald-600"
-                    data-icon="verified">verified</span>
-                <span class="font-['Work_Sans'] text-sm antialiased">Compliance</span>
-            </a>
-            <div class="pt-8 mt-auto border-t border-slate-200/50">
-                <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
-                    href="#">
-                    <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
-                    <span class="font-['Work_Sans'] text-sm antialiased">Support</span>
-                </a>
-                <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 group"
-                    href="#">
-                    <span class="material-symbols-outlined" data-icon="archive">archive</span>
-                    <span class="font-['Work_Sans'] text-sm antialiased">Archive</span>
-                </a>
-            </div>
         </div>
     </aside>
     <!-- Main Content Canvas -->
-    <main class="md:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+
+    <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
         <header class="mb-12 relative">
             <span class="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Registration Flow</span>
             <h1 class="text-[3.5rem] font-extrabold leading-none tracking-tighter text-on-surface mb-4">Create Supplier

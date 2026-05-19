@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>All Suppliers - SupplyCatalyst</title>
+    <title>All Suppliers | Kinetic Inventory</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet" />
@@ -99,94 +99,59 @@
     </style>
 </head>
 
-<body class="bg-surface text-on-surface antialiased min-h-screen">
-    <!-- TopNavBar Implementation -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar Shell -->
+    <header
+        class="fixed top-0 w-full z-50 border-b-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center px-8 h-16 w-full font-work-sans text-sm font-medium tracking-tight">
         <div class="flex items-center gap-8">
-            <span class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">SupplyCatalyst</span>
-            <div class="hidden md:flex items-center space-x-6 font-['Work_Sans'] text-sm font-medium">
+            <span class="text-xl font-bold tracking-tighter text-emerald-800 dark:text-emerald-300">Kinetic
+                Inventory</span>
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Dashboard</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Categories</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Products</a>
                 <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
                     href="#">Inventory</a>
                 <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                    href="#">Orders</a>
-                <!-- Active Tab: Suppliers -->
-                <a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 pb-1"
+                    href="#">Locations</a>
+                <a class="text-emerald-700 dark:text-emerald-400 font-bold border-b-2 border-emerald-600 transition-colors h-16 flex items-center"
                     href="#">Suppliers</a>
-                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                    href="#">Logistics</a>
-                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
-                    href="#">Analytics</a>
-            </div>
+            </nav>
         </div>
-        <div class="flex items-center space-x-4">
-            <button class="material-symbols-outlined text-slate-600 hover:text-emerald-600 transition-colors"
-                data-icon="notifications">notifications</button>
-            <button class="material-symbols-outlined text-slate-600 hover:text-emerald-600 transition-colors"
-                data-icon="settings">settings</button>
-            <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
-                <img alt="User Profile" class="w-full h-full object-cover"
-                    data-alt="A professional headshot of a modern corporate professional, set against a blurred, high-end office background. The lighting is soft and natural, emphasizing a clean, light-mode aesthetic with emerald green undertones. The overall mood is competent and trustworthy, perfectly integrated with a sophisticated digital supply chain management interface."
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbYAQFMtYu8UO4AaVH_ZMjZ48czXh7gFHp4I85sX_l4scd9CCWp14co9REA0U_ERjnFX3ARq-80wB6euolfyxgRpOC1_RASN7aBKT6tLF_cAh7ww8buHfeR70UrxZjgA_NdffDJXorebDXqZ5Z9QA6w73Thf5fJKRau0ypQh5kA0FRBosjlt6csbEtpqJuIWRjyIvQX_ne1WwTV7Iz6lMpJq7euLvS76Ofj38Ek1WctmzYISxixugxKn_815kcJDcvAKFunM3kJIXY" />
-            </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
+            </button>
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="settings">settings</span>
+            </button>
+            <img alt="User profile" class="w-8 h-8 rounded-full object-cover ml-2"
+                data-alt="professional headshot of a person with a friendly expression in a modern office setting, soft corporate lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRKHFbkBq99DldqYnJJvawG8v81-e2Yv9wHr9O7C7lbaxE3wL8Tq8HOZEHBHNunzr2enE9Kdr8NR2nlzpcLfSoYxv3HXcHkd-S5pyTOi-fYIdGhClDsYTxCEYWDNdkVMB1RYs26SJ9uJBxDorxxJ2T-nMxPxjmCtd0KVWESCZu0UjTd5CJ4RlYebEq2-PisUpZab3v3bNAubTtJsSdfzQQoWr1wJPn6RvwU62TN0Y_K9lmBdWe456kNdDsgfF11yOWWF6biCvE760" />
         </div>
-    </nav>
-    <!-- SideNavBar Implementation -->
+    </header>
+    <!-- SideNavBar Shell -->
     <aside
-        class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-lg flex flex-col p-4 space-y-2 font-['Work_Sans'] text-sm antialiased">
-        <div class="flex items-center space-x-3 px-2 py-4 mb-2">
-            <div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800">
-                <span class="material-symbols-outlined" data-icon="hub">hub</span>
-            </div>
-            <div>
-                <p class="text-emerald-800 dark:text-emerald-200 font-bold">Supplier Mgmt</p>
-                <p class="text-xs text-slate-500">Global Network</p>
-            </div>
-        </div>
-        <nav class="flex-1 space-y-1">
-            <!-- Active Tab: Directory (Mapped from All Suppliers) -->
-            <a class="flex items-center space-x-3 px-3 py-2 text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-50 dark:bg-emerald-900/20 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="person_search">person_search</span>
-                <span>Directory</span>
-            </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="description">description</span>
-                <span>Active Contracts</span>
-            </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
-                <span>Performance</span>
-            </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="verified">verified</span>
-                <span>Compliance</span>
-            </a>
-        </nav>
-        <div class="pt-4 border-t border-slate-200/50 space-y-1">
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
-                <span>Support</span>
-            </a>
-            <a class="flex items-center space-x-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg scale-95 active:scale-100 transition-transform"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="archive">archive</span>
-                <span>Archive</span>
-            </a>
-        </div>
-        <button
-            class="mt-4 w-full bg-primary text-on-primary py-2.5 rounded-lg font-medium flex items-center justify-center space-x-2 active:opacity-80 transition-all">
-            <span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
-            <span>Add New Supplier</span>
-        </button>
+        class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-slate-50/60 dark:bg-slate-900/60 backdrop-blur-2xl flex flex-col p-4 gap-2 font-work-sans text-sm overflow-y-auto border-r">
+        <a class="flex items-center gap-3 px-4 py-3 bg-emerald-100/50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 font-semibold rounded-lg hover:translate-x-1 transition-all cursor-pointer"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+            <span>All Suppliers</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 hover:translate-x-1 transition-all rounded-lg cursor-pointer"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+            <span>Create Supplier</span>
+        </a>
     </aside>
     <!-- Main Content Canvas -->
-    <main class="ml-64 pt-16 min-h-screen bg-surface">
-        <div class="p-8 max-w-7xl mx-auto">
+    <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
+        <div class="max-w-7xl mx-auto">
             <!-- Page Header -->
             <header class="mb-10 relative">
                 <div class="flex items-baseline space-x-3 mb-2">
@@ -374,6 +339,23 @@
             </div>
         </div>
     </main>
+    <!-- BottomNavBar for Mobile -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 px-6 py-3 flex justify-around items-center z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-emerald-600">
+            <span class="material-symbols-outlined" data-icon="person_search" data-weight="fill"
+                style="font-variation-settings: 'FILL' 1;">person_search</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+        </button>
+    </nav>
 </body>
 
 </html>
