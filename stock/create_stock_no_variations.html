@@ -101,236 +101,194 @@
 </head>
 
 <body class="bg-background text-on-background min-h-screen">
-    <!-- TopNavBar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center px-8 h-16 w-full">
+    <!-- TopAppBar Shell -->
+    <header
+        class="fixed top-0 w-full z-50 border-b-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center px-8 h-16 w-full font-work-sans text-sm font-medium tracking-tight">
         <div class="flex items-center gap-8">
             <span class="text-2xl font-black tracking-tighter text-emerald-800 dark:text-emerald-300 uppercase">Kinetic
                 Inventory</span>
-            <div class="hidden md:flex gap-6">
+            <nav class="hidden md:flex items-center gap-6">
                 <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
                     href="#">Dashboard</a>
-                <a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-600 font-bold text-sm"
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Categories</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Products</a>
+                <a class="text-emerald-700 dark:text-emerald-400 font-bold border-b-2 border-emerald-600 transition-colors h-16 flex items-center"
                     href="#">Inventory</a>
-                <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
-                    href="#">Orders</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
+                    href="#">Locations</a>
                 <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
                     href="#">Suppliers</a>
-                <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
-                    href="#">Reports</a>
-                <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
-                    href="#">Analytics</a>
-            </div>
+            </nav>
         </div>
         <div class="flex items-center gap-4">
-            <button class="p-2 text-slate-500 hover:bg-emerald-50/50 rounded-full transition-all">
-                <span class="material-symbols-outlined">notifications</span>
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="notifications">notifications</span>
             </button>
-            <button class="p-2 text-slate-500 hover:bg-emerald-50/50 rounded-full transition-all">
-                <span class="material-symbols-outlined">settings</span>
+            <button
+                class="p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors active:scale-95 duration-200">
+                <span class="material-symbols-outlined text-slate-600" data-icon="settings">settings</span>
             </button>
-            <div class="h-8 w-8 rounded-full overflow-hidden border border-emerald-100">
-                <img alt="User profile"
-                    data-alt="professional inventory manager headshot in a bright office setting, clean lighting"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjNTBbV8faCfrn982t3Cqa9_nUfYQyk9pZAlxdU1O1DyFgjIKCDTrbIpy-4QcfxUixqR_X67J2r7BIHtAvwwsDrdQl_nSfuTWVUrqaRXwHvkPb0OqF2DzcvWFRJMAhwdU4ykTE0LDaPopJ_MGuNQR9wApXE_SzuaawaUu1Hz-iUF6YUkkRaDi6eL5-QypBXdECE2K_fCbWQNcV4WMghtLT7Gj3wZcSuXp10BYBMB3tntcSbWym8y1_Vpw4HLdcyhAKpwl60wbGS1yi" />
-            </div>
+            <img alt="User profile" class="w-8 h-8 rounded-full object-cover ml-2"
+                data-alt="professional headshot of a person with a friendly expression in a modern office setting, soft corporate lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRKHFbkBq99DldqYnJJvawG8v81-e2Yv9wHr9O7C7lbaxE3wL8Tq8HOZEHBHNunzr2enE9Kdr8NR2nlzpcLfSoYxv3HXcHkd-S5pyTOi-fYIdGhClDsYTxCEYWDNdkVMB1RYs26SJ9uJBxDorxxJ2T-nMxPxjmCtd0KVWESCZu0UjTd5CJ4RlYebEq2-PisUpZab3v3bNAubTtJsSdfzQQoWr1wJPn6RvwU62TN0Y_K9lmBdWe456kNdDsgfF11yOWWF6biCvE760" />
         </div>
-    </nav>
-    <div class="flex pt-16 h-screen">
-        <!-- SideNavBar -->
-        <aside
-            class="h-screen w-64 pt-4 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-2xl border-r border-slate-200/20 flex flex-col gap-2 p-4 fixed left-0">
-            <div class="px-4 py-6 mb-2">
-                <div class="flex items-center gap-3 mb-1">
-                    <img alt="Inventory Manager" class="w-10 h-10 rounded-lg object-cover"
-                        data-alt="close up of warehouse worker with digital tablet overseeing stock levels in a modern bright warehouse"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBguDYTEprMk1bb7tGHa1DLICRWk6fq15CJ2xGAVhd5iTBdNArG7SojgOhzPVyyXC73-twmStyFjmtu7Ocy8TaVLLqXxXdbrpLP5hJjLnnssYcGtBpHAyQ6HDbziLlMV4ZRirHR21q_DG4LqL9y8z_NLQh1t4dZfhGBWOs4gikDEBRPVqZ_Vzom9MBi4L3DF4Loi5brpJOiUJz6DtlXMSA8C8Bf-ImaicRqZzhEMymtzCpQItZHmmgygbhWN94c-asKDwcH3VnAYuPu" />
-                    <div>
-                        <h4 class="text-on-surface font-bold text-sm leading-tight">Contextual Actions</h4>
-                        <p class="text-on-surface-variant text-[0.75rem]">Module: Inventory</p>
+    </header>
+    <!-- SideNavBar Shell -->
+    <aside
+        class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-slate-50/60 dark:bg-slate-900/60 backdrop-blur-2xl flex flex-col p-4 gap-2 font-work-sans text-sm overflow-y-auto border-r">
+        <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 hover:translate-x-1 transition-all rounded-lg cursor-pointer"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+            <span>All Stock</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 bg-emerald-100/50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 font-semibold rounded-lg hover:translate-x-1 transition-all cursor-pointer"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+            <span>Create Stock</span>
+        </a>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
+        <!-- Header Section -->
+        <div class="mb-10 max-w-5xl">
+            <p class="text-primary font-bold text-xs tracking-widest uppercase mb-1">Create Entry</p>
+            <h1 class="text-on-surface text-5xl font-black tracking-tighter mb-3">Create Stock</h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl">Add stock for a specific product variation at a
+                selected location.</p>
+        </div>
+        <!-- Content Grid -->
+        <div class="grid grid-cols-12 gap-8 max-w-6xl">
+            <!-- Left Column: Product Selection -->
+            <div class="col-span-12 lg:col-span-7 flex flex-col gap-8">
+                <section class="bg-surface-container-lowest rounded-xl p-8 transition-colors hover:bg-surface-bright">
+                    <div class="flex items-center gap-2 mb-6 text-primary">
+                        <span class="material-symbols-outlined">settings_suggest</span>
+                        <h2 class="font-bold text-lg">Product Selection</h2>
                     </div>
-                </div>
+                    <div class="space-y-6">
+                        <div class="group">
+                            <label
+                                class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Product</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-medium appearance-none cursor-not-allowed"
+                                    disabled="">
+                                    <option>Industrial Pallet Jack</option>
+                                </select>
+                                <span
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400">lock</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label
+                                class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Location</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-medium appearance-none focus:ring-2 focus:ring-primary transition-all">
+                                    <option>Warehouse A - Zone 4</option>
+                                    <option>Warehouse B - Zone 1</option>
+                                    <option>Distribution Center - Main</option>
+                                </select>
+                                <span
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 pointer-events-none">expand_more</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-surface-container-low rounded-xl p-8 border border-dashed border-outline-variant/30">
+                    <div class="flex items-center gap-2 mb-4 text-on-surface-variant opacity-60">
+                        <span class="material-symbols-outlined">layers</span>
+                        <h2 class="font-bold text-lg">Product Variation</h2>
+                    </div>
+                    <div class="flex flex-col items-center justify-center py-10 text-center">
+                        <div class="bg-surface-container-high p-4 rounded-full mb-4">
+                            <span class="material-symbols-outlined text-3xl text-slate-400">info</span>
+                        </div>
+                        <p class="text-on-surface-variant font-medium">This product does not have any variants.</p>
+                        <p class="text-xs text-slate-400 mt-1">Directly proceed to inventory details.</p>
+                    </div>
+                </section>
             </div>
-            <nav class="flex flex-col gap-1">
-                <a class="flex items-center gap-3 px-4 py-3 bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-lg font-semibold text-[0.875rem]"
-                    href="#">
-                    <span class="material-symbols-outlined">inventory_2</span>
-                    Stock Overview
-                </a>
-                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:pl-5 transition-all text-[0.875rem]"
-                    href="#">
-                    <span class="material-symbols-outlined">list_alt</span>
-                    Item Registry
-                </a>
-                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:pl-5 transition-all text-[0.875rem]"
-                    href="#">
-                    <span class="material-symbols-outlined">sync_alt</span>
-                    Warehouse Sync
-                </a>
-                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:pl-5 transition-all text-[0.875rem]"
-                    href="#">
-                    <span class="material-symbols-outlined">warning</span>
-                    Low Stock Alerts
-                </a>
-                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:pl-5 transition-all text-[0.875rem]"
-                    href="#">
-                    <span class="material-symbols-outlined">history</span>
-                    Audit Trail
-                </a>
-            </nav>
-            <div class="mt-auto p-4">
+            <!-- Right Column: Inventory Details -->
+            <div class="col-span-12 lg:col-span-5">
+                <section
+                    class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(0,105,71,0.08)] sticky top-24">
+                    <div class="flex items-center gap-2 mb-8 text-tertiary">
+                        <span class="material-symbols-outlined">analytics</span>
+                        <h2 class="font-bold text-lg text-on-surface">Inventory Details</h2>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="group">
+                            <div class="flex justify-between items-center mb-2">
+                                <label
+                                    class="block text-xs font-bold text-primary uppercase tracking-wider">Quantity</label>
+                                <span
+                                    class="text-xs font-semibold px-2 py-1 bg-primary-container text-on-primary-container rounded">Active</span>
+                            </div>
+                            <input
+                                class="w-full bg-surface-container-high border-none rounded-lg p-4 text-2xl font-black text-on-surface focus:ring-2 focus:ring-primary transition-all"
+                                type="number" value="0" />
+                            <p class="text-[10px] text-slate-400 mt-2 italic">Units available at current location
+                            </p>
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Selling
+                                Price</label>
+                            <div class="relative">
+                                <span
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
+                                <input
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 pl-8 text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary transition-all"
+                                    type="text" value="0.00" />
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Reorder
+                                Level</label>
+                            <div class="flex items-center gap-4">
+                                <input
+                                    class="w-2/3 bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-bold focus:ring-2 focus:ring-primary transition-all"
+                                    type="number" value="10" />
+                                <div class="flex-1 bg-tertiary-container/30 rounded-lg p-3 flex flex-col items-center">
+                                    <span class="text-[0.6rem] font-black text-tertiary uppercase">Auto-Sync</span>
+                                    <span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Energy Conduit (Signature Component) -->
+                    <div class="mt-12">
+                        <div class="flex justify-between text-xs font-bold mb-2">
+                            <span class="text-on-surface-variant uppercase">Potential Catalyst Rank</span>
+                            <span class="text-primary">84%</span>
+                        </div>
+                        <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+                            <div class="h-full w-[84%] bg-gradient-to-r from-tertiary to-primary rounded-full">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Bottom Sticky Actions -->
+            <div
+                class="col-span-12 mt-8 flex justify-end items-center gap-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10">
                 <button
-                    class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex items-center justify-center gap-2 hover:scale-95 transition-transform">
-                    <span class="material-symbols-outlined">qr_code_scanner</span>
-                    Quick Scan Item
+                    class="px-8 py-3 text-primary font-bold hover:bg-primary-container/20 rounded-lg transition-all">
+                    Cancel
+                </button>
+                <button
+                    class="px-10 py-4 bg-primary text-on-primary font-black rounded-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    Create Stock
                 </button>
             </div>
-        </aside>
-        <!-- Main Content Canvas -->
-        <main class="ml-64 flex-1 p-10 bg-surface overflow-y-auto">
-            <!-- Header Section -->
-            <div class="mb-10 max-w-5xl">
-                <p class="text-primary font-bold text-xs tracking-widest uppercase mb-1">Create Entry</p>
-                <h1 class="text-on-surface text-5xl font-black tracking-tighter mb-3">Create Stock</h1>
-                <p class="text-on-surface-variant text-lg max-w-2xl">Add stock for a specific product variation at a
-                    selected location.</p>
-            </div>
-            <!-- Content Grid -->
-            <div class="grid grid-cols-12 gap-8 max-w-6xl">
-                <!-- Left Column: Product Selection -->
-                <div class="col-span-12 lg:col-span-7 flex flex-col gap-8">
-                    <section
-                        class="bg-surface-container-lowest rounded-xl p-8 transition-colors hover:bg-surface-bright">
-                        <div class="flex items-center gap-2 mb-6 text-primary">
-                            <span class="material-symbols-outlined">settings_suggest</span>
-                            <h2 class="font-bold text-lg">Product Selection</h2>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="group">
-                                <label
-                                    class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Product</label>
-                                <div class="relative">
-                                    <select
-                                        class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-medium appearance-none cursor-not-allowed"
-                                        disabled="">
-                                        <option>Industrial Pallet Jack</option>
-                                    </select>
-                                    <span
-                                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400">lock</span>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <label
-                                    class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Location</label>
-                                <div class="relative">
-                                    <select
-                                        class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-medium appearance-none focus:ring-2 focus:ring-primary transition-all">
-                                        <option>Warehouse A - Zone 4</option>
-                                        <option>Warehouse B - Zone 1</option>
-                                        <option>Distribution Center - Main</option>
-                                    </select>
-                                    <span
-                                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400 pointer-events-none">expand_more</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section
-                        class="bg-surface-container-low rounded-xl p-8 border border-dashed border-outline-variant/30">
-                        <div class="flex items-center gap-2 mb-4 text-on-surface-variant opacity-60">
-                            <span class="material-symbols-outlined">layers</span>
-                            <h2 class="font-bold text-lg">Product Variation</h2>
-                        </div>
-                        <div class="flex flex-col items-center justify-center py-10 text-center">
-                            <div class="bg-surface-container-high p-4 rounded-full mb-4">
-                                <span class="material-symbols-outlined text-3xl text-slate-400">info</span>
-                            </div>
-                            <p class="text-on-surface-variant font-medium">This product does not have any variants.</p>
-                            <p class="text-xs text-slate-400 mt-1">Directly proceed to inventory details.</p>
-                        </div>
-                    </section>
-                </div>
-                <!-- Right Column: Inventory Details -->
-                <div class="col-span-12 lg:col-span-5">
-                    <section
-                        class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(0,105,71,0.08)] sticky top-24">
-                        <div class="flex items-center gap-2 mb-8 text-tertiary">
-                            <span class="material-symbols-outlined">analytics</span>
-                            <h2 class="font-bold text-lg text-on-surface">Inventory Details</h2>
-                        </div>
-                        <div class="space-y-8">
-                            <div class="group">
-                                <div class="flex justify-between items-center mb-2">
-                                    <label
-                                        class="block text-xs font-bold text-primary uppercase tracking-wider">Quantity</label>
-                                    <span
-                                        class="text-xs font-semibold px-2 py-1 bg-primary-container text-on-primary-container rounded">Active</span>
-                                </div>
-                                <input
-                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 text-2xl font-black text-on-surface focus:ring-2 focus:ring-primary transition-all"
-                                    type="number" value="0" />
-                                <p class="text-[10px] text-slate-400 mt-2 italic">Units available at current location
-                                </p>
-                            </div>
-                            <div class="group">
-                                <label
-                                    class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Selling
-                                    Price</label>
-                                <div class="relative">
-                                    <span
-                                        class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
-                                    <input
-                                        class="w-full bg-surface-container-high border-none rounded-lg p-4 pl-8 text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary transition-all"
-                                        type="text" value="0.00" />
-                                </div>
-                            </div>
-                            <div class="group">
-                                <label
-                                    class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Reorder
-                                    Level</label>
-                                <div class="flex items-center gap-4">
-                                    <input
-                                        class="w-2/3 bg-surface-container-high border-none rounded-lg p-4 text-on-surface font-bold focus:ring-2 focus:ring-primary transition-all"
-                                        type="number" value="10" />
-                                    <div
-                                        class="flex-1 bg-tertiary-container/30 rounded-lg p-3 flex flex-col items-center">
-                                        <span class="text-[0.6rem] font-black text-tertiary uppercase">Auto-Sync</span>
-                                        <span
-                                            class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Energy Conduit (Signature Component) -->
-                        <div class="mt-12">
-                            <div class="flex justify-between text-xs font-bold mb-2">
-                                <span class="text-on-surface-variant uppercase">Potential Catalyst Rank</span>
-                                <span class="text-primary">84%</span>
-                            </div>
-                            <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
-                                <div class="h-full w-[84%] bg-gradient-to-r from-tertiary to-primary rounded-full">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- Bottom Sticky Actions -->
-                <div
-                    class="col-span-12 mt-8 flex justify-end items-center gap-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant/10">
-                    <button
-                        class="px-8 py-3 text-primary font-bold hover:bg-primary-container/20 rounded-lg transition-all">
-                        Cancel
-                    </button>
-                    <button
-                        class="px-10 py-4 bg-primary text-on-primary font-black rounded-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3">
-                        <span class="material-symbols-outlined">add_circle</span>
-                        Create Stock
-                    </button>
-                </div>
-            </div>
-            <!-- Footer Spacing -->
-            <div class="h-24"></div>
-        </main>
+        </div>
+        <!-- Footer Spacing -->
+        <div class="h-24"></div>
+    </main>
     </div>
 </body>
 
