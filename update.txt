@@ -12,5 +12,9 @@ Todo:
     - Location details drawer - Done
 
 2. Fix the bottom navigation on mobile 
-3. Make create location form like Create category. Now the heading is too big and wide
+3. Fix header sizes for create forms and make the form middle aligned
+    - Location - Done
+    - Product - Done
+    - Category - Done
 4. Make all drawers consistent. Now each drawer looks different from another. Fonts are all over the place
+5. Fix create product form. Consolidate 3 forms in to one.
