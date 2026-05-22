@@ -153,128 +153,135 @@
     <!-- Main Content Canvas -->
     <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
         <!-- Header Section -->
-        <div class="max-w-6xl mx-auto mb-10">
-            <span class="label-md text-primary font-bold tracking-widest uppercase text-xs">Stock Management</span>
-            <h1 class="text-4xl font-black text-on-surface tracking-tighter mt-1 mb-2">Create Stock</h1>
-            <p class="text-on-surface-variant max-w-2xl text-sm leading-relaxed">Add stock for a specific product
-                variation at a selected location. Dynamic variation fields will unlock upon product selection.</p>
-        </div>
-        <!-- Form Grid -->
-        <div class="max-w-6xl mx-auto grid grid-cols-12 gap-8 items-start">
+        <div class="max-w-5xl mx-auto">
+            <header class="mb-12">
+                <h1 class="text-5xl font-black tracking-tighter text-on-surface mb-2">Create Stock</h1>
+                <p class="text-on-surface-variant mt-4 font-medium">Add stock for a specific product
+                    variation at a selected location. Dynamic variation fields will unlock upon product selection.</p>
+            </header>
+            <!-- Form Grid -->
             <!-- Card 1: Left - Selection & Variations -->
-            <div class="col-span-12 lg:col-span-7 space-y-8">
-                <!-- Product Selection Section -->
-                <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-primary">search_check</span>
-                        <h2 class="text-lg font-bold text-on-surface">Product Selection</h2>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Target
-                                Product</label>
-                            <div class="relative group">
-                                <select
-                                    class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
-                                    <option disabled="" selected="" value="">Search and select product...</option>
-                                </select>
-                                <span
-                                    class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+
+            <div class="grid grid-cols-12 gap-8 items-start">
+                <div class="col-span-12 lg:col-span-7 space-y-8">
+                    <!-- Product Selection Section -->
+                    <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">search_check</span>
+                            <h2 class="text-lg font-bold text-on-surface">Product Selection</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Target
+                                    Product</label>
+                                <div class="relative group">
+                                    <select
+                                        class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
+                                        <option disabled="" selected="" value="">Search and select product...</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Warehouse
-                                Location</label>
-                            <div class="relative">
-                                <select
-                                    class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
-                                    <option disabled="" selected="" value="">Search and select location...</option>
-                                </select>
-                                <span
-                                    class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">location_on</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Variation Section (Empty State) -->
-                <div
-                    class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15 border-2 border-dashed border-outline-variant/30">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-primary">layers</span>
-                        <h2 class="text-lg font-bold text-on-surface">Product Variation</h2>
-                    </div>
-                    <div class="flex flex-col items-center justify-center py-12 text-center">
-                        <div
-                            class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4">
-                            <span class="material-symbols-outlined text-3xl text-outline-variant">dynamic_feed</span>
-                        </div>
-                        <p class="text-on-surface-variant text-sm max-w-sm">
-                            Variation attributes are dynamically loaded based on product selection. Please select a
-                            product above to continue.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2: Right - Inventory Details -->
-            <div class="col-span-12 lg:col-span-5">
-                <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
-                    <div class="flex items-center gap-3 mb-6">
-                        <span class="material-symbols-outlined text-tertiary">analytics</span>
-                        <h2 class="text-lg font-bold text-on-surface">Inventory Details</h2>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Initial
-                                Quantity</label>
-                            <input
-                                class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
-                                disabled="" type="number" value="0" />
-                            <p class="text-[10px] text-on-surface-variant/60 italic">Stock on hand at initiation</p>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Selling
-                                Price (USD)</label>
-                            <div class="relative">
-                                <span class="absolute left-4 top-3 text-outline-variant font-medium">$</span>
-                                <input
-                                    class="w-full h-12 pl-8 pr-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
-                                    disabled="" type="text" value="0.00" />
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Reorder
-                                Level</label>
-                            <input
-                                class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed"
-                                disabled="" type="number" value="10" />
-                            <p class="text-[10px] text-on-surface-variant/60 italic">Threshold for replenishment
-                                alerts</p>
-                        </div>
-                        <!-- High Efficiency Progress Indicator (Initial/Zero State) -->
-                        <div class="pt-4">
-                            <div class="flex justify-between items-end mb-2">
-                                <span class="text-xs font-bold text-on-surface uppercase">Capacity Forecast</span>
-                                <span class="text-xs font-bold text-outline-variant tracking-tighter">0%</span>
-                            </div>
-                            <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-                                <div
-                                    class="w-0 h-full bg-gradient-to-r from-tertiary to-primary transition-all duration-1000">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Warehouse
+                                    Location</label>
+                                <div class="relative">
+                                    <select
+                                        class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
+                                        <option disabled="" selected="" value="">Search and select location...</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">location_on</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Product Variation Section (Empty State) -->
+                    <div
+                        class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15 border-2 border-dashed border-outline-variant/30">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-primary">layers</span>
+                            <h2 class="text-lg font-bold text-on-surface">Product Variation</h2>
+                        </div>
+                        <div class="flex flex-col items-center justify-center py-12 text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4">
+                                <span
+                                    class="material-symbols-outlined text-3xl text-outline-variant">dynamic_feed</span>
+                            </div>
+                            <p class="text-on-surface-variant text-sm max-w-sm">
+                                Variation attributes are dynamically loaded based on product selection. Please select a
+                                product above to continue.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Action Buttons -->
-                <div class="mt-8 flex items-center gap-4">
-                    <button
-                        class="flex-1 h-12 text-primary font-bold hover:bg-primary-container/30 transition-colors rounded-lg text-sm uppercase tracking-widest">
-                        Cancel
-                    </button>
-                    <button
-                        class="flex-[2] h-12 bg-outline-variant text-surface rounded-lg font-bold text-sm uppercase tracking-widest cursor-not-allowed shadow-none opacity-50"
-                        disabled="">
-                        Create Stock
-                    </button>
+                <!-- Card 2: Right - Inventory Details -->
+                <div class="col-span-12 lg:col-span-5">
+                    <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-tertiary">analytics</span>
+                            <h2 class="text-lg font-bold text-on-surface">Inventory Details</h2>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Initial
+                                    Quantity</label>
+                                <input
+                                    class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
+                                    disabled="" type="number" value="0" />
+                                <p class="text-[10px] text-on-surface-variant/60 italic">Stock on hand at initiation</p>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Selling
+                                    Price (USD)</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-3 text-outline-variant font-medium">$</span>
+                                    <input
+                                        class="w-full h-12 pl-8 pr-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
+                                        disabled="" type="text" value="0.00" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Reorder
+                                    Level</label>
+                                <input
+                                    class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed"
+                                    disabled="" type="number" value="10" />
+                                <p class="text-[10px] text-on-surface-variant/60 italic">Threshold for replenishment
+                                    alerts</p>
+                            </div>
+                            <!-- High Efficiency Progress Indicator (Initial/Zero State) -->
+                            <div class="pt-4">
+                                <div class="flex justify-between items-end mb-2">
+                                    <span class="text-xs font-bold text-on-surface uppercase">Capacity Forecast</span>
+                                    <span class="text-xs font-bold text-outline-variant tracking-tighter">0%</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                                    <div
+                                        class="w-0 h-full bg-gradient-to-r from-tertiary to-primary transition-all duration-1000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="mt-8 flex items-center gap-4">
+                        <button
+                            class="flex-1 h-12 text-primary font-bold hover:bg-primary-container/30 transition-colors rounded-lg text-sm uppercase tracking-widest">
+                            Cancel
+                        </button>
+                        <button
+                            class="flex-[2] h-12 bg-outline-variant text-surface rounded-lg font-bold text-sm uppercase tracking-widest cursor-not-allowed shadow-none opacity-50"
+                            disabled="">
+                            Create Stock
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
