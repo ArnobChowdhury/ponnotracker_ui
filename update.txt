@@ -12,7 +12,7 @@ Todo:
     - Location details drawer - Done
 
 2. Fix the bottom navigation on mobile 
-3. Fix header sizes for create forms and make the form middle aligned
+3. Fix header sizes for create forms and make the form middle aligned - wip
     - Location - Done
     - Product - Done
     - Category - Done
