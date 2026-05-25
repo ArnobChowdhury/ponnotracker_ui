@@ -162,135 +162,136 @@
     <!-- Main Content Canvas -->
 
     <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
-        <header class="mb-12 relative">
-            <span class="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Registration Flow</span>
-            <h1 class="text-[3.5rem] font-extrabold leading-none tracking-tighter text-on-surface mb-4">Create Supplier
-            </h1>
-            <p class="text-on-surface-variant max-w-xl text-lg">Onboard a new strategic partner into the global supply
-                network. Ensure all fields are precisely documented.</p>
-        </header>
-        <form class="space-y-6">
-            <!-- Card 1: Basic Information -->
-            <section
-                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
-                        <span class="material-symbols-outlined text-on-primary-container" data-icon="badge">badge</span>
-                    </div>
-                    <h2 class="text-1.5rem font-bold text-on-surface">Basic Information</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Name <span
-                                class="text-error">*</span></label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="Enter supplier legal name" required="" type="text" />
-                    </div>
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Code</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="SUP-XXXX" type="text" />
-                    </div>
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Phone</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="+1 (555) 000-0000" type="tel" />
-                    </div>
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Email</label>
-                        <input
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="contact@supplier.com" type="email" />
-                    </div>
-                </div>
-            </section>
-            <!-- Card 2: Address & Contact -->
-            <section
-                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-10 h-10 bg-tertiary-container/30 rounded-lg flex items-center justify-center">
-                        <span class="material-symbols-outlined text-tertiary" data-icon="location_on">location_on</span>
-                    </div>
-                    <h2 class="text-1.5rem font-bold text-on-surface">Address &amp; Contact</h2>
-                </div>
-                <div class="space-y-8">
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Address</label>
-                        <textarea
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="Full physical headquarters address" rows="3"></textarea>
+
+
+        <div class="max-w-5xl mx-auto">
+            <header class="mb-12">
+                <h1 class="text-5xl font-black tracking-tighter text-on-surface mb-2">Create Supplier</h1>
+                <p class="text-on-surface-variant mt-4 font-medium">Onboard a new strategic partner into the global
+                    supply
+                    network. Ensure all fields are precisely documented.</p>
+            </header>
+            <form class="space-y-6"> <!-- Card 1: Basic Information -->
+                <section
+                    class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center"> <span
+                                class="material-symbols-outlined text-on-primary-container"
+                                data-icon="badge">badge</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-on-surface">Basic Information</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-2">
-                            <label class="block text-sm font-semibold text-on-surface-variant">Contact Person</label>
-                            <input
+                        <div class="space-y-2"> <label class="block text-sm font-semibold text-on-surface-variant">Name
+                                <span class="text-error">*</span></label> <input
                                 class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                                placeholder="Full name of representative" type="text" />
+                                placeholder="Enter supplier legal name" required="" type="text" /> </div>
+                        <div class="space-y-2"> <label
+                                class="block text-sm font-semibold text-on-surface-variant">Code</label> <input
+                                class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                placeholder="SUP-XXXX" type="text" /> </div>
+                    </div>
+                </section>
+                <!-- Card 2: Address & Contact -->
+                <section
+                    class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-10 h-10 bg-tertiary-container/30 rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary"
+                                data-icon="location_on">location_on</span>
                         </div>
-                        <div class="flex items-center">
-                            <div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 w-full">
-                                <span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
-                                <p class="text-sm text-on-surface-variant italic">Primary contact for logistical
-                                    inquiries and contract negotiations.</p>
+                        <h2 class="text-2xl font-bold text-on-surface">Address &amp; Contact</h2>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-on-surface-variant">Address</label>
+                            <textarea
+                                class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                placeholder="Full physical headquarters address" rows="3"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-on-surface-variant">Phone</label>
+                                <input
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                    placeholder="+1 (555) 000-0000" type="tel" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-on-surface-variant">Email</label>
+                                <input
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                    placeholder="contact@supplier.com" type="email" />
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-on-surface-variant">Contact
+                                    Person</label>
+                                <input
+                                    class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                    placeholder="Full name of representative" type="text" />
+                            </div>
+                            <div class="md:pt-7">
+                                <div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4 w-full">
+                                    <span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
+                                    <p class="text-sm text-on-surface-variant italic">Primary contact for logistical
+                                        inquiries and contract negotiations.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- Card 3: Additional Details -->
-            <section
-                class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-10 h-10 bg-secondary-container/30 rounded-lg flex items-center justify-center">
-                        <span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
-                    </div>
-                    <h2 class="text-1.5rem font-bold text-on-surface">Additional Details</h2>
-                </div>
-                <div class="space-y-8">
-                    <div class="space-y-2">
-                        <label class="block text-sm font-semibold text-on-surface-variant">Notes</label>
-                        <textarea
-                            class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
-                            placeholder="Special handling requirements, delivery preferences, or internal remarks..."
-                            rows="4"></textarea>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
-                            <div>
-                                <p class="font-semibold text-on-surface">Is Active</p>
-                                <p class="text-xs text-on-surface-variant">Enable immediate purchasing from this
-                                    supplier</p>
-                            </div>
+                </section>
+                <!-- Card 3: Additional Details -->
+                <section
+                    class="bg-surface-container-lowest rounded-lg p-8 shadow-[0_12px_40px_rgba(0,105,71,0.04)] border border-outline-variant/15">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-10 h-10 bg-secondary-container/30 rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
                         </div>
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input checked="" class="sr-only peer" type="checkbox" value="" />
-                            <div
-                                class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
-                            </div>
-                        </label>
+                        <h2 class="text-2xl font-bold text-on-surface">Additional Details</h2>
                     </div>
+                    <div class="space-y-8">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-on-surface-variant">Notes</label>
+                            <textarea
+                                class="w-full bg-surface-container-high border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all placeholder:text-outline"
+                                placeholder="Special handling requirements, delivery preferences, or internal remarks..."
+                                rows="4"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg">
+                            <div class="flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+                                <div>
+                                    <p class="font-semibold text-on-surface">Is Active</p>
+                                    <p class="text-xs text-on-surface-variant">Enable immediate purchasing from this
+                                        supplier</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                <div
+                                    class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <!-- Buttons -->
+                <div class="flex justify-end items-center gap-4 pt-8">
+                    <button
+                        class="px-8 py-3 text-primary font-semibold hover:bg-primary/5 rounded-lg transition-all active:scale-95"
+                        type="button">Cancel</button>
+                    <button
+                        class="px-10 py-4 bg-primary text-on-primary rounded-lg font-bold shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim transition-all active:scale-95 flex items-center gap-2"
+                        type="submit">
+                        <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+                        Create Supplier
+                    </button>
                 </div>
-            </section>
-            <!-- Buttons -->
-            <div class="flex justify-end items-center gap-4 pt-8">
-                <button
-                    class="px-8 py-3 text-primary font-semibold hover:bg-primary/5 rounded-lg transition-all active:scale-95"
-                    type="button">Cancel</button>
-                <button
-                    class="px-10 py-4 bg-primary text-on-primary rounded-lg font-bold shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim transition-all active:scale-95 flex items-center gap-2"
-                    type="submit">
-                    <span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
-                    Create Supplier
-                </button>
-            </div>
-        </form>
-        <!-- Decorative Elements for Kinetic Catalyst feel -->
-        <div class="fixed -bottom-10 -right-10 w-96 h-96 bg-primary-container/20 blur-3xl rounded-full -z-10"></div>
-        <div class="fixed top-40 right-20 w-64 h-64 bg-tertiary-container/10 blur-3xl rounded-full -z-10"></div>
+            </form>
+        </div>
     </main>
     <!-- Bottom Nav for Mobile -->
     <nav
