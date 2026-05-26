@@ -12,16 +12,17 @@ Todo:
     - Location details drawer - Done
 
 2. Fix the bottom navigation on mobile 
-3. Fix header sizes for create forms and make the form middle aligned - wip
+3. Fix header sizes for create forms and make the form middle aligned - Done
     - Location - Done
     - Product - Done
     - Category - Done
     - Stock - Done
     - Supplier - Done
 4. Make all drawers consistent. Now each drawer looks different from another. Fonts are all over the place
-5. Fix create product form. Consolidate 3 forms in to one.
-6. Design alignment for create pages with multiple state:
+5. Design alignment for create pages with multiple state: WIP
     - Stock
     - Product
     - Category
+6. Make form heading same size across all forms:
+7. Make form field heading same size across all forms:
 

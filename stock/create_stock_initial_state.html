@@ -21,57 +21,57 @@
             theme: {
                 extend: {
                     "colors": {
-                        "tertiary": "#006575",
-                        "on-tertiary": "#dcf7ff",
-                        "on-secondary-fixed-variant": "#006853",
-                        "on-primary-fixed-variant": "#006544",
-                        "on-primary": "#c8ffe0",
-                        "surface-dim": "#d1d5d7",
-                        "primary-dim": "#005c3d",
-                        "on-secondary": "#c4ffea",
-                        "surface-variant": "#dadddf",
-                        "tertiary-fixed": "#00dcfd",
-                        "surface-container-low": "#eff1f2",
-                        "inverse-primary": "#69f6b8",
-                        "on-tertiary-fixed": "#00343c",
-                        "on-secondary-fixed": "#004939",
-                        "inverse-surface": "#0c0f10",
-                        "on-error-container": "#570008",
+                        "surface": "#f5f6f7",
+                        "secondary-container": "#5afcd2",
                         "on-primary-container": "#005a3c",
+                        "on-secondary": "#c4ffea",
+                        "error-container": "#fb5151",
+                        "surface-bright": "#f5f6f7",
+                        "primary": "#006947",
+                        "surface-dim": "#d1d5d7",
+                        "on-primary": "#c8ffe0",
+                        "on-secondary-container": "#005d4a",
+                        "on-tertiary-container": "#004955",
                         "primary-fixed": "#69f6b8",
+                        "on-surface-variant": "#595c5d",
+                        "outline": "#757778",
+                        "primary-dim": "#005c3d",
+                        "tertiary-container": "#00dcfd",
+                        "on-error-container": "#570008",
+                        "surface-container": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#dadddf",
+                        "error": "#b31b25",
+                        "secondary-fixed": "#5afcd2",
+                        "primary-container": "#69f6b8",
+                        "outline-variant": "#abadae",
+                        "tertiary-dim": "#005866",
+                        "primary-fixed-dim": "#58e7ab",
+                        "inverse-primary": "#69f6b8",
+                        "surface-variant": "#dadddf",
+                        "on-tertiary-fixed": "#00343c",
+                        "on-secondary-fixed-variant": "#006853",
+                        "tertiary": "#006575",
+                        "secondary-fixed-dim": "#47edc4",
+                        "on-tertiary-fixed-variant": "#005360",
+                        "background": "#f5f6f7",
                         "on-background": "#2c2f30",
                         "tertiary-fixed-dim": "#00cdeb",
-                        "secondary-fixed": "#5afcd2",
-                        "primary": "#006947",
-                        "error": "#b31b25",
-                        "tertiary-container": "#00dcfd",
-                        "inverse-on-surface": "#9b9d9e",
-                        "primary-fixed-dim": "#58e7ab",
-                        "surface-container-highest": "#dadddf",
-                        "on-secondary-container": "#005d4a",
-                        "background": "#f5f6f7",
-                        "error-dim": "#9f0519",
-                        "secondary-container": "#5afcd2",
-                        "outline-variant": "#abadae",
-                        "secondary-fixed-dim": "#47edc4",
-                        "on-error": "#ffefee",
-                        "on-tertiary-fixed-variant": "#005360",
-                        "on-primary-fixed": "#00452d",
-                        "tertiary-dim": "#005866",
                         "secondary": "#006853",
-                        "outline": "#757778",
-                        "on-surface-variant": "#595c5d",
-                        "error-container": "#fb5151",
+                        "on-secondary-fixed": "#004939",
                         "secondary-dim": "#005b48",
-                        "on-tertiary-container": "#004955",
-                        "surface-container": "#e6e8ea",
-                        "on-surface": "#2c2f30",
+                        "on-error": "#ffefee",
+                        "surface-container-high": "#e0e3e4",
                         "surface-tint": "#006947",
-                        "surface-container-lowest": "#ffffff",
-                        "surface": "#f5f6f7",
-                        "primary-container": "#69f6b8",
-                        "surface-bright": "#f5f6f7",
-                        "surface-container-high": "#e0e3e4"
+                        "inverse-surface": "#0c0f10",
+                        "tertiary-fixed": "#00dcfd",
+                        "on-primary-fixed-variant": "#006544",
+                        "on-primary-fixed": "#00452d",
+                        "error-dim": "#9f0519",
+                        "surface-container-low": "#eff1f2",
+                        "on-tertiary": "#dcf7ff",
+                        "on-surface": "#2c2f30",
+                        "inverse-on-surface": "#9b9d9e"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -85,8 +85,8 @@
                         "body": ["Work Sans"],
                         "label": ["Work Sans"]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
     <style>
@@ -97,18 +97,23 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
     </style>
 </head>
 
-<body class="bg-surface text-on-background min-h-screen">
+<body class="bg-surface text-on-surface min-h-screen">
     <!-- TopAppBar Shell -->
     <header
         class="fixed top-0 w-full z-50 border-b-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,105,71,0.08)] flex justify-between items-center px-8 h-16 w-full font-work-sans text-sm font-medium tracking-tight">
         <div class="flex items-center gap-8">
-            <span class="text-2xl font-black tracking-tighter text-emerald-800 dark:text-emerald-300 uppercase">Kinetic
+            <span class="text-xl font-bold tracking-tighter text-emerald-800 dark:text-emerald-300">Kinetic
                 Inventory</span>
-            <nav class="hidden md:flex gap-6 items-center">
-                <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
                     href="#">Dashboard</a>
                 <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
                     href="#">Categories</a>
@@ -118,7 +123,7 @@
                     href="#">Inventory</a>
                 <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
                     href="#">Locations</a>
-                <a class="text-slate-500 dark:text-slate-400 hover:text-emerald-600 transition-colors font-medium text-sm"
+                <a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 transition-colors"
                     href="#">Suppliers</a>
             </nav>
         </div>
@@ -152,138 +157,178 @@
     </aside>
     <!-- Main Content Canvas -->
     <main class="lg:ml-64 pt-24 px-6 pb-20 max-w-[1920px] mx-auto">
-        <!-- Header Section -->
         <div class="max-w-5xl mx-auto">
-            <header class="mb-12">
+            <!-- Page Header -->
+            <div class="mb-10">
                 <h1 class="text-5xl font-black tracking-tighter text-on-surface mb-2">Create Stock</h1>
-                <p class="text-on-surface-variant mt-4 font-medium">Add stock for a specific product
-                    variation at a selected location. Dynamic variation fields will unlock upon product selection.</p>
-            </header>
-            <!-- Form Grid -->
-            <!-- Card 1: Left - Selection & Variations -->
-
-            <div class="grid grid-cols-12 gap-8 items-start">
-                <div class="col-span-12 lg:col-span-7 space-y-8">
-                    <!-- Product Selection Section -->
-                    <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">search_check</span>
-                            <h2 class="text-lg font-bold text-on-surface">Product Selection</h2>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Target
-                                    Product</label>
-                                <div class="relative group">
-                                    <select
-                                        class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
-                                        <option disabled="" selected="" value="">Search and select product...</option>
-                                    </select>
-                                    <span
-                                        class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+                <p class="text-on-surface-variant mt-4 font-medium">Add stock for a specific product variation at a
+                    selected location.</p>
+            </div>
+            <!-- Form Layout -->
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Column 1 -->
+                    <div class="space-y-6">
+                        <!-- Product Selection Card -->
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)] transition-all">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+                                <h2 class="text-xl font-bold tracking-tight">Product Selection</h2>
+                            </div>
+                            <div class="space-y-5">
+                                <div class="group">
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Product</label>
+                                    <div class="relative">
+                                        <select
+                                            class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all appearance-none cursor-pointer">
+                                            <option>Search and select product...</option>
+                                            <option>AeroFlow Running Shoes</option>
+                                            <option>Zenith Pro Smartphone</option>
+                                            <option>Terra Cotton T-Shirt</option>
+                                        </select>
+                                        <span
+                                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline"
+                                            data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Warehouse
-                                    Location</label>
-                                <div class="relative">
-                                    <select
-                                        class="w-full h-12 px-4 bg-surface-container-high rounded-lg border-none focus:ring-2 focus:ring-primary text-on-surface-variant appearance-none">
-                                        <option disabled="" selected="" value="">Search and select location...</option>
-                                    </select>
-                                    <span
-                                        class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">location_on</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product Variation Section (Empty State) -->
-                    <div
-                        class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15 border-2 border-dashed border-outline-variant/30">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-primary">layers</span>
-                            <h2 class="text-lg font-bold text-on-surface">Product Variation</h2>
-                        </div>
-                        <div class="flex flex-col items-center justify-center py-12 text-center">
-                            <div
-                                class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4">
-                                <span
-                                    class="material-symbols-outlined text-3xl text-outline-variant">dynamic_feed</span>
-                            </div>
-                            <p class="text-on-surface-variant text-sm max-w-sm">
-                                Variation attributes are dynamically loaded based on product selection. Please select a
-                                product above to continue.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2: Right - Inventory Details -->
-                <div class="col-span-12 lg:col-span-5">
-                    <div class="bg-surface-container-lowest rounded-lg p-8 ring-1 ring-outline-variant/15">
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="material-symbols-outlined text-tertiary">analytics</span>
-                            <h2 class="text-lg font-bold text-on-surface">Inventory Details</h2>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="space-y-2">
-                                <label
-                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Initial
-                                    Quantity</label>
-                                <input
-                                    class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
-                                    disabled="" type="number" value="0" />
-                                <p class="text-[10px] text-on-surface-variant/60 italic">Stock on hand at initiation</p>
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Selling
-                                    Price (USD)</label>
-                                <div class="relative">
-                                    <span class="absolute left-4 top-3 text-outline-variant font-medium">$</span>
-                                    <input
-                                        class="w-full h-12 pl-8 pr-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed text-lg font-semibold"
-                                        disabled="" type="text" value="0.00" />
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Reorder
-                                    Level</label>
-                                <input
-                                    class="w-full h-12 px-4 bg-surface-container-low rounded-lg border-none text-outline-variant cursor-not-allowed"
-                                    disabled="" type="number" value="10" />
-                                <p class="text-[10px] text-on-surface-variant/60 italic">Threshold for replenishment
-                                    alerts</p>
-                            </div>
-                            <!-- High Efficiency Progress Indicator (Initial/Zero State) -->
-                            <div class="pt-4">
-                                <div class="flex justify-between items-end mb-2">
-                                    <span class="text-xs font-bold text-on-surface uppercase">Capacity Forecast</span>
-                                    <span class="text-xs font-bold text-outline-variant tracking-tighter">0%</span>
-                                </div>
-                                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-                                    <div
-                                        class="w-0 h-full bg-gradient-to-r from-tertiary to-primary transition-all duration-1000">
+                                <div class="group">
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Location</label>
+                                    <div class="relative">
+                                        <select
+                                            class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all appearance-none cursor-pointer">
+                                            <option>Search and select location...</option>
+                                            <option>Main Distribution Hub (Alpha)</option>
+                                            <option>Regional Retail - North</option>
+                                            <option>West Coast Logistics</option>
+                                        </select>
+                                        <span
+                                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline"
+                                            data-icon="location_on">location_on</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- Product Variation Card -->
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)]">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-tertiary" data-icon="layers">layers</span>
+                                <h2 class="text-xl font-bold tracking-tight">Product Variation</h2>
+                            </div>
+                            <div class="flex flex-col items-center justify-center py-12 text-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4">
+                                    <span
+                                        class="material-symbols-outlined text-3xl text-outline-variant">dynamic_feed</span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm max-w-sm">
+                                    Variation attributes are dynamically loaded based on product selection. Please
+                                    select a
+                                    product above to continue.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Action Buttons -->
-                    <div class="mt-8 flex items-center gap-4">
-                        <button
-                            class="flex-1 h-12 text-primary font-bold hover:bg-primary-container/30 transition-colors rounded-lg text-sm uppercase tracking-widest">
-                            Cancel
-                        </button>
-                        <button
-                            class="flex-[2] h-12 bg-outline-variant text-surface rounded-lg font-bold text-sm uppercase tracking-widest cursor-not-allowed shadow-none opacity-50"
-                            disabled="">
-                            Create Stock
-                        </button>
+                    <!-- Column 2 -->
+                    <div class="space-y-6">
+                        <!-- Inventory Details Card -->
+                        <div
+                            class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_12px_40px_rgba(0,105,71,0.04)] h-full">
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-icon="analytics">analytics</span>
+                                <h2 class="text-xl font-bold tracking-tight">Inventory Details</h2>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="group">
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">SKU</label>
+                                    <div class="relative">
+                                        <input
+                                            class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all"
+                                            placeholder="SKU-XXXX-XXXX" type="text" value="SKU-001-AERO" />
+                                    </div>
+                                    <p class="mt-2 text-[11px] text-outline italic">Auto-generated but editable</p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Product
+                                        Image</label>
+                                    <div class="relative group">
+                                        <label
+                                            class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-outline-variant rounded-lg bg-surface-container-low hover:bg-surface-container hover:border-primary transition-all cursor-pointer group">
+                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                                <span
+                                                    class="material-symbols-outlined text-outline group-hover:text-primary mb-2 transition-colors"
+                                                    data-icon="cloud_upload">cloud_upload</span>
+                                                <p
+                                                    class="text-xs text-outline group-hover:text-on-surface transition-colors">
+                                                    <span class="font-bold">Drop image here</span> or click to
+                                                    browse
+                                                </p>
+                                                <p
+                                                    class="text-[10px] text-outline-variant mt-1 italic uppercase tracking-tighter">
+                                                    PNG, JPG, or WEBP (Max 2MB)</p>
+                                            </div>
+                                            <input accept="image/*" class="hidden" type="file" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Quantity</label>
+                                    <input
+                                        class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all"
+                                        placeholder="0" type="number" />
+                                    <p class="mt-2 text-[11px] text-outline italic">Current stock quantity available
+                                    </p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Selling
+                                        Price</label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
+                                        <input
+                                            class="w-full bg-surface-container-high border-none rounded-lg py-3 pl-8 pr-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all"
+                                            placeholder="0.00" step="0.01" type="number" />
+                                    </div>
+                                    <p class="mt-2 text-[11px] text-outline italic">Selling price for this exact
+                                        variation</p>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 px-1">Reorder
+                                        Level</label>
+                                    <input
+                                        class="w-full bg-surface-container-high border-none rounded-lg py-3 px-4 focus:ring-0 focus:border-primary border-b-2 border-transparent transition-all"
+                                        placeholder="10" type="number" />
+                                    <p class="mt-2 text-[11px] text-outline italic">Low stock alert threshold</p>
+                                </div>
+                                <!-- Signature Component: Catalyst Progress -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <!-- Actions -->
+                <div class="flex flex-col md:flex-row items-center justify-end gap-4 pt-8">
+                    <button
+                        class="w-full md:w-auto px-10 py-3 rounded-lg font-bold text-sm text-primary hover:bg-primary-container/20 active:scale-95 transition-all"
+                        type="button">
+                        Cancel
+                    </button>
+                    <button
+                        class="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-lg font-black text-sm uppercase tracking-widest shadow-[0_12px_40px_rgba(0,105,71,0.15)] hover:bg-primary-dim active:scale-[0.98] transition-all"
+                        type="submit">
+                        Create Stock
+                    </button>
+                </div>
+            </form>
+            <!-- Visual Decorative Element -->
         </div>
     </main>
     </div>
