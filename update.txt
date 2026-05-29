@@ -21,8 +21,9 @@ Todo:
 4. Make all drawers consistent. Now each drawer looks different from another. Fonts are all over the place
 5. Design alignment for create pages with multiple state: WIP
     - Stock - Done
-    - Product
+    - Product - Done
     - Category
-6. Make form heading same size across all forms:
-7. Make form field heading same size across all forms:
+6. Product page need a initial state and a no variant state just like stock. Maybe, we can adapt it from stock forms. 
+7. Make form heading same size across all forms:
+8. Make form field heading same size across all forms:
 
