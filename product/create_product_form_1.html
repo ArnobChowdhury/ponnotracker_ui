@@ -232,13 +232,14 @@
                         <div class="md:col-span-2 space-y-8">
                             <!-- Field: Cost with Currency Selector -->
                             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                <div class="md:col-span-3 space-y-2">
+                                <!-- Field: Cost with Currency Selector -->
+                                <div class="md:col-span-2 space-y-2">
                                     <label
                                         class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Cost</label>
-                                    <div class="flex gap-2">
-                                        <div class="relative w-24 flex-shrink-0">
+                                    <div class="flex gap-2 h-[48px]">
+                                        <div class="relative w-20 flex-shrink-0">
                                             <select
-                                                class="w-full bg-surface-container-high border-none rounded-lg px-3 py-3 focus:ring-2 focus:ring-primary transition-all text-on-surface appearance-none font-medium">
+                                                class="w-full h-full bg-surface-container-high border-none rounded-lg px-3 py-0 focus:ring-2 focus:ring-primary transition-all text-on-surface appearance-none font-medium">
                                                 <option value="USD">$</option>
                                                 <option value="BDT">৳</option>
                                                 <option value="EUR">€</option>
@@ -250,33 +251,33 @@
                                         </div>
                                         <div class="relative flex-1">
                                             <input
-                                                class="w-full bg-surface-container-high border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline"
+                                                class="w-full h-full bg-surface-container-high border-none rounded-lg px-4 py-0 focus:ring-2 focus:ring-primary transition-all text-on-surface placeholder:text-outline"
                                                 placeholder="0.00" step="0.01" type="number" />
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Field: Is Active Toggle (Full Width Row) -->
-                            <div
-                                class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border border-outline-variant/10">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                                        <span class="material-symbols-outlined text-primary"
-                                            data-icon="check_circle">check_circle</span>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-base">Active Status</p>
-                                        <p class="text-sm text-on-surface-variant">Enable product tracking and
-                                            visibility across the warehouse</p>
+                                <!-- Field: Active Status (Merged Row) -->
+                                <div class="md:col-span-2 space-y-2">
+                                    <label
+                                        class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Active
+                                        Status</label>
+                                    <div
+                                        class="flex items-center justify-between px-4 h-[48px] bg-surface-container-high rounded-lg border border-outline-variant/10">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-primary text-xl"
+                                                data-icon="check_circle">check_circle</span>
+                                            <p class="font-bold text-sm">Active</p>
+                                        </div>
+                                        <label class="relative inline-flex items-center cursor-pointer scale-90">
+                                            <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                            <div
+                                                class="w-11 h-6 bg-outline-variant/30 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                            </div>
+                                        </label>
                                     </div>
                                 </div>
-                                <label class="relative inline-flex items-center cursor-pointer scale-110">
-                                    <input checked="" class="sr-only peer" type="checkbox" value="" />
-                                    <div
-                                        class="w-11 h-6 bg-outline-variant/30 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
-                                    </div>
-                                </label>
                             </div>
+                            <!-- Field: Is Active Toggle (Full Width Row) -->
                         </div>
                     </div>
                 </section>
