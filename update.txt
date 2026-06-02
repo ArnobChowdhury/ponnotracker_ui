@@ -23,7 +23,9 @@ Todo:
     - Stock - Done
     - Product - Done
     - Category - Done
-6. Product page need a initial state and a no variant state just like stock. Maybe, we can adapt it from stock forms. 
+6. Product page need an initial state and a no variant state just like stock. Maybe, we can adapt it from stock forms. - WIP
+    - Initial state - Done
+    - No variant state
 7. Make form heading same size across all forms:
 8. Make form field heading same size across all forms:
 
