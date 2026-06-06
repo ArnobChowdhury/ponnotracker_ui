@@ -212,21 +212,20 @@
     </main>
     <div class="fixed inset-0 z-[60] flex justify-end bg-on-surface/20 backdrop-blur-[2px]">
         <div
-            class="w-full max-w-lg bg-surface shadow-[0_12px_40px_rgba(0,105,71,0.12)] flex flex-col h-full transform transition-transform duration-500 ease-out">
-            <div
-                class="p-8 border-b border-outline-variant/10 flex justify-between items-start bg-surface-container-lowest">
-                <div class="space-y-1">
-                    <div class="flex items-center space-x-2">
-                        <span
-                            class="text-[10px] font-black uppercase tracking-tighter text-primary px-2 py-0.5 bg-primary-container rounded">SUP-CORE</span>
-                        <h2 class="text-sm font-bold text-primary tracking-widest uppercase">Supplier Details</h2>
-                    </div>
-                    <h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">Global Precision Tooling</h1>
-                    <p class="text-sm text-on-surface-variant font-medium">System Reference ID: GPT-9082-2024</p>
+            class="w-full max-w-lg bg-surface-container-lowest shadow-[0_12px_40px_rgba(0,105,71,0.12)] flex flex-col h-full transform transition-transform duration-500 ease-out">
+            <div class="px-8 pt-8 pb-6 border-b border-surface-container-low flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                    <h2 class="text-2xl font-black tracking-tight text-on-surface">Supplier Details</h2>
                 </div>
-                <button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90">
-                    <span class="material-symbols-outlined text-on-surface-variant">close</span>
-                </button>
+                <div class="flex gap-2">
+                    <button class="pt-2 px-2 text-primary hover:bg-surface-container-low rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">edit</span>
+                    </button>
+                </div>
             </div>
             <div class="flex-1 overflow-y-auto p-8 space-y-12">
                 <section>
@@ -283,11 +282,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="bg-surface-container-lowest p-8 rounded-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-5">
-                        <span class="material-symbols-outlined text-8xl"
-                            style="font-variation-settings: 'FILL' 1;">analytics</span>
-                    </div>
+                <section class="bg-surface p-8 rounded-2xl relative overflow-hidden">
                     <div class="flex items-center space-x-2 mb-8">
                         <span class="w-1 h-4 bg-tertiary rounded-full"></span>
                         <h3 class="text-xs font-black uppercase text-tertiary tracking-[0.2em]">Sourcing Summary</h3>

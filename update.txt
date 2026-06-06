@@ -25,12 +25,15 @@ Todo:
         - Stock - Done
         - Supplier - Done
         - Location - Done
-    - Make all drawers' close icon before the heading. Product details is the base 
-        - Product 
-        - Category
-        - Stock
-        - Supplier
-        - Location
+    - Make all drawers' close icon before the heading. Product details is the base - Done
+        - Product - Done
+        - Category - Done
+        - Stock - Done
+        - Supplier - Done
+        - Location - Done
+    - Icons in drawer are not aligned. Some has overlay, some don't. Let's go with plain icons - looks professional 
+    - Field headings are not same fonts and design
+    - Supplier details is off. It is not showing the supplier name and supplier number etc. Align this.
 5. Design alignment for create pages with multiple state: Done
     - Stock - Done
     - Product - Done

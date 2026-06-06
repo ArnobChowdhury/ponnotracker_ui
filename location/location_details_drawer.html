@@ -199,29 +199,28 @@
     <!-- Location Details Side Drawer -->
     <div
         class="fixed top-0 right-0 h-screen w-full max-w-lg bg-surface-container-lowest shadow-[0_12px_40px_rgba(0,105,71,0.15)] z-[70] flex flex-col overflow-y-auto">
+
         <!-- Drawer Header -->
-        <div
-            class="sticky top-0 bg-surface-container-lowest/80 backdrop-blur-md px-8 py-6 flex items-center justify-between z-10">
+        <div class="px-8 pt-8 pb-6 border-b border-surface-container-low flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <button
-                    class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+                    class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
                     <span class="material-symbols-outlined">close</span>
                 </button>
-                <h2 class="text-2xl font-extrabold tracking-tight">Location Details</h2>
+                <h2 class="text-2xl font-black tracking-tight text-on-surface">Location Details</h2>
             </div>
             <div class="flex gap-2">
-                <button
-                    class="p-2.5 bg-primary-container text-on-primary-container rounded-lg hover:brightness-95 transition-all">
+                <button class="pt-2 px-2 text-primary hover:bg-surface-container-low rounded-lg transition-colors">
                     <span class="material-symbols-outlined">edit</span>
                 </button>
             </div>
         </div>
-        <div class="px-8 pb-12 flex flex-col gap-8">
+        <div class="px-8 pt-8 pb-12 flex flex-col gap-8">
             <!-- Hero Map/Visual -->
             <!-- Section: Basic Information -->
             <section>
                 <div class="flex items-center gap-2 mb-4">
-                    <span class="material-symbols-outlined text-primary text-xl">inventory_2</span>
+                    <span class="material-symbols-outlined text-primary text-xl">info</span>
                     <span class="text-xs font-bold text-primary uppercase tracking-widest">Basic Information</span>
                 </div>
                 <div class="bg-surface-container-low rounded-xl p-6 grid grid-cols-2 gap-y-6 gap-x-4">
