@@ -32,7 +32,12 @@ Todo:
         - Supplier - Done
         - Location - Done
     - Icons in drawer are not aligned. Some has overlay, some don't. Let's go with plain icons - looks professional. Follow 'location details'.
-    - Section header as black color font and for style and size follow 'Category details'. 
+    - Section header as black color font and for style and size follow 'Category details'. - Done
+        - Product - Done
+        - Category - Done 
+        - Stock - Done
+        - Supplier - Done
+        - Location - Done
     - Field headers as primary green color and for style and size follow 'Category details'. 
     - Field headings are not same fonts and design
     - Supplier details is off. It is not showing the supplier name and supplier number etc. Align this.
