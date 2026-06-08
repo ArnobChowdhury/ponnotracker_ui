@@ -43,7 +43,7 @@ Todo:
         - Stock - Done
         - Supplier - Done
         - Location - Done
-    - Field headers as primary green color and for style and size follow 'Category details'. 
+    - Field headers as primary green color and for style and size follow 'Category details'. - Done
         - Product 
         - Category  
         - Stock 
