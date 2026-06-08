@@ -31,7 +31,12 @@ Todo:
         - Stock - Done
         - Supplier - Done
         - Location - Done
-    - Icons in drawer are not aligned. Some has overlay, some don't. Let's go with plain icons - looks professional. Follow 'location details'.
+    - Icons in drawer are not aligned. Some has overlay, some don't. Let's go with plain icons - looks professional. Follow 'location details'. - Done 
+        - Product - Done
+        - Category - Done
+        - Stock - Done
+        - Supplier - Done
+        - Location - Done
     - Section header as black color font and for style and size follow 'Category details'. - Done
         - Product - Done
         - Category - Done 
@@ -39,7 +44,11 @@ Todo:
         - Supplier - Done
         - Location - Done
     - Field headers as primary green color and for style and size follow 'Category details'. 
-    - Field headings are not same fonts and design
+        - Product 
+        - Category  
+        - Stock 
+        - Supplier 
+        - Location 
     - Supplier details is off. It is not showing the supplier name and supplier number etc. Align this.
 5. Design alignment for create pages with multiple state: Done
     - Stock - Done
