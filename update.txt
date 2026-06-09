@@ -49,7 +49,7 @@ Todo:
         - Stock 
         - Supplier 
         - Location 
-    - Supplier details is off. It is not showing the supplier name and supplier number etc. Align this.
+    - Supplier details is off. It is not showing the supplier name and supplier number etc. Align this. - Done
 5. Design alignment for create pages with multiple state: Done
     - Stock - Done
     - Product - Done
